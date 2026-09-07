@@ -1,0 +1,68 @@
+/* ==========================================================================
+   内容与排期 · 整体 / 月历 —— 表格主体文字层级
+   只调字号 / 字重 / 文字颜色深浅；不改布局、结构、行高、系列配色与卡片底色。
+   ========================================================================== */
+
+/* 主题文字统一色板
+   保留系列色相，只降低饱和度与浓度，维持系列识别度。
+   需要更中性就把 62% 调小，需要更贴近原系列色就调大。 */
+.plan-item,
+.overview-series,
+.queue-item {
+  --text-series-soft: color-mix(in srgb, var(--series-color, #6b7280) 62%, #6f7484);
+}
+
+/* 1 / 6. 主题卡片名称：再降一档，12px / 400 */
+.plan-item .plan-item-title strong {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-2);
+  color: var(--text-series-soft);
+}
+
+/* 月历视图的紧凑卡片，同样 12px / 400 */
+.plan-item.compact .plan-item-title strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* 2. 日期：11px / 400，进一步缩小 */
+.plan-item .plan-item-date {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+/* 月历日期数字：11px / 400，随主体一起降重 */
+.calendar-day .day-heading {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* 3 / 6. 左侧系列名称：14px / 500 */
+.overview-table .overview-series strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  color: var(--text-series-soft);
+}
+
+/* 4. 系列下方「X 篇」：12px / 400 / 弱灰 */
+.overview-table .overview-series > span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9aa1b1;
+}
+
+/* 5. 待排期主题名称：14px / 500 */
+.queue-list .queue-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+/* 6. 待排期卡片底部状态标签：随主题文字一起降重 */
+.queue-list .queue-item .queue-bottom > span:first-child {
+  font-weight: 400;
+  color: var(--text-series-soft);
+}
