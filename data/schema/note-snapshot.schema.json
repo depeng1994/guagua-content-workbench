@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "note-snapshot.schema.json",
+  "title": "XHS note daily snapshot",
+  "type": "object",
+  "required": ["schema_version", "snapshot_date", "notes"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "snapshot_date": {"type": "string", "format": "date"},
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["snapshot_date", "content_id", "note_id", "publish_date", "impressions", "views", "likes", "favorites", "comments", "shares", "followers_gained"],
+        "properties": {
+          "snapshot_date": {"type": "string", "format": "date"},
+          "content_id": {"type": "string"},
+          "note_id": {"type": ["string", "null"]},
+          "publish_date": {"type": ["string", "null"], "format": "date"},
+          "impressions": {"type": ["number", "null"]},
+          "views": {"type": ["number", "null"]},
+          "likes": {"type": ["number", "null"]},
+          "favorites": {"type": ["number", "null"]},
+          "comments": {"type": ["number", "null"]},
+          "shares": {"type": ["number", "null"]},
+          "followers_gained": {"type": ["number", "null"]}
+        }
+      }
+    }
+  }
+}

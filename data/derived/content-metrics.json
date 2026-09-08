@@ -1,0 +1,1395 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-08T16:03:30+08:00",
+  "warnings": [],
+  "contents": [
+    {
+      "content_id": "GG-001",
+      "title": "宝宝越来越少，母婴生意为什么还在变大？🍼",
+      "topic": "母婴总览",
+      "series": "看懂母婴生意",
+      "publish_date": "2026-09-04",
+      "latest": {
+        "impressions": 406.0,
+        "views": 296.0,
+        "likes": 7.0,
+        "favorites": 10.0,
+        "comments": 0.0,
+        "shares": 5.0,
+        "followers_gained": 1.0,
+        "interactions": 22.0,
+        "view_rate": 0.729064039408867,
+        "like_rate": 0.02364864864864865,
+        "favorite_rate": 0.033783783783783786,
+        "comment_rate": 0.0,
+        "share_rate": 0.016891891891891893,
+        "engagement_rate": 0.07432432432432433,
+        "follow_conversion_rate": 0.0033783783783783786,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": {
+          "impressions": 406.0,
+          "views": 296.0,
+          "likes": 7.0,
+          "favorites": 10.0,
+          "comments": 0.0,
+          "shares": 5.0,
+          "followers_gained": 1.0,
+          "interactions": 22.0,
+          "view_rate": 0.729064039408867,
+          "like_rate": 0.02364864864864865,
+          "favorite_rate": 0.033783783783783786,
+          "comment_rate": 0.0,
+          "share_rate": 0.016891891891891893,
+          "engagement_rate": 0.07432432432432433,
+          "follow_conversion_rate": 0.0033783783783783786,
+          "snapshot_date": "2026-09-05"
+        },
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-002",
+      "title": "星巴克，为什么不跟9块9打到底？☕️",
+      "topic": "星巴克",
+      "series": "咖啡的N种活法",
+      "publish_date": "2026-09-02",
+      "latest": {
+        "impressions": 4121.0,
+        "views": 631.0,
+        "likes": 23.0,
+        "favorites": 7.0,
+        "comments": 3.0,
+        "shares": 8.0,
+        "followers_gained": 4.0,
+        "interactions": 41.0,
+        "view_rate": 0.15311817520019413,
+        "like_rate": 0.03645007923930269,
+        "favorite_rate": 0.011093502377179081,
+        "comment_rate": 0.004754358161648178,
+        "share_rate": 0.012678288431061807,
+        "engagement_rate": 0.06497622820919176,
+        "follow_conversion_rate": 0.006339144215530904,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": {
+          "impressions": 4121.0,
+          "views": 631.0,
+          "likes": 23.0,
+          "favorites": 7.0,
+          "comments": 3.0,
+          "shares": 8.0,
+          "followers_gained": 4.0,
+          "interactions": 41.0,
+          "view_rate": 0.15311817520019413,
+          "like_rate": 0.03645007923930269,
+          "favorite_rate": 0.011093502377179081,
+          "comment_rate": 0.004754358161648178,
+          "share_rate": 0.012678288431061807,
+          "engagement_rate": 0.06497622820919176,
+          "follow_conversion_rate": 0.006339144215530904,
+          "snapshot_date": "2026-09-05"
+        },
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-003",
+      "title": "🔝瓜瓜看经营，到底看什么？",
+      "topic": "账号介绍",
+      "series": "其他内容",
+      "publish_date": "2026-09-02",
+      "latest": {
+        "impressions": 700.0,
+        "views": 33.0,
+        "likes": 3.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0,
+        "interactions": 3.0,
+        "view_rate": 0.047142857142857146,
+        "like_rate": 0.09090909090909091,
+        "favorite_rate": 0.0,
+        "comment_rate": 0.0,
+        "share_rate": 0.0,
+        "engagement_rate": 0.09090909090909091,
+        "follow_conversion_rate": 0.0,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": {
+          "impressions": 700.0,
+          "views": 33.0,
+          "likes": 3.0,
+          "favorites": 0.0,
+          "comments": 0.0,
+          "shares": 0.0,
+          "followers_gained": 0.0,
+          "interactions": 3.0,
+          "view_rate": 0.047142857142857146,
+          "like_rate": 0.09090909090909091,
+          "favorite_rate": 0.0,
+          "comment_rate": 0.0,
+          "share_rate": 0.0,
+          "engagement_rate": 0.09090909090909091,
+          "follow_conversion_rate": 0.0,
+          "snapshot_date": "2026-09-05"
+        },
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-004",
+      "title": "Manner和M Stand，为什么越做越不像？",
+      "topic": "Manner／M Stand",
+      "series": "咖啡的N种活法",
+      "publish_date": "2026-08-31",
+      "latest": {
+        "impressions": 39134.0,
+        "views": 11594.0,
+        "likes": 151.0,
+        "favorites": 98.0,
+        "comments": 49.0,
+        "shares": 62.0,
+        "followers_gained": 39.0,
+        "interactions": 360.0,
+        "view_rate": 0.29626411815812337,
+        "like_rate": 0.013023977919613593,
+        "favorite_rate": 0.008452647921338624,
+        "comment_rate": 0.004226323960669312,
+        "share_rate": 0.0053475935828877,
+        "engagement_rate": 0.03105054338450923,
+        "follow_conversion_rate": 0.0033638088666551663,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-005",
+      "title": "9块9之后，瑞幸和库迪为什么走向了两条路？",
+      "topic": "瑞幸／库迪",
+      "series": "咖啡的N种活法",
+      "publish_date": "2026-08-28",
+      "latest": {
+        "impressions": 6662.0,
+        "views": 923.0,
+        "likes": 30.0,
+        "favorites": 19.0,
+        "comments": 5.0,
+        "shares": 12.0,
+        "followers_gained": 10.0,
+        "interactions": 66.0,
+        "view_rate": 0.1385469828880216,
+        "like_rate": 0.032502708559046585,
+        "favorite_rate": 0.020585048754062838,
+        "comment_rate": 0.005417118093174431,
+        "share_rate": 0.013001083423618635,
+        "engagement_rate": 0.07150595882990249,
+        "follow_conversion_rate": 0.010834236186348862,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": {
+          "impressions": 6662.0,
+          "views": 923.0,
+          "likes": 30.0,
+          "favorites": 19.0,
+          "comments": 5.0,
+          "shares": 12.0,
+          "followers_gained": 10.0,
+          "interactions": 66.0,
+          "view_rate": 0.1385469828880216,
+          "like_rate": 0.032502708559046585,
+          "favorite_rate": 0.020585048754062838,
+          "comment_rate": 0.005417118093174431,
+          "share_rate": 0.013001083423618635,
+          "engagement_rate": 0.07150595882990249,
+          "follow_conversion_rate": 0.010834236186348862,
+          "snapshot_date": "2026-09-05"
+        },
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-006",
+      "title": "一杯咖啡的钱，到底被谁赚走了？☕",
+      "topic": "咖啡成本",
+      "series": "咖啡的N种活法",
+      "publish_date": "2026-08-26",
+      "latest": {
+        "impressions": 3636.0,
+        "views": 885.0,
+        "likes": 26.0,
+        "favorites": 18.0,
+        "comments": 3.0,
+        "shares": 9.0,
+        "followers_gained": 14.0,
+        "interactions": 56.0,
+        "view_rate": 0.2433993399339934,
+        "like_rate": 0.02937853107344633,
+        "favorite_rate": 0.020338983050847456,
+        "comment_rate": 0.003389830508474576,
+        "share_rate": 0.010169491525423728,
+        "engagement_rate": 0.06327683615819209,
+        "follow_conversion_rate": 0.015819209039548022,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-007",
+      "title": "山姆、盒马、永辉，为什么都在做自有品牌？",
+      "topic": "商超自有品牌",
+      "series": "商超自救指南",
+      "publish_date": "2026-08-24",
+      "latest": {
+        "impressions": 2676.0,
+        "views": 441.0,
+        "likes": 13.0,
+        "favorites": 15.0,
+        "comments": 0.0,
+        "shares": 3.0,
+        "followers_gained": 9.0,
+        "interactions": 31.0,
+        "view_rate": 0.1647982062780269,
+        "like_rate": 0.02947845804988662,
+        "favorite_rate": 0.034013605442176874,
+        "comment_rate": 0.0,
+        "share_rate": 0.006802721088435374,
+        "engagement_rate": 0.07029478458049887,
+        "follow_conversion_rate": 0.02040816326530612,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-008",
+      "title": "小米中报｜Q2收入回来了，毛利率还在跌？",
+      "topic": "小米中报",
+      "series": "其他内容",
+      "publish_date": "2026-08-20",
+      "latest": {
+        "impressions": 869.0,
+        "views": 178.0,
+        "likes": 4.0,
+        "favorites": 1.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "followers_gained": 0.0,
+        "interactions": 6.0,
+        "view_rate": 0.2048331415420023,
+        "like_rate": 0.02247191011235955,
+        "favorite_rate": 0.0056179775280898875,
+        "comment_rate": 0.0,
+        "share_rate": 0.0056179775280898875,
+        "engagement_rate": 0.033707865168539325,
+        "follow_conversion_rate": 0.0,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-009",
+      "title": "永辉盒马山姆，为什么越做越不一样？",
+      "topic": "商超经营差异",
+      "series": "商超自救指南",
+      "publish_date": "2026-08-18",
+      "latest": {
+        "impressions": 2871.0,
+        "views": 425.0,
+        "likes": 18.0,
+        "favorites": 10.0,
+        "comments": 2.0,
+        "shares": 2.0,
+        "followers_gained": 1.0,
+        "interactions": 32.0,
+        "view_rate": 0.14803204458376873,
+        "like_rate": 0.042352941176470586,
+        "favorite_rate": 0.023529411764705882,
+        "comment_rate": 0.004705882352941176,
+        "share_rate": 0.004705882352941176,
+        "engagement_rate": 0.07529411764705882,
+        "follow_conversion_rate": 0.002352941176470588,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-010",
+      "title": "大家都在排队挤山姆，但260 元年费真的值吗？",
+      "topic": "山姆会员费",
+      "series": "商超自救指南",
+      "publish_date": "2026-08-13",
+      "latest": {
+        "impressions": 5367.0,
+        "views": 710.0,
+        "likes": 16.0,
+        "favorites": 8.0,
+        "comments": 3.0,
+        "shares": 1.0,
+        "followers_gained": 1.0,
+        "interactions": 28.0,
+        "view_rate": 0.13228991988075275,
+        "like_rate": 0.022535211267605635,
+        "favorite_rate": 0.011267605633802818,
+        "comment_rate": 0.004225352112676056,
+        "share_rate": 0.0014084507042253522,
+        "engagement_rate": 0.03943661971830986,
+        "follow_conversion_rate": 0.0014084507042253522,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-011",
+      "title": "千亿GMV，盒马到底做对了什么？",
+      "topic": "盒马",
+      "series": "商超自救指南",
+      "publish_date": "2026-08-11",
+      "latest": {
+        "impressions": 4370.0,
+        "views": 618.0,
+        "likes": 24.0,
+        "favorites": 11.0,
+        "comments": 8.0,
+        "shares": 3.0,
+        "followers_gained": 7.0,
+        "interactions": 46.0,
+        "view_rate": 0.1414187643020595,
+        "like_rate": 0.038834951456310676,
+        "favorite_rate": 0.01779935275080906,
+        "comment_rate": 0.012944983818770227,
+        "share_rate": 0.0048543689320388345,
+        "engagement_rate": 0.0744336569579288,
+        "follow_conversion_rate": 0.011326860841423949,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-012",
+      "title": "除了大金瓶，你喝过东鹏家第二种饮料吗？🥤",
+      "topic": "东鹏饮料",
+      "series": "其他内容",
+      "publish_date": "2026-08-07",
+      "latest": {
+        "impressions": 1232.0,
+        "views": 129.0,
+        "likes": 5.0,
+        "favorites": 2.0,
+        "comments": 2.0,
+        "shares": 2.0,
+        "followers_gained": 0.0,
+        "interactions": 11.0,
+        "view_rate": 0.10470779220779221,
+        "like_rate": 0.03875968992248062,
+        "favorite_rate": 0.015503875968992248,
+        "comment_rate": 0.015503875968992248,
+        "share_rate": 0.015503875968992248,
+        "engagement_rate": 0.08527131782945736,
+        "follow_conversion_rate": 0.0,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-013",
+      "title": "智驾天团｜智驾背后的外包大脑Momonta🚗",
+      "topic": "Momenta",
+      "series": "智驾天团",
+      "publish_date": "2026-08-06",
+      "latest": {
+        "impressions": 1258.0,
+        "views": 214.0,
+        "likes": 8.0,
+        "favorites": 1.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0,
+        "interactions": 9.0,
+        "view_rate": 0.17011128775834658,
+        "like_rate": 0.037383177570093455,
+        "favorite_rate": 0.004672897196261682,
+        "comment_rate": 0.0,
+        "share_rate": 0.0,
+        "engagement_rate": 0.04205607476635514,
+        "follow_conversion_rate": 0.0,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": {
+          "impressions": 1258.0,
+          "views": 214.0,
+          "likes": 8.0,
+          "favorites": 1.0,
+          "comments": 0.0,
+          "shares": 0.0,
+          "followers_gained": 0.0,
+          "interactions": 9.0,
+          "view_rate": 0.17011128775834658,
+          "like_rate": 0.037383177570093455,
+          "favorite_rate": 0.004672897196261682,
+          "comment_rate": 0.0,
+          "share_rate": 0.0,
+          "engagement_rate": 0.04205607476635514,
+          "follow_conversion_rate": 0.0,
+          "snapshot_date": "2026-09-05"
+        }
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-014",
+      "title": "商超自救指南｜“胖改”后的永辉怎么样了？",
+      "topic": "永辉胖改",
+      "series": "商超自救指南",
+      "publish_date": "2026-08-05",
+      "latest": {
+        "impressions": 3934.0,
+        "views": 574.0,
+        "likes": 13.0,
+        "favorites": 5.0,
+        "comments": 7.0,
+        "shares": 3.0,
+        "followers_gained": 3.0,
+        "interactions": 28.0,
+        "view_rate": 0.14590747330960854,
+        "like_rate": 0.02264808362369338,
+        "favorite_rate": 0.008710801393728223,
+        "comment_rate": 0.012195121951219513,
+        "share_rate": 0.005226480836236934,
+        "engagement_rate": 0.04878048780487805,
+        "follow_conversion_rate": 0.005226480836236934,
+        "snapshot_date": "2026-09-05"
+      },
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": {
+          "impressions": 3934.0,
+          "views": 574.0,
+          "likes": 13.0,
+          "favorites": 5.0,
+          "comments": 7.0,
+          "shares": 3.0,
+          "followers_gained": 3.0,
+          "interactions": 28.0,
+          "view_rate": 0.14590747330960854,
+          "like_rate": 0.02264808362369338,
+          "favorite_rate": 0.008710801393728223,
+          "comment_rate": 0.012195121951219513,
+          "share_rate": 0.005226480836236934,
+          "engagement_rate": 0.04878048780487805,
+          "follow_conversion_rate": 0.005226480836236934,
+          "snapshot_date": "2026-09-05"
+        }
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-P001",
+      "title": "Babycare：从产品定义到家庭价值",
+      "topic": "Babycare",
+      "series": "看懂母婴生意",
+      "publish_date": null,
+      "latest": null,
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-P002",
+      "title": "全棉时代：医疗信任如何变成消费生意",
+      "topic": "全棉时代",
+      "series": "看懂母婴生意",
+      "publish_date": "2026-09-07",
+      "latest": null,
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-P003",
+      "title": "智驾产业地图：同样做智驾，如何赚钱",
+      "topic": "智驾总览",
+      "series": "智驾天团",
+      "publish_date": null,
+      "latest": null,
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    },
+    {
+      "content_id": "GG-P004",
+      "title": "安踏品牌局：多品牌如何形成增长",
+      "topic": "安踏品牌局",
+      "series": "安踏品牌局",
+      "publish_date": null,
+      "latest": null,
+      "deltas": {
+        "impressions": null,
+        "views": null,
+        "likes": null,
+        "favorites": null,
+        "comments": null,
+        "shares": null,
+        "followers_gained": null
+      },
+      "lifecycle": {
+        "24h": null,
+        "72h": null,
+        "7d": null,
+        "30d": null
+      },
+      "long_tail": {
+        "metric": "7d_after_72h_ratio",
+        "ratio": null
+      }
+    }
+  ],
+  "rankings": {
+    "24h": {
+      "impressions": [
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 406.0
+        }
+      ],
+      "views": [
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 296.0
+        }
+      ],
+      "favorites": [
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 10.0
+        }
+      ],
+      "interactions": [
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 22.0
+        }
+      ],
+      "followers_gained": [
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 1.0
+        }
+      ]
+    },
+    "72h": {
+      "impressions": [
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 4121.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 700.0
+        }
+      ],
+      "views": [
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 631.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 33.0
+        }
+      ],
+      "favorites": [
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 7.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 0.0
+        }
+      ],
+      "interactions": [
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 41.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 3.0
+        }
+      ],
+      "followers_gained": [
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 4.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 0.0
+        }
+      ]
+    },
+    "7d": {
+      "impressions": [
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 6662.0
+        }
+      ],
+      "views": [
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 923.0
+        }
+      ],
+      "favorites": [
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 19.0
+        }
+      ],
+      "interactions": [
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 66.0
+        }
+      ],
+      "followers_gained": [
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 10.0
+        }
+      ]
+    },
+    "30d": {
+      "impressions": [
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 3934.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 1258.0
+        }
+      ],
+      "views": [
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 574.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 214.0
+        }
+      ],
+      "favorites": [
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 5.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 1.0
+        }
+      ],
+      "interactions": [
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 28.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 9.0
+        }
+      ],
+      "followers_gained": [
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 3.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 0.0
+        }
+      ]
+    },
+    "cumulative": {
+      "impressions": [
+        {
+          "content_id": "GG-004",
+          "topic": "Manner／M Stand",
+          "value": 39134.0
+        },
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 6662.0
+        },
+        {
+          "content_id": "GG-010",
+          "topic": "山姆会员费",
+          "value": 5367.0
+        },
+        {
+          "content_id": "GG-011",
+          "topic": "盒马",
+          "value": 4370.0
+        },
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 4121.0
+        },
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 3934.0
+        },
+        {
+          "content_id": "GG-006",
+          "topic": "咖啡成本",
+          "value": 3636.0
+        },
+        {
+          "content_id": "GG-009",
+          "topic": "商超经营差异",
+          "value": 2871.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
+          "value": 2676.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 1258.0
+        },
+        {
+          "content_id": "GG-012",
+          "topic": "东鹏饮料",
+          "value": 1232.0
+        },
+        {
+          "content_id": "GG-008",
+          "topic": "小米中报",
+          "value": 869.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 700.0
+        },
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 406.0
+        }
+      ],
+      "views": [
+        {
+          "content_id": "GG-004",
+          "topic": "Manner／M Stand",
+          "value": 11594.0
+        },
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 923.0
+        },
+        {
+          "content_id": "GG-006",
+          "topic": "咖啡成本",
+          "value": 885.0
+        },
+        {
+          "content_id": "GG-010",
+          "topic": "山姆会员费",
+          "value": 710.0
+        },
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 631.0
+        },
+        {
+          "content_id": "GG-011",
+          "topic": "盒马",
+          "value": 618.0
+        },
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 574.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
+          "value": 441.0
+        },
+        {
+          "content_id": "GG-009",
+          "topic": "商超经营差异",
+          "value": 425.0
+        },
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 296.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 214.0
+        },
+        {
+          "content_id": "GG-008",
+          "topic": "小米中报",
+          "value": 178.0
+        },
+        {
+          "content_id": "GG-012",
+          "topic": "东鹏饮料",
+          "value": 129.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 33.0
+        }
+      ],
+      "favorites": [
+        {
+          "content_id": "GG-004",
+          "topic": "Manner／M Stand",
+          "value": 98.0
+        },
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 19.0
+        },
+        {
+          "content_id": "GG-006",
+          "topic": "咖啡成本",
+          "value": 18.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
+          "value": 15.0
+        },
+        {
+          "content_id": "GG-011",
+          "topic": "盒马",
+          "value": 11.0
+        },
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 10.0
+        },
+        {
+          "content_id": "GG-009",
+          "topic": "商超经营差异",
+          "value": 10.0
+        },
+        {
+          "content_id": "GG-010",
+          "topic": "山姆会员费",
+          "value": 8.0
+        },
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 7.0
+        },
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 5.0
+        },
+        {
+          "content_id": "GG-012",
+          "topic": "东鹏饮料",
+          "value": 2.0
+        },
+        {
+          "content_id": "GG-008",
+          "topic": "小米中报",
+          "value": 1.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 1.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 0.0
+        }
+      ],
+      "interactions": [
+        {
+          "content_id": "GG-004",
+          "topic": "Manner／M Stand",
+          "value": 360.0
+        },
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 66.0
+        },
+        {
+          "content_id": "GG-006",
+          "topic": "咖啡成本",
+          "value": 56.0
+        },
+        {
+          "content_id": "GG-011",
+          "topic": "盒马",
+          "value": 46.0
+        },
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 41.0
+        },
+        {
+          "content_id": "GG-009",
+          "topic": "商超经营差异",
+          "value": 32.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
+          "value": 31.0
+        },
+        {
+          "content_id": "GG-010",
+          "topic": "山姆会员费",
+          "value": 28.0
+        },
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 28.0
+        },
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 22.0
+        },
+        {
+          "content_id": "GG-012",
+          "topic": "东鹏饮料",
+          "value": 11.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 9.0
+        },
+        {
+          "content_id": "GG-008",
+          "topic": "小米中报",
+          "value": 6.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 3.0
+        }
+      ],
+      "followers_gained": [
+        {
+          "content_id": "GG-004",
+          "topic": "Manner／M Stand",
+          "value": 39.0
+        },
+        {
+          "content_id": "GG-006",
+          "topic": "咖啡成本",
+          "value": 14.0
+        },
+        {
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 10.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
+          "value": 9.0
+        },
+        {
+          "content_id": "GG-011",
+          "topic": "盒马",
+          "value": 7.0
+        },
+        {
+          "content_id": "GG-002",
+          "topic": "星巴克",
+          "value": 4.0
+        },
+        {
+          "content_id": "GG-014",
+          "topic": "永辉胖改",
+          "value": 3.0
+        },
+        {
+          "content_id": "GG-001",
+          "topic": "母婴总览",
+          "value": 1.0
+        },
+        {
+          "content_id": "GG-009",
+          "topic": "商超经营差异",
+          "value": 1.0
+        },
+        {
+          "content_id": "GG-010",
+          "topic": "山姆会员费",
+          "value": 1.0
+        },
+        {
+          "content_id": "GG-003",
+          "topic": "账号介绍",
+          "value": 0.0
+        },
+        {
+          "content_id": "GG-008",
+          "topic": "小米中报",
+          "value": 0.0
+        },
+        {
+          "content_id": "GG-012",
+          "topic": "东鹏饮料",
+          "value": 0.0
+        },
+        {
+          "content_id": "GG-013",
+          "topic": "Momenta",
+          "value": 0.0
+        }
+      ]
+    }
+  }
+}

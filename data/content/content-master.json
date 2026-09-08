@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-08",
+  "source": "migrated from the existing embedded schedule snapshot; this is the single public content master",
+  "series": [
+    {
+      "series_id": "SER-01",
+      "name": "商超自救指南",
+      "color": "#7652CF",
+      "order": 1,
+      "aliases": [
+        "商超"
+      ]
+    },
+    {
+      "series_id": "SER-02",
+      "name": "咖啡的N种活法",
+      "color": "#3165D5",
+      "order": 2,
+      "aliases": [
+        "咖啡"
+      ]
+    },
+    {
+      "series_id": "SER-03",
+      "name": "看懂母婴生意",
+      "color": "#9B6C16",
+      "order": 3,
+      "aliases": [
+        "母婴"
+      ]
+    },
+    {
+      "series_id": "SER-04",
+      "name": "智驾天团",
+      "color": "#14808F",
+      "order": 4,
+      "aliases": [
+        "智驾"
+      ]
+    },
+    {
+      "series_id": "SER-05",
+      "name": "安踏品牌局",
+      "color": "#AB4D7F",
+      "order": 5,
+      "aliases": [
+        "运动品牌"
+      ]
+    },
+    {
+      "series_id": "SER-06",
+      "name": "AI商业地图",
+      "color": "#5158BC",
+      "order": 6,
+      "aliases": [
+        "AI"
+      ]
+    },
+    {
+      "series_id": "SER-07",
+      "name": "餐饮万店命题",
+      "color": "#5F7545",
+      "order": 7,
+      "aliases": [
+        "餐饮"
+      ]
+    },
+    {
+      "series_id": "SER-OTHER",
+      "name": "其他内容",
+      "color": "#647187",
+      "order": 8,
+      "aliases": [
+        "科技财报",
+        "饮料",
+        "账号介绍",
+        "未分类"
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "content_id": "GG-001",
+      "publish_date": "2026-09-04",
+      "planned_date": null,
+      "series": "看懂母婴生意",
+      "topic": "母婴总览",
+      "title": "宝宝越来越少，母婴生意为什么还在变大？🍼",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "行业总览",
+      "title_type": "为什么型",
+      "industry": "母婴",
+      "tags": [
+        "母婴总览",
+        "看懂母婴生意",
+        "行业地图"
+      ]
+    },
+    {
+      "content_id": "GG-002",
+      "publish_date": "2026-09-02",
+      "planned_date": null,
+      "series": "咖啡的N种活法",
+      "topic": "星巴克",
+      "title": "星巴克，为什么不跟9块9打到底？☕️",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "为什么型",
+      "industry": "餐饮",
+      "tags": [
+        "星巴克",
+        "咖啡的N种活法",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-003",
+      "publish_date": "2026-09-02",
+      "planned_date": null,
+      "series": "其他内容",
+      "topic": "账号介绍",
+      "title": "🔝瓜瓜看经营，到底看什么？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "账号介绍",
+      "title_type": "问题型",
+      "industry": "消费",
+      "tags": [
+        "账号介绍",
+        "其他内容"
+      ]
+    },
+    {
+      "content_id": "GG-004",
+      "publish_date": "2026-08-31",
+      "planned_date": null,
+      "series": "咖啡的N种活法",
+      "topic": "Manner／M Stand",
+      "title": "Manner和M Stand，为什么越做越不像？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业对比",
+      "title_type": "为什么型",
+      "industry": "餐饮",
+      "tags": [
+        "Manner／M Stand",
+        "咖啡的N种活法",
+        "品牌比较"
+      ]
+    },
+    {
+      "content_id": "GG-005",
+      "publish_date": "2026-08-28",
+      "planned_date": null,
+      "series": "咖啡的N种活法",
+      "topic": "瑞幸／库迪",
+      "title": "9块9之后，瑞幸和库迪为什么走向了两条路？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业对比",
+      "title_type": "为什么型",
+      "industry": "餐饮",
+      "tags": [
+        "瑞幸／库迪",
+        "咖啡的N种活法",
+        "品牌比较"
+      ]
+    },
+    {
+      "content_id": "GG-006",
+      "publish_date": "2026-08-26",
+      "planned_date": null,
+      "series": "咖啡的N种活法",
+      "topic": "咖啡成本",
+      "title": "一杯咖啡的钱，到底被谁赚走了？☕",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "商业模式",
+      "title_type": "陈述型",
+      "industry": "餐饮",
+      "tags": [
+        "咖啡成本",
+        "咖啡的N种活法",
+        "经营拆解"
+      ]
+    },
+    {
+      "content_id": "GG-007",
+      "publish_date": "2026-08-24",
+      "planned_date": null,
+      "series": "商超自救指南",
+      "topic": "商超自有品牌",
+      "title": "山姆、盒马、永辉，为什么都在做自有品牌？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业对比",
+      "title_type": "为什么型",
+      "industry": "零售",
+      "tags": [
+        "商超自有品牌",
+        "商超自救指南",
+        "品牌比较"
+      ]
+    },
+    {
+      "content_id": "GG-008",
+      "publish_date": "2026-08-20",
+      "planned_date": null,
+      "series": "其他内容",
+      "topic": "小米中报",
+      "title": "小米中报｜Q2收入回来了，毛利率还在跌？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "数字型",
+      "industry": "消费",
+      "tags": [
+        "小米中报",
+        "其他内容",
+        "财报解读"
+      ]
+    },
+    {
+      "content_id": "GG-009",
+      "publish_date": "2026-08-18",
+      "planned_date": null,
+      "series": "商超自救指南",
+      "topic": "商超经营差异",
+      "title": "永辉盒马山姆，为什么越做越不一样？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业对比",
+      "title_type": "为什么型",
+      "industry": "零售",
+      "tags": [
+        "商超经营差异",
+        "商超自救指南",
+        "品牌比较"
+      ]
+    },
+    {
+      "content_id": "GG-010",
+      "publish_date": "2026-08-13",
+      "planned_date": null,
+      "series": "商超自救指南",
+      "topic": "山姆会员费",
+      "title": "大家都在排队挤山姆，但260 元年费真的值吗？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "商业模式",
+      "title_type": "数字型",
+      "industry": "零售",
+      "tags": [
+        "山姆会员费",
+        "商超自救指南",
+        "经营拆解"
+      ]
+    },
+    {
+      "content_id": "GG-011",
+      "publish_date": "2026-08-11",
+      "planned_date": null,
+      "series": "商超自救指南",
+      "topic": "盒马",
+      "title": "千亿GMV，盒马到底做对了什么？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "问题型",
+      "industry": "零售",
+      "tags": [
+        "盒马",
+        "商超自救指南",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-012",
+      "publish_date": "2026-08-07",
+      "planned_date": null,
+      "series": "其他内容",
+      "topic": "东鹏饮料",
+      "title": "除了大金瓶，你喝过东鹏家第二种饮料吗？🥤",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "陈述型",
+      "industry": "消费",
+      "tags": [
+        "东鹏饮料",
+        "其他内容",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-013",
+      "publish_date": "2026-08-06",
+      "planned_date": null,
+      "series": "智驾天团",
+      "topic": "Momenta",
+      "title": "智驾天团｜智驾背后的外包大脑Momonta🚗",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "陈述型",
+      "industry": "汽车",
+      "tags": [
+        "Momenta",
+        "智驾天团",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-014",
+      "publish_date": "2026-08-05",
+      "planned_date": null,
+      "series": "商超自救指南",
+      "topic": "永辉胖改",
+      "title": "商超自救指南｜“胖改”后的永辉怎么样了？",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "为什么型",
+      "industry": "零售",
+      "tags": [
+        "永辉胖改",
+        "商超自救指南",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-P001",
+      "publish_date": null,
+      "planned_date": null,
+      "series": "看懂母婴生意",
+      "topic": "Babycare",
+      "title": "Babycare：从产品定义到家庭价值",
+      "status": "undated",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "陈述型",
+      "industry": "母婴",
+      "tags": [
+        "Babycare",
+        "看懂母婴生意",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-P002",
+      "publish_date": "2026-09-07",
+      "planned_date": null,
+      "series": "看懂母婴生意",
+      "topic": "全棉时代",
+      "title": "全棉时代：医疗信任如何变成消费生意",
+      "status": "published",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "企业单拆",
+      "title_type": "陈述型",
+      "industry": "母婴",
+      "tags": [
+        "全棉时代",
+        "看懂母婴生意",
+        "单家公司"
+      ]
+    },
+    {
+      "content_id": "GG-P003",
+      "publish_date": null,
+      "planned_date": null,
+      "series": "智驾天团",
+      "topic": "智驾总览",
+      "title": "智驾产业地图：同样做智驾，如何赚钱",
+      "status": "undated",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "行业总览",
+      "title_type": "陈述型",
+      "industry": "汽车",
+      "tags": [
+        "智驾总览",
+        "智驾天团",
+        "行业地图"
+      ]
+    },
+    {
+      "content_id": "GG-P004",
+      "publish_date": null,
+      "planned_date": null,
+      "series": "安踏品牌局",
+      "topic": "安踏品牌局",
+      "title": "安踏品牌局：多品牌如何形成增长",
+      "status": "undated",
+      "xiaohongshu_note_id": null,
+      "xiaohongshu_url": null,
+      "content_type": "行业总览",
+      "title_type": "陈述型",
+      "industry": "消费",
+      "tags": [
+        "安踏品牌局",
+        "行业地图"
+      ]
+    }
+  ]
+}

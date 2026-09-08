@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-08T16:03:30+08:00",
+  "latest_date": "2026-09-05",
+  "latest": null,
+  "last_7_days": {
+    "period_start": "2026-08-30",
+    "period_end": "2026-09-05",
+    "coverage_days": 0,
+    "metric_window": null,
+    "impressions": null,
+    "views": null,
+    "new_followers": null,
+    "publish_count": 4
+  },
+  "trend": []
+}

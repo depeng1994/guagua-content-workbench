@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-08T16:03:30+08:00",
+  "dimensions": {
+    "content_type": [
+      {
+        "value": "企业单拆",
+        "sample_size": 2,
+        "average_impressions": 2596.0,
+        "average_views": 394.0,
+        "average_favorite_rate": 0.006691849294994952,
+        "average_engagement_rate": 0.04541828128561659,
+        "follow_efficiency": 0.002613240418118467,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "企业对比",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "商业模式",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "行业总览",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "账号介绍",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      }
+    ],
+    "title_type": [
+      {
+        "value": "为什么型",
+        "sample_size": 1,
+        "average_impressions": 3934.0,
+        "average_views": 574.0,
+        "average_favorite_rate": 0.008710801393728223,
+        "average_engagement_rate": 0.04878048780487805,
+        "follow_efficiency": 0.005226480836236934,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "数字型",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "问题型",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "陈述型",
+        "sample_size": 1,
+        "average_impressions": 1258.0,
+        "average_views": 214.0,
+        "average_favorite_rate": 0.004672897196261682,
+        "average_engagement_rate": 0.04205607476635514,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
+      }
+    ],
+    "industry": [
+      {
+        "value": "母婴",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "汽车",
+        "sample_size": 1,
+        "average_impressions": 1258.0,
+        "average_views": 214.0,
+        "average_favorite_rate": 0.004672897196261682,
+        "average_engagement_rate": 0.04205607476635514,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "消费",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "零售",
+        "sample_size": 1,
+        "average_impressions": 3934.0,
+        "average_views": 574.0,
+        "average_favorite_rate": 0.008710801393728223,
+        "average_engagement_rate": 0.04878048780487805,
+        "follow_efficiency": 0.005226480836236934,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "餐饮",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      }
+    ],
+    "series": [
+      {
+        "value": "其他内容",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "咖啡的N种活法",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "商超自救指南",
+        "sample_size": 1,
+        "average_impressions": 3934.0,
+        "average_views": 574.0,
+        "average_favorite_rate": 0.008710801393728223,
+        "average_engagement_rate": 0.04878048780487805,
+        "follow_efficiency": 0.005226480836236934,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "安踏品牌局",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "智驾天团",
+        "sample_size": 1,
+        "average_impressions": 1258.0,
+        "average_views": 214.0,
+        "average_favorite_rate": 0.004672897196261682,
+        "average_engagement_rate": 0.04205607476635514,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "看懂母婴生意",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      }
+    ]
+  }
+}

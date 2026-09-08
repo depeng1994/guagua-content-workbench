@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "account-snapshot.schema.json",
+  "title": "XHS account daily snapshot",
+  "type": "object",
+  "required": ["schema_version", "snapshot_date", "account"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "snapshot_date": {"type": "string", "format": "date"},
+    "account": {
+      "type": "object",
+      "required": ["date", "metric_window"],
+      "properties": {
+        "date": {"type": "string", "format": "date"},
+        "period_start": {"type": ["string", "null"], "format": "date"},
+        "period_end": {"type": ["string", "null"], "format": "date"},
+        "metric_window": {
+          "type": "string",
+          "enum": ["daily", "period_total", "cumulative", "unknown"]
+        },
+        "followers": {"type": ["number", "null"]},
+        "followers_delta": {"type": ["number", "null"]},
+        "impressions": {"type": ["number", "null"]},
+        "views": {"type": ["number", "null"]},
+        "profile_views": {"type": ["number", "null"]},
+        "likes": {"type": ["number", "null"]},
+        "favorites": {"type": ["number", "null"]},
+        "comments": {"type": ["number", "null"]},
+        "shares": {"type": ["number", "null"]},
+        "engagements": {"type": ["number", "null"]},
+        "new_followers": {"type": ["number", "null"]}
+      }
+    }
+  }
+}

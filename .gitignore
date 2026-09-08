@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*credentials*
+*cookie*
+*session*
+
+# Browser state and collector outputs (PHASE 2+)
+.guagua/
+browser-profile/
+downloads/
+!downloads/guagua-feishu-tables-20260907.xlsx
+logs/
+tmp/
+
+# Raw creator exports and private normalized snapshots
+imports/*
+!imports/README.md
+!imports/*.example.csv
+local-data/
+
+# Python/editor artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store

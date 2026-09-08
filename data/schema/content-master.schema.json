@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "content-master.schema.json",
+  "title": "Guagua content master",
+  "type": "object",
+  "required": ["schema_version", "series", "contents"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "series": {"type": "array", "items": {"type": "object", "required": ["series_id", "name", "color", "order"]}},
+    "contents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["content_id", "publish_date", "series", "topic", "title", "status", "xiaohongshu_note_id", "xiaohongshu_url", "content_type", "title_type", "industry", "tags"],
+        "properties": {
+          "content_id": {"type": "string"},
+          "publish_date": {"type": ["string", "null"], "format": "date"},
+          "series": {"type": "string"},
+          "topic": {"type": "string"},
+          "title": {"type": "string"},
+          "status": {"enum": ["published", "planned", "undated"]},
+          "xiaohongshu_note_id": {"type": ["string", "null"]},
+          "xiaohongshu_url": {"type": ["string", "null"]},
+          "content_type": {"type": "string"},
+          "title_type": {"type": "string"},
+          "industry": {"type": "string"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}
