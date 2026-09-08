@@ -66,3 +66,25 @@
   font-weight: 400;
   color: var(--text-series-soft);
 }
+
+/* ==========================================================================
+   排期页头布局微调
+   ========================================================================== */
+
+/* 桌面端：左侧浮动目录与右侧主题栏统一 14px 顶边距。 */
+@media (min-width: 768px) {
+  .main-column {
+    padding-top: 14px;
+  }
+}
+
+/* 删除“已保存快照 / 最近采集 / 刷新数据”整行，让主体直接上移。 */
+.source-strip {
+  display: none !important;
+}
+
+/* 飞书入口只保留按钮文字，不显示右上箭头。 */
+.topbar-actions .action svg,
+.overview-panel > .schedule-panel-head > .action svg {
+  display: none !important;
+}
