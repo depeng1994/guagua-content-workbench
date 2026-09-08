@@ -1,4 +1,19 @@
 /* Evidence-first review dashboard. It extends the incumbent workbench. */
+.brand .monogram {
+  color: transparent;
+  background-color: #eef2f7;
+  background-image: url("./avatar-guagua.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-size: 200%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .72);
+  font-size: 0;
+}
+
+.user-card {
+  display: none !important;
+}
+
 .phase1-mounted > :not(.phase1-dashboard) {
   display: none !important;
 }
