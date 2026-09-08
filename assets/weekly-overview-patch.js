@@ -1,5 +1,5 @@
 // Keep the original React overview as the source of truth, but present a weekly mirror.
-// One column = one Monday-Sunday week. The original layout/classes are preserved.
+// One column = one Monday-Sunday week. The original table container provides horizontal scrolling.
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -27,8 +27,7 @@ function cardDate(card) {
   const title = card.getAttribute("title") || "";
   const match = title.match(/·\s*(\d{4}-\d{2}-\d{2})\s*·/);
   if (match) return match[1];
-  const time = card.querySelector("time[datetime]");
-  return time?.getAttribute("datetime") || null;
+  return card.querySelector("time[datetime]")?.getAttribute("datetime") || null;
 }
 
 function formatShort(value) {
@@ -48,8 +47,7 @@ function buildWeeks(sourceTable) {
   if (!dates.length) return [];
 
   const start = mondayOf(parseDate(dates[0]));
-  const last = parseDate(dates[dates.length - 1]);
-  const lastMonday = mondayOf(last);
+  const lastMonday = mondayOf(parseDate(dates[dates.length - 1]));
   const count = Math.floor((lastMonday.getTime() - start.getTime()) / WEEK_MS) + 1;
 
   return Array.from({ length: count }, (_, index) => {
@@ -71,8 +69,6 @@ function sourceSignature(sourceTable) {
 
 function makeWeekHeader(template, week) {
   const th = template.cloneNode(false);
-  th.removeAttribute("class");
-
   const label = document.createElement("span");
   label.textContent = `${formatShort(week.start)} — ${formatShort(week.end)}`;
   th.appendChild(label);
@@ -85,7 +81,8 @@ function makeWeekHeader(template, week) {
 
 function makeWeekCell(template, cards) {
   const td = template.cloneNode(false);
-  td.className = "overview-cell";
+  td.classList.remove("undated-cell");
+  if (!td.classList.contains("overview-cell")) td.classList.add("overview-cell");
 
   if (!cards.length) {
     const empty = document.createElement("span");
@@ -120,12 +117,12 @@ function buildWeeklyTable(sourceTable, weeks) {
   const seriesCol = sourceColgroup?.querySelector(".overview-series-col")?.cloneNode(true) || document.createElement("col");
   seriesCol.className = "overview-series-col";
   colgroup.appendChild(seriesCol);
-  for (const week of weeks) {
+  weeks.forEach(() => {
     const col = document.createElement("col");
     col.className = "overview-week-col";
     col.style.width = `${WEEK_COL_WIDTH}px`;
     colgroup.appendChild(col);
-  }
+  });
   const undatedCol = sourceColgroup?.querySelector(".overview-undated-col")?.cloneNode(true) || document.createElement("col");
   undatedCol.className = "overview-undated-col";
   colgroup.appendChild(undatedCol);
@@ -188,21 +185,20 @@ function renderWeeklyOverview() {
     const weeks = buildWeeks(sourceTable);
     if (!weeks.length) continue;
 
+    const container = sourceTable.parentElement;
+    if (!container) continue;
+
     const signature = `${sourceSignature(sourceTable)}##${weeks.map((week) => week.start).join("|")}`;
-    let scroller = panel.querySelector(":scope > .guagua-weekly-scroll");
-    if (scroller?.dataset.signature === signature) {
+    const currentMirror = container.querySelector(":scope > .guagua-weekly-table");
+    if (currentMirror?.dataset.signature === signature) {
       sourceTable.style.display = "none";
       continue;
     }
 
-    if (!scroller) {
-      scroller = document.createElement("div");
-      scroller.className = "guagua-weekly-scroll";
-      sourceTable.insertAdjacentElement("afterend", scroller);
-    }
-
-    scroller.replaceChildren(buildWeeklyTable(sourceTable, weeks));
-    scroller.dataset.signature = signature;
+    const mirror = buildWeeklyTable(sourceTable, weeks);
+    mirror.dataset.signature = signature;
+    if (currentMirror) currentMirror.replaceWith(mirror);
+    else sourceTable.insertAdjacentElement("afterend", mirror);
     sourceTable.style.display = "none";
   }
 }
@@ -212,17 +208,7 @@ function installStyles() {
   const style = document.createElement("style");
   style.id = "guagua-weekly-overview-style";
   style.textContent = `
-    .guagua-weekly-scroll {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-gutter: stable;
-      -webkit-overflow-scrolling: touch;
-    }
-    .guagua-weekly-table {
-      table-layout: fixed !important;
-    }
+    .guagua-weekly-table { table-layout: fixed !important; }
     .guagua-weekly-table .overview-series-col { width: ${SERIES_COL_WIDTH}px; }
     .guagua-weekly-table .overview-week-col { width: ${WEEK_COL_WIDTH}px; }
     .guagua-weekly-table .overview-undated-col { width: ${UNDATED_COL_WIDTH}px; }
@@ -244,9 +230,14 @@ installStyles();
 scheduleRender();
 
 const observer = new MutationObserver((mutations) => {
-  if (mutations.every((mutation) => mutation.target.closest?.(".guagua-weekly-scroll"))) return;
+  if (mutations.every((mutation) => mutation.target.closest?.(".guagua-weekly-table"))) return;
   scheduleRender();
 });
-observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "title"] });
+observer.observe(document.documentElement, {
+  childList: true,
+  subtree: true,
+  attributes: true,
+  attributeFilter: ["class", "title"],
+});
 
 window.addEventListener("pageshow", scheduleRender);
