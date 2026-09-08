@@ -117,3 +117,7 @@ for (let i = 0; i < chunks.length; i += 1) chunks[i] = patchRscChunk(chunks[i]);
 
 const nativePush = chunks.push.bind(chunks);
 chunks.push = (...values) => nativePush(...values.map(patchRscChunk));
+
+import("./weekly-overview-patch.js").catch((error) => {
+  console.error("[guagua] weekly overview patch failed to load", error);
+});
