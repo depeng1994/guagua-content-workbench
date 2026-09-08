@@ -1,0 +1,48 @@
+{
+  "login_url": "https://creator.xiaohongshu.com/login",
+  "home_url": "https://creator.xiaohongshu.com/",
+  "login_markers": ["登录", "扫码登录", "验证码登录", "手机号登录"],
+  "logged_in_markers": ["创作服务平台", "内容管理", "数据中心", "发布笔记"],
+  "navigation": {
+    "data_center": ["数据中心", "数据分析", "数据看板"],
+    "account": ["账号数据", "账号概览", "账号分析", "账号数据概览"],
+    "notes": ["笔记数据", "内容分析", "笔记分析", "作品数据", "内容数据"]
+  },
+  "export_triggers": ["导出数据", "导出", "下载数据", "下载明细", "数据导出"],
+  "download_actions": ["导出 Excel", "导出Excel", "导出 CSV", "导出CSV", "下载 Excel", "下载Excel", "下载 CSV", "下载CSV", "确认导出", "立即导出", "下载"],
+  "account_metric_labels": {
+    "followers": ["粉丝数", "总粉丝", "粉丝总数"],
+    "followers_delta": ["净涨粉", "粉丝变化", "粉丝增量"],
+    "impressions": ["曝光", "曝光量", "曝光数"],
+    "views": ["阅读", "阅读量", "观看", "观看次数", "播放量"],
+    "profile_views": ["主页访问", "主页访问量", "主页浏览"],
+    "likes": ["点赞", "点赞数", "点赞量"],
+    "favorites": ["收藏", "收藏数", "收藏量"],
+    "comments": ["评论", "评论数", "评论量"],
+    "shares": ["分享", "分享数", "分享量"],
+    "engagements": ["互动", "互动数", "互动量"],
+    "new_followers": ["新增粉丝", "新增关注", "新增涨粉"]
+  },
+  "recognized_headers": [
+    "快照日期", "采集日期", "统计日期", "日期", "date",
+    "内容id", "内容编号", "作品编号", "content_id",
+    "笔记id", "笔记编号", "作品id", "note_id",
+    "标题", "笔记标题", "作品标题", "内容标题", "title",
+    "发布日期", "发布时间", "首发时间", "publish_date",
+    "粉丝数", "总粉丝", "粉丝总数", "followers",
+    "粉丝变化", "净涨粉", "粉丝增量", "followers_delta",
+    "曝光", "曝光数", "曝光量", "展示次数", "impressions",
+    "阅读", "阅读数", "阅读量", "观看", "观看次数", "播放量", "views",
+    "主页访问", "主页访问量", "主页浏览", "profile_views",
+    "点赞", "点赞数", "点赞量", "likes",
+    "收藏", "收藏数", "收藏量", "favorites",
+    "评论", "评论数", "评论量", "comments",
+    "分享", "分享数", "分享量", "shares",
+    "互动", "互动数", "互动量", "engagements",
+    "笔记涨粉", "涨粉", "涨粉人数", "followers_gained",
+    "新增粉丝", "新增关注", "新增涨粉", "new_followers",
+    "周期开始", "统计开始", "开始日期", "period_start",
+    "周期结束", "统计结束", "结束日期", "period_end",
+    "指标口径", "统计口径", "数据口径", "metric_window"
+  ]
+}
