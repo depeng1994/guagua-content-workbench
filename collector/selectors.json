@@ -1,12 +1,16 @@
 {
   "login_url": "https://creator.xiaohongshu.com/login",
   "home_url": "https://creator.xiaohongshu.com/",
+  "section_urls": {
+    "account": "https://creator.xiaohongshu.com/statistics/account/v2",
+    "notes": "https://creator.xiaohongshu.com/statistics/data-analysis"
+  },
   "login_markers": ["登录", "扫码登录", "验证码登录", "手机号登录"],
   "logged_in_markers": ["创作服务平台", "内容管理", "数据中心", "发布笔记"],
   "navigation": {
     "data_center": ["数据中心", "数据分析", "数据看板"],
     "account": ["账号数据", "账号概览", "账号分析", "账号数据概览"],
-    "notes": ["笔记数据", "内容分析", "笔记分析", "作品数据", "内容数据"]
+    "notes": ["内容分析", "笔记分析", "作品数据", "内容数据", "笔记数据"]
   },
   "export_triggers": ["导出数据", "导出", "下载数据", "下载明细", "数据导出"],
   "download_actions": ["导出 Excel", "导出Excel", "导出 CSV", "导出CSV", "下载 Excel", "下载Excel", "下载 CSV", "下载CSV", "确认导出", "立即导出", "下载"],

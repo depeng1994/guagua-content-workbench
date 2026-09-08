@@ -1,4 +1,4 @@
-# PHASE 1 技术方案
+# PHASE 1–2 技术方案
 
 ## 审计结论
 
@@ -26,14 +26,14 @@
 - `tests/`：核心计算与历史快照保护测试。
 - `assets/phase1-dashboard.*`：独立的数据与复盘视图。
 - `local-data/raw/`：默认的私有快照位置，已被 Git 忽略。
+- `collector/`：Playwright 本地登录态复用、官方导出与可见表格回退采集。
 
 暂不执行：
 
-- Playwright 登录和自动采集（PHASE 2）。
 - launchd、自动 commit / push（PHASE 3）。
 
 ## 数据流
 
-`CSV / Excel → 字段标准化 → 批次校验 → local-data/raw 每日快照 → analyze → data/derived → GitHub Pages 工作台`
+`本地登录态 → 官方导出/可见表格 → 字段标准化 → 批次校验 → local-data/raw 每日快照 → analyze → data/derived → GitHub Pages 工作台`
 
 原则：快照只新增、不覆盖；缺失值使用 `null`；负增长不作为增量而记录 warning；公开仓库默认只提交主表与 derived 聚合结果。

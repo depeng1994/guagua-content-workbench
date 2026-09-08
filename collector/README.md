@@ -65,6 +65,14 @@ local-data/collector/inbox/YYYY-MM-DD/HHMMSS/debug/
 python3 collector/collect_xhs.py --headed --debug
 ```
 
+当前小红书“内容分析”页的官方导出按钮若导致页面关闭，可使用已验证的可见表格回退模式：
+
+```bash
+python3 collector/collect_xhs.py --headed --browser chrome --skip-notes-official-export --debug
+```
+
+笔记页会自动切换为每页 50 条后再采集。若页面标题尚未写入 `data/content/content-master.json`，原始行仍保留在私有 CSV 中，其余已匹配笔记继续进入分析，并在 manifest 中记录待补主表提示。
+
 稳定后可关闭浏览器界面：
 
 ```bash
@@ -104,6 +112,9 @@ python3 collector/collect_xhs.py --headed --no-import
 
 # 只采集笔记数据
 python3 collector/collect_xhs.py --headed --skip-account
+
+# 官方导出异常时，使用页面表格回退采集
+python3 collector/collect_xhs.py --headed --browser chrome --skip-notes-official-export
 
 # 只采集账号数据
 python3 collector/collect_xhs.py --headed --skip-notes

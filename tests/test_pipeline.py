@@ -10,9 +10,12 @@ sys.path.insert(0, str(PROJECT / "scripts"))
 
 from guagua_pipeline import (  # noqa: E402
     DuplicateSnapshotError,
+    PipelineError,
+    _xhs_account_daily_rows,
     analyze,
     import_exports,
     metric_bundle,
+    normalize_note_rows,
     safe_delta,
     save_snapshot,
     select_lifecycle_snapshot,
@@ -63,6 +66,31 @@ def note(snapshot_date, content_id="A", publish_date="2026-09-01", **values):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_visible_fallback_can_report_unmatched_notes_without_hiding_them(self):
+        master = {"contents": [{
+            "content_id": "A",
+            "title": "已收录",
+            "topic": "已收录",
+            "publish_date": "2026-09-01",
+        }]}
+        rows = [{"标题": "未收录", "观看": "10"}]
+        with self.assertRaises(PipelineError):
+            normalize_note_rows(rows, master, "2026-09-08")
+        unmatched = []
+        self.assertEqual(normalize_note_rows(rows, master, "2026-09-08", unmatched), [])
+        self.assertEqual(unmatched, ["未收录"])
+
+    def test_xhs_account_trend_sheets_become_daily_snapshots(self):
+        rows = _xhs_account_daily_rows({
+            "曝光趋势": [("日期", "数值"), ("2026年09月07日", 1000), ("2026年09月08日", 1200)],
+            "观看趋势": [("日期", "数值"), ("2026年09月07日", 200), ("2026年09月08日", 260)],
+        })
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[0]["snapshot_date"], "2026-09-07")
+        self.assertEqual(rows[0]["metric_window"], "daily")
+        self.assertEqual(rows[1]["impressions"], 1200)
+        self.assertEqual(rows[1]["views"], 260)
+
     def test_snapshot_delta_and_negative_correction(self):
         warnings = []
         self.assertEqual(safe_delta(120, 100, "A views", warnings), 20)

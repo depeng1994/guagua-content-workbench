@@ -1,6 +1,6 @@
 # 瓜瓜看经营 · 内容工作台
 
-GitHub Pages 静态工作台，包含内容排期与由本地小红书创作者后台导出文件驱动的数据复盘。PHASE 1 已完成手工导入、私有每日快照、指标分析和前端 JSON 接入。
+GitHub Pages 静态工作台，包含内容排期与由本地小红书创作者后台数据驱动的数据复盘。PHASE 1 已完成导入、私有每日快照、指标分析和前端 JSON 接入；PHASE 2 已接入 Playwright 本地登录态复用与采集。
 
 ## 快速开始
 
@@ -50,6 +50,7 @@ scripts/
   sync_content_master.py            # 从主表刷新旧排期 UI 的兼容快照
   sanitize_public_snapshot.py       # 发布前清理内嵌后台原始数据
 tests/
+collector/                           # PHASE 2 本地登录与采集
 ```
 
 ## 数据模型与口径
@@ -100,4 +101,4 @@ python3 -m unittest discover -s tests -v
 
 ## 阶段边界
 
-本次只完成 PHASE 1。Playwright 登录采集属于 PHASE 2；launchd 与自动 Git 提交属于 PHASE 3，均未实现。详细审计见 `TECHNICAL_PLAN.md`。
+当前已完成 PHASE 1 与 PHASE 2。PHASE 2 只在本机复用人工登录态采集，不绕过验证码或风控；详细用法见 `collector/README.md`。launchd 定时运行与自动 Git 提交属于 PHASE 3，尚未实现。详细审计见 `TECHNICAL_PLAN.md`。

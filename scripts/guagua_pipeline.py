@@ -71,7 +71,7 @@ def parse_date(value: Any, field: str = "date") -> Optional[str]:
     if isinstance(value, date):
         return value.isoformat()
     text = str(value).strip()
-    for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y.%m.%d", "%Y-%m-%d %H:%M:%S"):
+    for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y.%m.%d", "%Y年%m月%d日", "%Y-%m-%d %H:%M:%S"):
         try:
             return datetime.strptime(text, fmt).date().isoformat()
         except ValueError:
@@ -166,6 +166,25 @@ def read_csv_rows(path: Path) -> List[Dict[str, Any]]:
     raise PipelineError(f"无法读取 CSV 编码：{path}") from last_error
 
 
+def _xhs_account_daily_rows(sheet_rows: Mapping[str, Sequence[Sequence[Any]]]) -> List[Dict[str, Any]]:
+    """Convert XHS trend worksheets into normalized daily account rows."""
+    rows_by_date: Dict[str, Dict[str, Any]] = {}
+    for sheet_name, metric in (("曝光趋势", "impressions"), ("观看趋势", "views")):
+        rows = sheet_rows.get(sheet_name) or []
+        for values in rows[1:]:
+            if len(values) < 2 or values[0] in (None, ""):
+                continue
+            snapshot_date = parse_date(values[0], f"{sheet_name} 日期")
+            if not snapshot_date:
+                continue
+            item = rows_by_date.setdefault(snapshot_date, {
+                "snapshot_date": snapshot_date,
+                "metric_window": "daily",
+            })
+            item[metric] = values[1]
+    return [rows_by_date[key] for key in sorted(rows_by_date)]
+
+
 def read_xlsx_tables(path: Path) -> List[Tuple[str, List[Dict[str, Any]]]]:
     try:
         from openpyxl import load_workbook  # type: ignore
@@ -173,8 +192,10 @@ def read_xlsx_tables(path: Path) -> List[Tuple[str, List[Dict[str, Any]]]]:
         raise PipelineError("读取 Excel 需要 openpyxl；请先运行 python -m pip install -r requirements.txt") from exc
     workbook = load_workbook(path, read_only=True, data_only=True)
     tables: List[Tuple[str, List[Dict[str, Any]]]] = []
+    sheet_rows: Dict[str, Sequence[Sequence[Any]]] = {}
     for sheet in workbook.worksheets:
         all_rows = list(sheet.iter_rows(values_only=True))
+        sheet_rows[sheet.title] = all_rows
         header_index = _find_header_index(all_rows)
         if header_index is None:
             continue
@@ -188,6 +209,9 @@ def read_xlsx_tables(path: Path) -> List[Tuple[str, List[Dict[str, Any]]]]:
             parsed.append(canonicalize_row(dict(zip(headers, values))))
         if parsed:
             tables.append((sheet.title, parsed))
+    daily_rows = _xhs_account_daily_rows(sheet_rows)
+    if daily_rows:
+        tables.append(("小红书账号每日趋势", daily_rows))
     return tables
 
 
@@ -300,7 +324,12 @@ def _content_indexes(master: Mapping[str, Any]) -> Tuple[Dict[str, Mapping[str, 
     return by_id, by_note, by_title
 
 
-def normalize_note_rows(rows: Sequence[Mapping[str, Any]], master: Mapping[str, Any], default_date: str) -> List[Dict[str, Any]]:
+def normalize_note_rows(
+    rows: Sequence[Mapping[str, Any]],
+    master: Mapping[str, Any],
+    default_date: str,
+    unmatched_titles: Optional[List[str]] = None,
+) -> List[Dict[str, Any]]:
     by_id, by_note, by_title = _content_indexes(master)
     normalized = []
     for index, raw in enumerate(rows, start=2):
@@ -313,6 +342,9 @@ def normalize_note_rows(rows: Sequence[Mapping[str, Any]], master: Mapping[str, 
         if not content and row.get("title"):
             content = by_title.get(str(row["title"]).strip())
         if not content:
+            if unmatched_titles is not None:
+                unmatched_titles.append(str(row.get("title") or row.get("note_id") or row.get("content_id") or "未命名笔记"))
+                continue
             raise PipelineError(f"笔记表第 {index} 行无法匹配内容主表：{row.get('title') or row.get('note_id') or row.get('content_id')}")
         snapshot_date = parse_date(row.get("snapshot_date"), "snapshot_date") or default_date
         publish_date = parse_date(row.get("publish_date"), "publish_date") or content.get("publish_date")
@@ -440,6 +472,8 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
     account_rows: List[Dict[str, Any]] = []
     note_rows: List[Dict[str, Any]] = []
     sources: List[str] = []
+    warnings: List[str] = []
+    unmatched_titles: List[str] = []
     for path in discover_imports(source):
         for table_name, rows in read_input_tables(path):
             if not rows:
@@ -451,13 +485,28 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
             if kind == "account":
                 account_rows.extend(normalize_account_rows(rows, default_date))
             else:
-                note_rows.extend(normalize_note_rows(rows, master, default_date))
+                # The visible-table fallback has no stable note ID. Keep its raw
+                # CSV intact, import matched rows, and surface new titles for the
+                # content master instead of discarding the entire daily snapshot.
+                allow_unmatched = path.name.startswith("visible-notes-table-")
+                note_rows.extend(
+                    normalize_note_rows(
+                        rows,
+                        master,
+                        default_date,
+                        unmatched_titles if allow_unmatched else None,
+                    )
+                )
+    if unmatched_titles:
+        warnings.append(
+            f"页面采集有 {len(unmatched_titles)} 条笔记未匹配内容主表，已保留在私有 CSV、暂不进入分析："
+            + "；".join(unmatched_titles)
+        )
     if not account_rows and not note_rows:
         raise PipelineError("没有读取到可导入的数据。")
 
     raw_root = _raw_root(project_root)
     plan: List[Tuple[Path, Dict[str, Any]]] = []
-    warnings: List[str] = []
     staged_prior: Optional[Mapping[str, Any]] = None
     for snapshot_date, grouped in sorted(_group_by(note_rows, "snapshot_date").items()):
         directory = raw_root / "notes"

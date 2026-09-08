@@ -35,6 +35,7 @@ from zoneinfo import ZoneInfo
 try:
     from playwright.sync_api import (
         BrowserContext,
+        Error as PlaywrightError,
         Locator,
         Page,
         TimeoutError as PlaywrightTimeoutError,
@@ -143,6 +144,16 @@ def text_locator(page: Page, text: str) -> Locator:
     return page.get_by_text(re.compile(re.escape(text), re.I)).first
 
 
+def action_locator(page: Page, text: str) -> Locator:
+    """Prefer the interactive control instead of a nested text span."""
+    label = re.compile(rf"^\s*{re.escape(text)}\s*$", re.I)
+    for role in ("button", "link", "menuitem"):
+        locator = page.get_by_role(role, name=label)
+        if locator.count() > 0:
+            return locator.first
+    return text_locator(page, text)
+
+
 def click_candidate(page: Page, candidates: Iterable[str], timeout_ms: int = 3500) -> Optional[str]:
     for text in candidates:
         locator = text_locator(page, text)
@@ -208,6 +219,11 @@ def save_debug(page: Page, debug_dir: Path, name: str) -> None:
 
 
 def navigate_to_section(page: Page, config: Mapping[str, Any], section: str) -> Dict[str, Any]:
+    direct_url = (config.get("section_urls") or {}).get(section)
+    if direct_url:
+        page.goto(direct_url, wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(1600)
+        return {"section": section, "url": page.url, "clicked": [], "direct_url": direct_url}
     nav = config.get("navigation", {})
     clicked: List[str] = []
     if section in {"account", "notes"}:
@@ -219,6 +235,27 @@ def navigate_to_section(page: Page, config: Mapping[str, Any], section: str) -> 
         clicked.append(second)
     page.wait_for_timeout(1200)
     return {"section": section, "url": page.url, "clicked": clicked}
+
+
+def expand_notes_page_size(page: Page) -> bool:
+    """Ask the dashboard to show up to 50 notes so one snapshot captures all rows."""
+    current = page.get_by_text(re.compile(r"^\s*(10|20)\s*条/页\s*$"))
+    if not visible(current):
+        return False
+    try:
+        current.first.click(timeout=3500)
+        page.wait_for_timeout(400)
+        option = page.get_by_text(re.compile(r"^\s*50\s*条/页\s*$"))
+        for index in range(option.count()):
+            candidate = option.nth(index)
+            if candidate.is_visible(timeout=500):
+                candidate.click(timeout=3500)
+                page.wait_for_timeout(1500)
+                log("笔记列表已切换为每页 50 条。")
+                return True
+    except PlaywrightError:
+        return False
+    return False
 
 
 def save_download(download: Any, target_dir: Path, prefix: str) -> Path:
@@ -236,12 +273,16 @@ def save_download(download: Any, target_dir: Path, prefix: str) -> Path:
 
 def try_expect_download(page: Page, locator: Locator, target_dir: Path, prefix: str) -> Optional[Path]:
     try:
-        with page.expect_download(timeout=4500) as info:
+        with page.expect_download(timeout=10000) as info:
             locator.click(timeout=3500)
         return save_download(info.value, target_dir, prefix)
     except PlaywrightTimeoutError:
+        if page.is_closed():
+            raise CollectorError("点击导出后页面被关闭，请保持采集窗口开启并重试。")
         return None
-    except Exception:
+    except PlaywrightError as exc:
+        if page.is_closed():
+            raise CollectorError("点击导出后页面被关闭，请保持采集窗口开启并重试。") from exc
         return None
 
 
@@ -254,7 +295,7 @@ def try_official_export(
 ) -> Tuple[Optional[Path], List[str]]:
     discovered: List[str] = []
     for label in config.get("export_triggers", []):
-        locator = text_locator(page, label)
+        locator = action_locator(page, label)
         if not visible(locator):
             continue
         discovered.append(label)
@@ -265,13 +306,15 @@ def try_official_export(
             return downloaded, discovered
 
         # Some creator dashboards open a menu/dialog first, then require a second click.
+        if page.is_closed():
+            raise CollectorError("点击导出后页面被关闭，请保持采集窗口开启并重试。")
         page.wait_for_timeout(700)
         for action in config.get("download_actions", []):
-            action_locator = text_locator(page, action)
-            if not visible(action_locator):
+            download_locator = action_locator(page, action)
+            if not visible(download_locator):
                 continue
             discovered.append(action)
-            downloaded = try_expect_download(page, action_locator, target_dir, prefix)
+            downloaded = try_expect_download(page, download_locator, target_dir, prefix)
             if downloaded:
                 return downloaded, discovered
     return None, discovered
@@ -310,7 +353,22 @@ def table_to_rows(rows: Sequence[Sequence[str]]) -> List[Dict[str, str]]:
     result = []
     for values in rows[1:]:
         padded = list(values) + [""] * max(0, len(headers) - len(values))
-        result.append(dict(zip(headers, padded[: len(headers)])))
+        row = dict(zip(headers, padded[: len(headers)]))
+        basic_info = row.pop("笔记基础信息", "")
+        if basic_info:
+            match = re.match(
+                r"^(?P<title>.*?)\s*发布于\s*(?P<publish_date>\d{4}-\d{2}-\d{2})(?:\s+\d{2}:\d{2})?$",
+                basic_info,
+            )
+            if match:
+                row = {
+                    "标题": match.group("title").strip(),
+                    "发布时间": match.group("publish_date"),
+                    **row,
+                }
+            else:
+                row = {"标题": basic_info.strip(), **row}
+        result.append(row)
     return result
 
 
@@ -401,7 +459,13 @@ def unpack_archives(output_dir: Path) -> List[Path]:
         target.mkdir(exist_ok=True)
         try:
             with zipfile.ZipFile(archive) as handle:
-                handle.extractall(target)
+                target_root = target.resolve()
+                for member in handle.infolist():
+                    destination = (target / member.filename).resolve()
+                    if destination != target_root and target_root not in destination.parents:
+                        log(f"已跳过 ZIP 中的不安全路径：{member.filename}")
+                        continue
+                    handle.extract(member, target)
         except (zipfile.BadZipFile, OSError):
             continue
         for path in target.rglob("*"):
@@ -463,11 +527,17 @@ def collect_section(
     snapshot_date: str,
     dry_run: bool,
     debug: bool,
+    skip_official_export: bool,
 ) -> Dict[str, Any]:
     nav = navigate_to_section(page, config, section)
+    if section == "notes":
+        nav["expanded_to_50_rows"] = expand_notes_page_size(page)
     if debug:
         save_debug(page, debug_dir, section)
-    official, discovered = try_official_export(page, config, output_dir, section, dry_run)
+    if skip_official_export:
+        official, discovered = None, []
+    else:
+        official, discovered = try_official_export(page, config, output_dir, section, dry_run)
     result: Dict[str, Any] = {
         "navigation": nav,
         "export_controls_seen": discovered,
@@ -482,7 +552,7 @@ def collect_section(
     fallback_files, raw_path = export_visible_tables(page, config, output_dir, section)
     result["raw_visible_tables"] = str(raw_path)
     result["fallback_files"].extend(str(path) for path in fallback_files)
-    if section == "account":
+    if section == "account" and not fallback_files:
         metric_file = write_account_fallback(page, config, output_dir, snapshot_date)
         if metric_file:
             result["fallback_files"].append(str(metric_file))
@@ -499,6 +569,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true", help="只检查登录、导航和导出入口，不下载、不导入")
     parser.add_argument("--debug", action="store_true", help="保存本地截图和 HTML 调试材料（local-data，Git 忽略）")
     parser.add_argument("--no-import", action="store_true", help="只采集文件，不调用 PHASE 1 导入/分析")
+    parser.add_argument("--skip-official-export", action="store_true", help="跳过官方导出按钮，直接采集页面可见表格")
+    parser.add_argument(
+        "--skip-notes-official-export",
+        action="store_true",
+        help="仅笔记页跳过官方导出；账号页仍优先下载官方 Excel",
+    )
     parser.add_argument("--skip-account", action="store_true")
     parser.add_argument("--skip-notes", action="store_true")
     parser.add_argument("--login-timeout", type=int, default=300, help="首次人工登录最长等待秒数")
@@ -526,6 +602,13 @@ def main() -> int:
         output_dir = args.output.expanduser().resolve()
     else:
         output_dir = project_root / "local-data" / "collector" / "inbox" / snapshot_date / timestamp_slug()
+    try:
+        relative_output = output_dir.relative_to(project_root)
+    except ValueError:
+        relative_output = None
+    if relative_output is not None and relative_output.parts[:1] != ("local-data",):
+        print("采集失败：仓库内的 --output 必须位于 local-data/，避免误提交原始数据。", file=sys.stderr)
+        return 2
     output_dir.mkdir(parents=True, exist_ok=True)
     debug_dir = output_dir / "debug"
 
@@ -549,6 +632,10 @@ def main() -> int:
                 page = pages[0] if pages else context.new_page()
                 log(f"打开小红书创作服务平台：{config['home_url']}")
                 page.goto(config["home_url"], wait_until="domcontentloaded", timeout=45000)
+                # The creator SPA can redirect to its login page after the first
+                # DOMContentLoaded event. Let that redirect settle before deciding
+                # whether the persistent profile is authenticated.
+                page.wait_for_timeout(2500)
                 wait_for_manual_login(page, config, args.headed, args.login_timeout)
                 page.goto(config["home_url"], wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(1200)
@@ -559,14 +646,30 @@ def main() -> int:
 
                 if not args.skip_account:
                     manifest["sections"]["account"] = collect_section(
-                        page, "account", config, output_dir, debug_dir, snapshot_date, args.dry_run, args.debug
+                        page,
+                        "account",
+                        config,
+                        output_dir,
+                        debug_dir,
+                        snapshot_date,
+                        args.dry_run,
+                        args.debug,
+                        args.skip_official_export,
                     )
                     page.goto(config["home_url"], wait_until="domcontentloaded", timeout=45000)
                     page.wait_for_timeout(900)
 
                 if not args.skip_notes:
                     manifest["sections"]["notes"] = collect_section(
-                        page, "notes", config, output_dir, debug_dir, snapshot_date, args.dry_run, args.debug
+                        page,
+                        "notes",
+                        config,
+                        output_dir,
+                        debug_dir,
+                        snapshot_date,
+                        args.dry_run,
+                        args.debug,
+                        args.skip_official_export or args.skip_notes_official_export,
                     )
             finally:
                 context.close()
@@ -589,7 +692,7 @@ def main() -> int:
         elif manifest.get("import"):
             log("PHASE 1 导入与 derived 分析已完成。")
         return 0
-    except (CollectorError, PlaywrightTimeoutError) as exc:
+    except (CollectorError, PlaywrightError) as exc:
         manifest["error"] = str(exc)
         write_json(output_dir / "manifest.json", manifest)
         print(f"采集失败：{exc}", file=sys.stderr)

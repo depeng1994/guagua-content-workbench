@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-08T16:03:30+08:00",
+  "generated_at": "2026-09-08T17:46:01+08:00",
   "dimensions": {
     "content_type": [
       {
         "value": "企业单拆",
-        "sample_size": 2,
-        "average_impressions": 2596.0,
-        "average_views": 394.0,
-        "average_favorite_rate": 0.006691849294994952,
-        "average_engagement_rate": 0.04541828128561659,
-        "follow_efficiency": 0.002613240418118467,
+        "sample_size": 3,
+        "average_impressions": 2163.0,
+        "average_views": 305.6666666666667,
+        "average_favorite_rate": 0.009629191519660718,
+        "average_engagement_rate": 0.058702626800230175,
+        "follow_efficiency": 0.0017421602787456448,
         "comparison_window": "30d"
       },
       {
@@ -87,11 +87,11 @@
       },
       {
         "value": "陈述型",
-        "sample_size": 1,
-        "average_impressions": 1258.0,
-        "average_views": 214.0,
-        "average_favorite_rate": 0.004672897196261682,
-        "average_engagement_rate": 0.04205607476635514,
+        "sample_size": 2,
+        "average_impressions": 1277.5,
+        "average_views": 171.5,
+        "average_favorite_rate": 0.010088386582626965,
+        "average_engagement_rate": 0.06366369629790625,
         "follow_efficiency": 0.0,
         "comparison_window": "30d"
       }
@@ -119,12 +119,12 @@
       },
       {
         "value": "消费",
-        "sample_size": 0,
-        "average_impressions": null,
-        "average_views": null,
-        "average_favorite_rate": null,
-        "average_engagement_rate": null,
-        "follow_efficiency": null,
+        "sample_size": 1,
+        "average_impressions": 1297.0,
+        "average_views": 129.0,
+        "average_favorite_rate": 0.015503875968992248,
+        "average_engagement_rate": 0.08527131782945736,
+        "follow_efficiency": 0.0,
         "comparison_window": "30d"
       },
       {
@@ -151,12 +151,12 @@
     "series": [
       {
         "value": "其他内容",
-        "sample_size": 0,
-        "average_impressions": null,
-        "average_views": null,
-        "average_favorite_rate": null,
-        "average_engagement_rate": null,
-        "follow_efficiency": null,
+        "sample_size": 1,
+        "average_impressions": 1297.0,
+        "average_views": 129.0,
+        "average_favorite_rate": 0.015503875968992248,
+        "average_engagement_rate": 0.08527131782945736,
+        "follow_efficiency": 0.0,
         "comparison_window": "30d"
       },
       {
