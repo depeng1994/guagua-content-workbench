@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T14:17:18+08:00",
+  "generated_at": "2026-09-10T15:42:55+08:00",
   "series": [
     {
       "series": "商超自救指南",
@@ -37,9 +37,9 @@
       "sample_size": 2,
       "average_impressions": 1685.5,
       "median_impressions": 1685.5,
-      "average_views": 307.5,
-      "average_favorite_rate": 0.02609756793788536,
-      "average_engagement_rate": 0.136739266955926,
+      "average_views": 308.5,
+      "average_favorite_rate": 0.025967714672075728,
+      "average_engagement_rate": 0.13561387198557584,
       "average_followers_gained": 4.5,
       "follow_efficiency": 0.009698275862068966,
       "long_tail_ability": null,
@@ -117,7 +117,7 @@
       "average_engagement_rate": 0.08527131782945736,
       "average_followers_gained": 0.0,
       "follow_efficiency": 0.0,
-      "long_tail_ability": 0.21428571428571427,
+      "long_tail_ability": 0.23255813953488372,
       "viral_rate": 1.0,
       "viral_threshold_views": 129.0,
       "comparison_window": "30d"
