@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T11:30:55+08:00",
+  "generated_at": "2026-09-10T12:21:19+08:00",
   "warnings": [
     "GG-001 最近两个快照不连续，不计算日增量。",
     "GG-002 最近两个快照不连续，不计算日增量。",
@@ -845,12 +845,12 @@
       "latest": {
         "impressions": 798.0,
         "views": null,
-        "likes": 16.0,
-        "favorites": 13.0,
+        "likes": 17.0,
+        "favorites": 14.0,
         "comments": 3.0,
         "shares": 3.0,
         "followers_gained": 3.0,
-        "interactions": 35.0,
+        "interactions": 37.0,
         "view_rate": null,
         "like_rate": null,
         "favorite_rate": null,
@@ -873,12 +873,12 @@
         "24h": {
           "impressions": 798.0,
           "views": null,
-          "likes": 16.0,
-          "favorites": 13.0,
+          "likes": 17.0,
+          "favorites": 14.0,
           "comments": 3.0,
           "shares": 3.0,
           "followers_gained": 3.0,
-          "interactions": 35.0,
+          "interactions": 37.0,
           "view_rate": null,
           "like_rate": null,
           "favorite_rate": null,
@@ -1038,7 +1038,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 13.0
+          "value": 14.0
         },
         {
           "content_id": "GG-001",
@@ -1050,7 +1050,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 35.0
+          "value": 37.0
         },
         {
           "content_id": "GG-001",
@@ -1516,7 +1516,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 13.0
+          "value": 14.0
         },
         {
           "content_id": "GG-002",
@@ -1601,13 +1601,13 @@
           "value": 47.0
         },
         {
-          "content_id": "GG-007",
-          "topic": "商超自有品牌",
-          "value": 35.0
-        },
-        {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
+          "value": 37.0
+        },
+        {
+          "content_id": "GG-007",
+          "topic": "商超自有品牌",
           "value": 35.0
         },
         {
