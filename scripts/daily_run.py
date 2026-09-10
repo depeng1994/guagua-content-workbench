@@ -66,10 +66,19 @@ def commit_and_push(cwd: Path, when: str, remote: str, branch: str) -> None:
         raise StepError(f"提交失败：{committed.stderr.strip()}")
     print(f"\n=== 提交 ===\n{committed.stdout.strip()}")
 
-    pushed = git(cwd, ["push", remote, branch])
-    if pushed.returncode != 0:
-        raise StepError(f"推送失败：{pushed.stderr.strip()}")
-    print(pushed.stdout.strip() or "(pushed)")
+    # 代理偶发 502 / HTTP2 framing 错误，重试几次再认定失败。
+    last_err = ""
+    for attempt in range(1, 6):
+        pushed = git(cwd, ["push", remote, branch])
+        if pushed.returncode == 0:
+            print(pushed.stdout.strip() or "(pushed)")
+            return
+        last_err = pushed.stderr.strip() or pushed.stdout.strip()
+        print(f"[重试 {attempt}/5] 推送失败：{last_err}")
+        if attempt < 5:
+            import time
+            time.sleep(attempt * 5)
+    raise StepError(f"推送失败：{last_err}")
 
 
 def main() -> int:
