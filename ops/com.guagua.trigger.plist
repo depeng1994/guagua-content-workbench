@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.guagua.trigger</string>
+
+    <!-- 用系统 python3 跑，只依赖标准库；路径必须是真实路径，
+         不能是 ~/Desktop 下的软链，否则会被 TCC 拦截（com.guagua.daily 就是这么失败的）。 -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/juding/projects/guagua-content-workbench/ops/trigger_server.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/juding/projects/guagua-content-workbench</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/juding/Library/Logs/guagua-trigger.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/juding/Library/Logs/guagua-trigger.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+</dict>
+</plist>
