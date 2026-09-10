@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T12:21:19+08:00",
+  "generated_at": "2026-09-10T13:57:26+08:00",
   "dimensions": {
     "content_type": [
       {
         "value": "企业单拆",
         "sample_size": 4,
         "average_impressions": 2790.75,
-        "average_views": 305.6666666666667,
-        "average_favorite_rate": 0.009629191519660718,
-        "average_engagement_rate": 0.058702626800230175,
-        "follow_efficiency": 0.0017421602787456448,
+        "average_views": 391.5,
+        "average_favorite_rate": 0.011844389787665416,
+        "average_engagement_rate": 0.06213174667952549,
+        "follow_efficiency": 0.004003076295345829,
         "comparison_window": "30d"
       },
       {
@@ -79,10 +79,10 @@
         "value": "问题型",
         "sample_size": 1,
         "average_impressions": 4674.0,
-        "average_views": null,
-        "average_favorite_rate": null,
-        "average_engagement_rate": null,
-        "follow_efficiency": null,
+        "average_views": 649.0,
+        "average_favorite_rate": 0.01848998459167951,
+        "average_engagement_rate": 0.0724191063174114,
+        "follow_efficiency": 0.01078582434514638,
         "comparison_window": "30d"
       },
       {
@@ -131,10 +131,10 @@
         "value": "零售",
         "sample_size": 2,
         "average_impressions": 4304.0,
-        "average_views": 574.0,
-        "average_favorite_rate": 0.008710801393728223,
-        "average_engagement_rate": 0.04878048780487805,
-        "follow_efficiency": 0.005226480836236934,
+        "average_views": 611.5,
+        "average_favorite_rate": 0.013600392992703866,
+        "average_engagement_rate": 0.060599797061144725,
+        "follow_efficiency": 0.008006152590691658,
         "comparison_window": "30d"
       },
       {
@@ -173,10 +173,10 @@
         "value": "商超自救指南",
         "sample_size": 2,
         "average_impressions": 4304.0,
-        "average_views": 574.0,
-        "average_favorite_rate": 0.008710801393728223,
-        "average_engagement_rate": 0.04878048780487805,
-        "follow_efficiency": 0.005226480836236934,
+        "average_views": 611.5,
+        "average_favorite_rate": 0.013600392992703866,
+        "average_engagement_rate": 0.060599797061144725,
+        "follow_efficiency": 0.008006152590691658,
         "comparison_window": "30d"
       },
       {

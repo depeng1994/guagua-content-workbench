@@ -1,51 +1,51 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T12:21:19+08:00",
+  "generated_at": "2026-09-10T13:57:26+08:00",
   "series": [
     {
       "series": "商超自救指南",
       "sample_size": 2,
       "average_impressions": 4304.0,
       "median_impressions": 4304.0,
-      "average_views": 574.0,
-      "average_favorite_rate": 0.008710801393728223,
-      "average_engagement_rate": 0.04878048780487805,
+      "average_views": 611.5,
+      "average_favorite_rate": 0.013600392992703866,
+      "average_engagement_rate": 0.060599797061144725,
       "average_followers_gained": 5.0,
-      "follow_efficiency": 0.005226480836236934,
+      "follow_efficiency": 0.008006152590691658,
       "long_tail_ability": null,
       "viral_rate": 0.5,
-      "viral_threshold_views": 574.0,
+      "viral_threshold_views": 649.0,
       "comparison_window": "30d"
     },
     {
       "series": "咖啡的N种活法",
-      "sample_size": 0,
-      "average_impressions": null,
-      "median_impressions": null,
-      "average_views": null,
-      "average_favorite_rate": null,
-      "average_engagement_rate": null,
-      "average_followers_gained": null,
-      "follow_efficiency": null,
-      "long_tail_ability": null,
-      "viral_rate": null,
-      "viral_threshold_views": 574.0,
-      "comparison_window": "30d"
+      "sample_size": 3,
+      "average_impressions": 19912.666666666668,
+      "median_impressions": 6662.0,
+      "average_views": 4727.333333333333,
+      "average_favorite_rate": 0.014371890540527704,
+      "average_engagement_rate": 0.05467923763510273,
+      "average_followers_gained": 19.0,
+      "follow_efficiency": 0.007084621543472759,
+      "long_tail_ability": 0.2514827995255042,
+      "viral_rate": 0.3333333333333333,
+      "viral_threshold_views": 12416.0,
+      "comparison_window": "7d"
     },
     {
       "series": "看懂母婴生意",
-      "sample_size": 0,
-      "average_impressions": null,
-      "median_impressions": null,
-      "average_views": null,
-      "average_favorite_rate": null,
-      "average_engagement_rate": null,
-      "average_followers_gained": null,
-      "follow_efficiency": null,
+      "sample_size": 2,
+      "average_impressions": 1685.5,
+      "median_impressions": 1685.5,
+      "average_views": 307.5,
+      "average_favorite_rate": 0.02609756793788536,
+      "average_engagement_rate": 0.136739266955926,
+      "average_followers_gained": 4.5,
+      "follow_efficiency": 0.009698275862068966,
       "long_tail_ability": null,
-      "viral_rate": null,
-      "viral_threshold_views": 574.0,
-      "comparison_window": "30d"
+      "viral_rate": 0.5,
+      "viral_threshold_views": 464.0,
+      "comparison_window": "72h"
     },
     {
       "series": "智驾天团",
@@ -58,8 +58,8 @@
       "average_followers_gained": 0.0,
       "follow_efficiency": 0.0,
       "long_tail_ability": null,
-      "viral_rate": 0.0,
-      "viral_threshold_views": 574.0,
+      "viral_rate": 1.0,
+      "viral_threshold_views": 214.0,
       "comparison_window": "30d"
     },
     {
@@ -74,8 +74,8 @@
       "follow_efficiency": null,
       "long_tail_ability": null,
       "viral_rate": null,
-      "viral_threshold_views": 574.0,
-      "comparison_window": "30d"
+      "viral_threshold_views": null,
+      "comparison_window": null
     },
     {
       "series": "AI商业地图",
@@ -89,8 +89,8 @@
       "follow_efficiency": null,
       "long_tail_ability": null,
       "viral_rate": null,
-      "viral_threshold_views": 574.0,
-      "comparison_window": "30d"
+      "viral_threshold_views": null,
+      "comparison_window": null
     },
     {
       "series": "餐饮万店命题",
@@ -104,8 +104,8 @@
       "follow_efficiency": null,
       "long_tail_ability": null,
       "viral_rate": null,
-      "viral_threshold_views": 574.0,
-      "comparison_window": "30d"
+      "viral_threshold_views": null,
+      "comparison_window": null
     },
     {
       "series": "其他内容",
@@ -117,9 +117,9 @@
       "average_engagement_rate": 0.08527131782945736,
       "average_followers_gained": 0.0,
       "follow_efficiency": 0.0,
-      "long_tail_ability": null,
-      "viral_rate": 0.0,
-      "viral_threshold_views": 574.0,
+      "long_tail_ability": 0.21428571428571427,
+      "viral_rate": 1.0,
+      "viral_threshold_views": 129.0,
       "comparison_window": "30d"
     }
   ]
