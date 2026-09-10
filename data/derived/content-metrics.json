@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T14:08:02+08:00",
+  "generated_at": "2026-09-10T14:17:18+08:00",
   "warnings": [
     "GG-001 最近两个快照不连续，不计算日增量。",
     "GG-002 最近两个快照不连续，不计算日增量。",
@@ -102,20 +102,20 @@
       "publish_date": "2026-09-02",
       "latest": {
         "impressions": 5988,
-        "views": 843,
+        "views": 844,
         "likes": 28,
         "favorites": 12,
         "comments": 4,
         "shares": 8,
         "followers_gained": 6,
         "interactions": 52,
-        "view_rate": 0.1407815631262525,
-        "like_rate": 0.033214709371293,
-        "favorite_rate": 0.014234875444839857,
-        "comment_rate": 0.004744958481613286,
-        "share_rate": 0.009489916963226572,
-        "engagement_rate": 0.06168446026097272,
-        "follow_conversion_rate": 0.0071174377224199285,
+        "view_rate": 0.1409485637942552,
+        "like_rate": 0.03317535545023697,
+        "favorite_rate": 0.014218009478672985,
+        "comment_rate": 0.004739336492890996,
+        "share_rate": 0.009478672985781991,
+        "engagement_rate": 0.061611374407582936,
+        "follow_conversion_rate": 0.0071090047393364926,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -149,27 +149,27 @@
         },
         "7d": {
           "impressions": 5988,
-          "views": 843,
+          "views": 844,
           "likes": 28,
           "favorites": 12,
           "comments": 4,
           "shares": 8,
           "followers_gained": 6,
           "interactions": 52,
-          "view_rate": 0.1407815631262525,
-          "like_rate": 0.033214709371293,
-          "favorite_rate": 0.014234875444839857,
-          "comment_rate": 0.004744958481613286,
-          "share_rate": 0.009489916963226572,
-          "engagement_rate": 0.06168446026097272,
-          "follow_conversion_rate": 0.0071174377224199285,
+          "view_rate": 0.1409485637942552,
+          "like_rate": 0.03317535545023697,
+          "favorite_rate": 0.014218009478672985,
+          "comment_rate": 0.004739336492890996,
+          "share_rate": 0.009478672985781991,
+          "engagement_rate": 0.061611374407582936,
+          "follow_conversion_rate": 0.0071090047393364926,
           "snapshot_date": "2026-09-10"
         },
         "30d": null
       },
       "long_tail": {
         "metric": "7d_after_72h_ratio",
-        "ratio": 0.2514827995255042
+        "ratio": 0.2523696682464455
       }
     },
     {
@@ -258,20 +258,20 @@
       "publish_date": "2026-08-31",
       "latest": {
         "impressions": 50160,
-        "views": 12746,
+        "views": 12747,
         "likes": 163,
         "favorites": 105,
         "comments": 59,
         "shares": 66,
         "followers_gained": 43,
         "interactions": 393,
-        "view_rate": 0.25410685805422645,
-        "like_rate": 0.012788325749254668,
-        "favorite_rate": 0.008237878550133375,
-        "comment_rate": 0.004628903185313039,
-        "share_rate": 0.005178095088655264,
-        "engagement_rate": 0.030833202573356346,
-        "follow_conversion_rate": 0.0033736074062450964,
+        "view_rate": 0.2541267942583732,
+        "like_rate": 0.01278732250725661,
+        "favorite_rate": 0.008237232289950576,
+        "comment_rate": 0.004628540048638895,
+        "share_rate": 0.0051776888679689334,
+        "engagement_rate": 0.030830783713815015,
+        "follow_conversion_rate": 0.0033733427473130934,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -844,20 +844,20 @@
       "publish_date": "2026-09-09",
       "latest": {
         "impressions": 798,
-        "views": 610,
+        "views": 615,
         "likes": 17,
         "favorites": 14,
         "comments": 5,
         "shares": 3,
         "followers_gained": 3,
         "interactions": 39,
-        "view_rate": 0.7644110275689223,
-        "like_rate": 0.027868852459016394,
-        "favorite_rate": 0.022950819672131147,
-        "comment_rate": 0.00819672131147541,
-        "share_rate": 0.004918032786885246,
-        "engagement_rate": 0.06393442622950819,
-        "follow_conversion_rate": 0.004918032786885246,
+        "view_rate": 0.7706766917293233,
+        "like_rate": 0.027642276422764227,
+        "favorite_rate": 0.022764227642276424,
+        "comment_rate": 0.008130081300813009,
+        "share_rate": 0.004878048780487805,
+        "engagement_rate": 0.06341463414634146,
+        "follow_conversion_rate": 0.004878048780487805,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -872,20 +872,20 @@
       "lifecycle": {
         "24h": {
           "impressions": 798,
-          "views": 610,
+          "views": 615,
           "likes": 17,
           "favorites": 14,
           "comments": 5,
           "shares": 3,
           "followers_gained": 3,
           "interactions": 39,
-          "view_rate": 0.7644110275689223,
-          "like_rate": 0.027868852459016394,
-          "favorite_rate": 0.022950819672131147,
-          "comment_rate": 0.00819672131147541,
-          "share_rate": 0.004918032786885246,
-          "engagement_rate": 0.06393442622950819,
-          "follow_conversion_rate": 0.004918032786885246,
+          "view_rate": 0.7706766917293233,
+          "like_rate": 0.027642276422764227,
+          "favorite_rate": 0.022764227642276424,
+          "comment_rate": 0.008130081300813009,
+          "share_rate": 0.004878048780487805,
+          "engagement_rate": 0.06341463414634146,
+          "follow_conversion_rate": 0.004878048780487805,
           "snapshot_date": "2026-09-10"
         },
         "72h": null,
@@ -1031,7 +1031,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 610
+          "value": 615
         },
         {
           "content_id": "GG-001",
@@ -1225,7 +1225,7 @@
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 843
+          "value": 844
         },
         {
           "content_id": "GG-003",
@@ -1499,7 +1499,7 @@
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 12746
+          "value": 12747
         },
         {
           "content_id": "GG-005",
@@ -1514,7 +1514,7 @@
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 843
+          "value": 844
         },
         {
           "content_id": "GG-010",
@@ -1529,7 +1529,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 610
+          "value": 615
         },
         {
           "content_id": "GG-014",
