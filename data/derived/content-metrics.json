@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:57:26+08:00",
+  "generated_at": "2026-09-10T14:08:02+08:00",
   "warnings": [
     "GG-001 最近两个快照不连续，不计算日增量。",
     "GG-002 最近两个快照不连续，不计算日增量。",
@@ -258,20 +258,20 @@
       "publish_date": "2026-08-31",
       "latest": {
         "impressions": 50160,
-        "views": 12745,
+        "views": 12746,
         "likes": 163,
         "favorites": 105,
         "comments": 59,
         "shares": 66,
         "followers_gained": 43,
         "interactions": 393,
-        "view_rate": 0.25408692185007975,
-        "like_rate": 0.012789329148685758,
-        "favorite_rate": 0.00823852491173009,
-        "comment_rate": 0.004629266378972146,
-        "share_rate": 0.005178501373087486,
-        "engagement_rate": 0.03083562181247548,
-        "follow_conversion_rate": 0.003373872106708513,
+        "view_rate": 0.25410685805422645,
+        "like_rate": 0.012788325749254668,
+        "favorite_rate": 0.008237878550133375,
+        "comment_rate": 0.004628903185313039,
+        "share_rate": 0.005178095088655264,
+        "engagement_rate": 0.030833202573356346,
+        "follow_conversion_rate": 0.0033736074062450964,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -319,20 +319,20 @@
       "publish_date": "2026-08-28",
       "latest": {
         "impressions": 7586,
-        "views": 1037,
+        "views": 1038,
         "likes": 32,
         "favorites": 20,
         "comments": 5,
-        "shares": 12,
+        "shares": 13,
         "followers_gained": 12,
-        "interactions": 69,
-        "view_rate": 0.13669918270498285,
-        "like_rate": 0.03085824493731919,
-        "favorite_rate": 0.019286403085824494,
-        "comment_rate": 0.0048216007714561235,
-        "share_rate": 0.011571841851494697,
-        "engagement_rate": 0.0665380906460945,
-        "follow_conversion_rate": 0.011571841851494697,
+        "interactions": 70,
+        "view_rate": 0.1368310044819404,
+        "like_rate": 0.030828516377649325,
+        "favorite_rate": 0.019267822736030827,
+        "comment_rate": 0.004816955684007707,
+        "share_rate": 0.012524084778420038,
+        "engagement_rate": 0.0674373795761079,
+        "follow_conversion_rate": 0.011560693641618497,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -556,20 +556,20 @@
       "publish_date": "2026-08-13",
       "latest": {
         "impressions": 5739,
-        "views": 749,
+        "views": 750,
         "likes": 16,
         "favorites": 10,
         "comments": 3,
         "shares": 1,
         "followers_gained": 1,
         "interactions": 30,
-        "view_rate": 0.13051054190625544,
-        "like_rate": 0.021361815754339118,
-        "favorite_rate": 0.01335113484646195,
-        "comment_rate": 0.004005340453938585,
-        "share_rate": 0.0013351134846461949,
-        "engagement_rate": 0.04005340453938585,
-        "follow_conversion_rate": 0.0013351134846461949,
+        "view_rate": 0.13068478829064298,
+        "like_rate": 0.021333333333333333,
+        "favorite_rate": 0.013333333333333334,
+        "comment_rate": 0.004,
+        "share_rate": 0.0013333333333333333,
+        "engagement_rate": 0.04,
+        "follow_conversion_rate": 0.0013333333333333333,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -844,20 +844,20 @@
       "publish_date": "2026-09-09",
       "latest": {
         "impressions": 798,
-        "views": 609,
+        "views": 610,
         "likes": 17,
         "favorites": 14,
         "comments": 5,
         "shares": 3,
         "followers_gained": 3,
         "interactions": 39,
-        "view_rate": 0.7631578947368421,
-        "like_rate": 0.027914614121510674,
-        "favorite_rate": 0.022988505747126436,
-        "comment_rate": 0.008210180623973728,
-        "share_rate": 0.0049261083743842365,
-        "engagement_rate": 0.06403940886699508,
-        "follow_conversion_rate": 0.0049261083743842365,
+        "view_rate": 0.7644110275689223,
+        "like_rate": 0.027868852459016394,
+        "favorite_rate": 0.022950819672131147,
+        "comment_rate": 0.00819672131147541,
+        "share_rate": 0.004918032786885246,
+        "engagement_rate": 0.06393442622950819,
+        "follow_conversion_rate": 0.004918032786885246,
         "snapshot_date": "2026-09-10"
       },
       "deltas": {
@@ -872,20 +872,20 @@
       "lifecycle": {
         "24h": {
           "impressions": 798,
-          "views": 609,
+          "views": 610,
           "likes": 17,
           "favorites": 14,
           "comments": 5,
           "shares": 3,
           "followers_gained": 3,
           "interactions": 39,
-          "view_rate": 0.7631578947368421,
-          "like_rate": 0.027914614121510674,
-          "favorite_rate": 0.022988505747126436,
-          "comment_rate": 0.008210180623973728,
-          "share_rate": 0.0049261083743842365,
-          "engagement_rate": 0.06403940886699508,
-          "follow_conversion_rate": 0.0049261083743842365,
+          "view_rate": 0.7644110275689223,
+          "like_rate": 0.027868852459016394,
+          "favorite_rate": 0.022950819672131147,
+          "comment_rate": 0.00819672131147541,
+          "share_rate": 0.004918032786885246,
+          "engagement_rate": 0.06393442622950819,
+          "follow_conversion_rate": 0.004918032786885246,
           "snapshot_date": "2026-09-10"
         },
         "72h": null,
@@ -1031,7 +1031,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 609
+          "value": 610
         },
         {
           "content_id": "GG-001",
@@ -1499,12 +1499,12 @@
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 12745
+          "value": 12746
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 1037
+          "value": 1038
         },
         {
           "content_id": "GG-006",
@@ -1519,7 +1519,7 @@
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 749
+          "value": 750
         },
         {
           "content_id": "GG-011",
@@ -1529,7 +1529,7 @@
         {
           "content_id": "GG-P001",
           "topic": "被质疑“高级贴牌”，Ba",
-          "value": 609
+          "value": 610
         },
         {
           "content_id": "GG-014",
@@ -1668,7 +1668,7 @@
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 69
+          "value": 70
         },
         {
           "content_id": "GG-006",
