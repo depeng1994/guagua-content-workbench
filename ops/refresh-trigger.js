@@ -20,6 +20,7 @@
   var panel = null;
   var bodyEl = null;
   var titleEl = null;
+  var currentLabel = "更新数据";
 
   /* ---------- 注入样式 ---------- */
   function injectStyle() {
@@ -135,6 +136,7 @@
   }
 
   function setLabel(text) {
+    currentLabel = text;
     if (!btn) return;
     var t = btn.querySelector(".gg-btn-text");
     if (t) t.textContent = text;
@@ -238,10 +240,27 @@
     }
   }
 
+  /* ---------- 保活 ----------
+   * 页面有 React hydration 不匹配（error #418），React 会重建整个容器，
+   * 把我们 append 到 body 的按钮一起清掉。所以每 2 秒检查一次，没了就重建。
+   */
+  function keepAlive() {
+    if (!document.body) return;
+    if (btn && document.body.contains(btn)) return;
+    var wasBusy = busy;
+    btn = null;
+    ensureButton();
+    if (wasBusy) {
+      btn.disabled = true;
+      setLabel(currentLabel);
+    }
+  }
+
   /* ---------- 启动 ---------- */
   function boot() {
     injectStyle();
     ensureButton();
+    setInterval(keepAlive, 2000);
   }
 
   if (document.readyState === "loading") {
