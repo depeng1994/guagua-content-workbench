@@ -36,6 +36,11 @@ function patchContents(contents) {
     let item = result.find((x) => x.id === plan.id) || result.find((x) => x.short === matchShort);
 
     if (item) {
+      // 已发布的内容不要再覆盖回「已排期」——否则创作者后台发布后，排期页
+      // 还会强制把它打回时钟状态（Babycare GG-P001 就是这个 bug）。
+      if (item.status === "已发布") {
+        continue;
+      }
       item.id = plan.id;
       item.short = plan.short;
       item.title = plan.title;
