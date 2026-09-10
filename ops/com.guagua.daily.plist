@@ -8,11 +8,11 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench/ops/run_daily.sh</string>
+        <string>/Users/juding/projects/guagua-content-workbench/ops/run_daily.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench</string>
+    <string>/Users/juding/projects/guagua-content-workbench</string>
 
     <key>StartCalendarInterval</key>
     <dict>

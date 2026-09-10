@@ -83,6 +83,12 @@ def main() -> int:
     parser.add_argument("--remote", default="origin")
     parser.add_argument("--branch", default="main")
     parser.add_argument("--python", help="运行子脚本的解释器，默认优先使用采集器 venv")
+    parser.add_argument(
+        "--browser",
+        choices=["chromium", "chrome"],
+        default="chrome",
+        help="采集使用的浏览器；默认本机 Chrome，避免依赖 playwright 下载的 chromium",
+    )
     args = parser.parse_args()
 
     root = args.project_root.resolve()
@@ -93,7 +99,7 @@ def main() -> int:
 
     try:
         if args.collect:
-            cmd = [python, str(root / "collector" / "collect_xhs.py")]
+            cmd = [python, str(root / "collector" / "collect_xhs.py"), "--browser", args.browser]
             if args.headed:
                 cmd.append("--headed")
             run_step("采集创作者后台", cmd, root)
