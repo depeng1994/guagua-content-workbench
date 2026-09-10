@@ -17,9 +17,10 @@ def main() -> int:
     parser.add_argument("--date", help="缺少采集日期时使用的日期（YYYY-MM-DD，默认北京时间今天）")
     parser.add_argument("--project-root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--no-analyze", action="store_true", help="只导入，不生成 derived JSON")
+    parser.add_argument("--overwrite", action="store_true", help="同日快照内容不同也覆盖（每日刷新用；手动导入默认保留历史）")
     args = parser.parse_args()
     try:
-        imported = import_exports(args.project_root.resolve(), args.source.resolve(), args.date)
+        imported = import_exports(args.project_root.resolve(), args.source.resolve(), args.date, overwrite=args.overwrite)
         result = {"import": imported}
         if not args.no_analyze:
             result["analysis"] = analyze(args.project_root.resolve())

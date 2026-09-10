@@ -445,7 +445,7 @@ def validate_account(account: Mapping[str, Any], prior: Optional[Mapping[str, An
     return errors, warnings
 
 
-def save_snapshot(path: Path, payload: Mapping[str, Any]) -> str:
+def save_snapshot(path: Path, payload: Mapping[str, Any], overwrite: bool = False) -> str:
     existing = load_json(path)
     if existing is not None:
         comparable_existing = dict(existing)
@@ -455,8 +455,11 @@ def save_snapshot(path: Path, payload: Mapping[str, Any]) -> str:
             item.pop("source_files", None)
         if comparable_existing == comparable_new:
             return "unchanged"
-        raise DuplicateSnapshotError(f"{path.name} 已存在且内容不同；为保护历史数据，本次未覆盖。")
+        if not overwrite:
+            raise DuplicateSnapshotError(f"{path.name} 已存在且内容不同；为保护历史数据，本次未覆盖。")
     write_json_atomic(path, payload)
+    if existing is not None:
+        return "overwritten"
     return "created"
 
 
@@ -465,7 +468,7 @@ def _raw_root(project_root: Path) -> Path:
     return project_root / ("data/snapshots" if publish_raw else "local-data/raw")
 
 
-def import_exports(project_root: Path, source: Path, import_date: Optional[str] = None) -> Dict[str, Any]:
+def import_exports(project_root: Path, source: Path, import_date: Optional[str] = None, overwrite: bool = False) -> Dict[str, Any]:
     default_date = parse_date(import_date, "--date") if import_date else today_iso()
     assert default_date
     master = load_content_master(project_root)
@@ -556,9 +559,9 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
             for item in (comparable_existing, comparable_new):
                 item.pop("imported_at", None)
                 item.pop("source_files", None)
-            if comparable_existing != comparable_new:
+            if comparable_existing != comparable_new and not overwrite:
                 raise DuplicateSnapshotError(f"{path.name} 已存在且内容不同；本批次未写入。")
-    statuses = [{"path": str(path.relative_to(project_root)), "status": save_snapshot(path, payload)} for path, payload in plan]
+    statuses = [{"path": str(path.relative_to(project_root)), "status": save_snapshot(path, payload, overwrite=overwrite)} for path, payload in plan]
     return {"date": default_date, "snapshots": statuses, "warnings": warnings, "raw_root": str(raw_root.relative_to(project_root))}
 
 

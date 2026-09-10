@@ -99,7 +99,7 @@ def main() -> int:
 
     try:
         if args.collect:
-            cmd = [python, str(root / "collector" / "collect_xhs.py"), "--browser", args.browser]
+            cmd = [python, str(root / "collector" / "collect_xhs.py"), "--browser", args.browser, "--overwrite"]
             if args.headed:
                 cmd.append("--headed")
             try:

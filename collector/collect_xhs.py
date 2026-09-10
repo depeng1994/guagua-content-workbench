@@ -481,7 +481,7 @@ def importable_files(output_dir: Path) -> List[Path]:
     return sorted(files)
 
 
-def run_phase1_import(project_root: Path, output_dir: Path, snapshot_date: str) -> Dict[str, Any]:
+def run_phase1_import(project_root: Path, output_dir: Path, snapshot_date: str, overwrite: bool = False) -> Dict[str, Any]:
     command = [
         sys.executable,
         str(project_root / "scripts" / "import_xhs_export.py"),
@@ -491,6 +491,8 @@ def run_phase1_import(project_root: Path, output_dir: Path, snapshot_date: str) 
         "--project-root",
         str(project_root),
     ]
+    if overwrite:
+        command.append("--overwrite")
     log("开始调用 PHASE 1 标准化与分析流水线。")
     completed = subprocess.run(command, cwd=project_root, text=True, capture_output=True)
     result = {
@@ -569,6 +571,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true", help="只检查登录、导航和导出入口，不下载、不导入")
     parser.add_argument("--debug", action="store_true", help="保存本地截图和 HTML 调试材料（local-data，Git 忽略）")
     parser.add_argument("--no-import", action="store_true", help="只采集文件，不调用 PHASE 1 导入/分析")
+    parser.add_argument("--overwrite", action="store_true", help="同日快照内容不同也覆盖；每日刷新由 daily_run 传入")
     parser.add_argument("--skip-official-export", action="store_true", help="跳过官方导出按钮，直接采集页面可见表格")
     parser.add_argument(
         "--skip-notes-official-export",
@@ -683,7 +686,7 @@ def main() -> int:
                     "没有采集到可供 PHASE 1 导入的 CSV/Excel；请用 --headed --debug 检查页面入口或更新 collector/selectors.json。"
                 )
             elif not args.no_import:
-                manifest["import"] = run_phase1_import(project_root, output_dir, snapshot_date)
+                manifest["import"] = run_phase1_import(project_root, output_dir, snapshot_date, args.overwrite)
 
         write_json(output_dir / "manifest.json", manifest)
         log(f"采集完成。私有结果：{output_dir}")
