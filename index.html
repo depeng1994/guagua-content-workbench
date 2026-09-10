@@ -123,7 +123,14 @@
     for (var i = 0; i < all.length; i++) {
       var b = all[i];
       var t = (b.textContent || "").trim();
-      if (t.indexOf("刷新数据") !== -1 || t.indexOf("读取中") !== -1) return b;
+      if (
+        t.indexOf("刷新数据") !== -1 ||
+        t.indexOf("读取中") !== -1 ||
+        t.indexOf("更新数据") !== -1 ||
+        t.indexOf("重试更新") !== -1
+      ) {
+        return b;
+      }
     }
     return null;
   }
@@ -234,12 +241,34 @@
 
   /* ---------- 启动：等 hydration 完成 ---------- */
   function boot() {
-    if (hijack()) return;
+    if (hijack()) {
+      watch();
+      return;
+    }
     var tries = 0;
     var timer = setInterval(function () {
       tries++;
-      if (hijack() || tries > 40) clearInterval(timer);
+      if (hijack() || tries > 40) {
+        clearInterval(timer);
+        watch();
+      }
     }, 300);
+  }
+
+  /* hydration 有可能重建按钮节点，兜住丢失/被还原的情况 */
+  function watch() {
+    setInterval(function () {
+      if (busy) return;
+      if (!btn || !document.body.contains(btn)) {
+        btn = null;
+        hijack();
+        return;
+      }
+      var t = (btn.textContent || "").trim();
+      if (t.indexOf("更新数据") === -1 && t.indexOf("重试更新") === -1) {
+        setLabel("更新数据");
+      }
+    }, 3000);
   }
 
   if (document.readyState === "loading") {
