@@ -102,7 +102,16 @@ def main() -> int:
             cmd = [python, str(root / "collector" / "collect_xhs.py"), "--browser", args.browser]
             if args.headed:
                 cmd.append("--headed")
-            run_step("采集创作者后台", cmd, root)
+            try:
+                run_step("采集创作者后台（官方导出）", cmd, root)
+            except StepError as exc:
+                # 小红书官方导出按钮偶发把页面关掉，回退到页面可见表格更稳
+                print(f"[重试] 官方导出失败（{exc}），改用页面可见表格回退采集。")
+                run_step(
+                    "采集创作者后台（可见表格回退）",
+                    [*cmd, "--skip-official-export"],
+                    root,
+                )
             steps.append("collect")
 
         if args.import_path:
