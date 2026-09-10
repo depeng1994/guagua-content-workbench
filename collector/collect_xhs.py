@@ -408,8 +408,9 @@ def nearest_numeric_text(locator: Locator) -> Optional[float]:
             text = ""
         if text:
             matches = NUMBER_RE.findall(text)
-            # Prefer the last number; dashboard cards often render label before value.
-            for token in reversed(matches):
+            # Prefer the first number: dashboard cards render label -> value ->
+            # 环比 -> benchmark% -> 提升建议; the metric value is the first token.
+            for token in matches:
                 value = parse_display_number(token)
                 if value is not None:
                     return value
@@ -441,6 +442,7 @@ def write_account_fallback(
     config: Mapping[str, Any],
     output_dir: Path,
     snapshot_date: str,
+    supplement: bool = False,
 ) -> Optional[Path]:
     row = extract_account_metric_cards(page, config, snapshot_date)
     metric_count = len(row) - 2
@@ -448,8 +450,24 @@ def write_account_fallback(
         return None
     path = output_dir / "visible-account-metrics.csv"
     write_csv(path, [row])
-    log(f"未发现官方导出，已从页面可见指标生成本地回退文件：{path.name}")
+    if supplement:
+        log(f"官方导出不含账号总览指标，已补充抓取：{path.name}")
+    else:
+        log(f"未发现官方导出，已从页面可见指标生成本地回退文件：{path.name}")
     return path
+
+
+def write_account_metric_cards(
+    page: Page,
+    config: Mapping[str, Any],
+    output_dir: Path,
+    snapshot_date: str,
+) -> Optional[Path]:
+    """Same as :func:`write_account_fallback` but used when the official export
+    already succeeded: the export lacks account-level fields like total
+    followers, so we still scrape the overview cards to supplement them.
+    """
+    return write_account_fallback(page, config, output_dir, snapshot_date, supplement=True)
 
 
 def unpack_archives(output_dir: Path) -> List[Path]:
@@ -549,6 +567,13 @@ def collect_section(
     if dry_run:
         return result
     if official:
+        if section == "account":
+            # 官方「近 7 日观看数据」导出不含粉丝等总览指标，导出成功后
+            # 再补一次总览卡片的抓取，与导出在导入层合并（见 import_exports
+            # 的 visible-account-metrics supplemental 逻辑）。
+            cards_file = write_account_metric_cards(page, config, output_dir, snapshot_date)
+            if cards_file:
+                result["fallback_files"].append(str(cards_file))
         return result
 
     fallback_files, raw_path = export_visible_tables(page, config, output_dir, section)

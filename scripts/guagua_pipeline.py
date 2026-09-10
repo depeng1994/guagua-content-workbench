@@ -71,7 +71,15 @@ def parse_date(value: Any, field: str = "date") -> Optional[str]:
     if isinstance(value, date):
         return value.isoformat()
     text = str(value).strip()
-    for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y.%m.%d", "%Y年%m月%d日", "%Y-%m-%d %H:%M:%S"):
+    for fmt in (
+        "%Y-%m-%d",
+        "%Y/%m/%d",
+        "%Y.%m.%d",
+        "%Y年%m月%d日",
+        "%Y年%m月%d日%H时%M分%S秒",
+        "%Y年%m月%d日 %H:%M:%S",
+        "%Y-%m-%d %H:%M:%S",
+    ):
         try:
             return datetime.strptime(text, fmt).date().isoformat()
         except ValueError:
@@ -113,11 +121,11 @@ ALIASES = {
     "content_id": ["contentid", "内容id", "内容编号", "作品编号"],
     "note_id": ["noteid", "笔记id", "笔记编号", "作品id"],
     "title": ["title", "标题", "笔记标题", "作品标题", "内容标题"],
-    "publish_date": ["publishdate", "发布日期", "发布时间", "首发时间"],
-    "followers": ["followers", "粉丝数", "总粉丝", "粉丝总数"],
-    "followers_delta": ["followersdelta", "粉丝变化", "净涨粉", "粉丝增量"],
+    "publish_date": ["publishdate", "发布日期", "发布时间", "首发时间", "首次发布时间"],
+    "followers": ["followers", "粉丝", "粉丝数", "总粉丝", "粉丝总数", "账号粉丝"],
+    "followers_delta": ["followersdelta", "粉丝变化", "净增粉丝", "净涨粉", "粉丝增量"],
     "impressions": ["impressions", "曝光", "曝光数", "曝光量", "展示次数"],
-    "views": ["views", "阅读", "阅读数", "阅读量", "观看", "观看次数", "播放量"],
+    "views": ["views", "阅读", "阅读数", "阅读量", "观看", "观看次数", "观看量", "播放量"],
     "profile_views": ["profileviews", "主页访问", "主页访问量", "主页浏览"],
     "likes": ["likes", "点赞", "点赞数", "点赞量"],
     "favorites": ["favorites", "收藏", "收藏数", "收藏量", "saves"],
@@ -474,6 +482,7 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
     master = load_content_master(project_root)
     account_rows: List[Dict[str, Any]] = []
     note_rows: List[Dict[str, Any]] = []
+    supplemental_by_date: Dict[str, Dict[str, Any]] = {}
     sources: List[str] = []
     warnings: List[str] = []
     unmatched_titles: List[str] = []
@@ -485,7 +494,23 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
             if kind == "ignore":
                 continue
             sources.append(f"{path.name}:{table_name}")
-            if kind == "account":
+            if path.name.startswith("visible-account-metrics") and kind == "account":
+                # 小红书「近 7 日观看数据」官方导出不含粉丝等账号总览指标，
+                # 采集器在抓到导出后还会额外抓一次账号总览卡片，写到
+                # visible-account-metrics.csv。这里把它当作**补充**数据：每行
+                # 的非空字段会合并到同日账号行（同一日期不会因此变成 2 行），
+                # 如果当天根本没有导出，再退化为独立账号行。
+                for raw in rows:
+                    row = canonicalize_row(raw)
+                    date_str = parse_date(row.get("snapshot_date"), "snapshot_date") or default_date
+                    patch = {m: to_number(row.get(m)) for m in ACCOUNT_METRICS if to_number(row.get(m)) is not None}
+                    if not patch:
+                        continue
+                    existing_patch = supplemental_by_date.setdefault(date_str, {})
+                    for key, value in patch.items():
+                        if existing_patch.get(key) is None:
+                            existing_patch[key] = value
+            elif kind == "account":
                 account_rows.extend(normalize_account_rows(rows, default_date))
             else:
                 # The visible-table fallback has no stable note ID. Keep its raw
@@ -500,6 +525,19 @@ def import_exports(project_root: Path, source: Path, import_date: Optional[str] 
                         unmatched_titles if allow_unmatched else None,
                     )
                 )
+    if supplemental_by_date:
+        if account_rows:
+            for date_str, patch in supplemental_by_date.items():
+                target = next((row for row in account_rows if str(row.get("date")) == date_str), None)
+                if target is None:
+                    target = {"date": date_str, "period_start": None, "period_end": None, "metric_window": "daily"}
+                    account_rows.append(target)
+                for key, value in patch.items():
+                    if target.get(key) is None:
+                        target[key] = value
+        else:
+            for date_str, patch in supplemental_by_date.items():
+                account_rows.append({"date": date_str, "period_start": None, "period_end": None, "metric_window": "daily", **patch})
     if unmatched_titles:
         warnings.append(
             f"页面采集有 {len(unmatched_titles)} 条笔记未匹配内容主表，已保留在私有 CSV、暂不进入分析："
@@ -685,21 +723,26 @@ def _series_rows(master: Mapping[str, Any], content_results: Sequence[Mapping[st
     grouped: Dict[str, List[Mapping[str, Any]]] = defaultdict(list)
     for item in content_results:
         grouped[str(item["series"])].append(item)
-    counts = {window: sum(item["lifecycle"].get(window) is not None for item in content_results) for window in WINDOWS}
-    comparison_window = max((window for window in WINDOWS if counts[window]), key=lambda window: (counts[window], WINDOWS[window]), default=None)
-    fair_views = []
-    for item in content_results:
-        bundle = item["lifecycle"].get(comparison_window) if comparison_window else None
-        if bundle and bundle.get("views") is not None:
-            fair_views.append(float(bundle["views"]))
-    viral_threshold = _percentile_80(fair_views)
     output = []
     known_series = [item["name"] for item in master.get("series", [])]
     for series_name in [*known_series, *sorted(set(grouped) - set(known_series))]:
         items = grouped.get(series_name, [])
+        # 每个系列按自己可用的最长时间窗取样本，避免老系列把全局窗口拉到 30d
+        # 把发布不足一个月的新系列（比如刚开的母婴）整列清零。
+        counts = {window: sum(item["lifecycle"].get(window) is not None for item in items) for window in WINDOWS}
+        comparison_window = max(
+            (window for window in WINDOWS if counts[window]),
+            key=lambda window: (counts[window], WINDOWS[window]),
+            default=None,
+        )
         fair_bundles = [item["lifecycle"].get(comparison_window) if comparison_window else None for item in items]
         fair_bundles = [bundle for bundle in fair_bundles if bundle]
-        viral_count = sum(1 for bundle in fair_bundles if viral_threshold is not None and bundle.get("views") is not None and bundle["views"] >= viral_threshold)
+        fair_views = [float(bundle["views"]) for bundle in fair_bundles if bundle.get("views") is not None]
+        viral_threshold = _percentile_80(fair_views)
+        viral_count = sum(
+            1 for bundle in fair_bundles
+            if viral_threshold is not None and bundle.get("views") is not None and bundle["views"] >= viral_threshold
+        )
         output.append({
             "series": series_name,
             "sample_size": len(fair_bundles),
