@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T09:47:40+08:00",
+  "generated_at": "2026-09-10T11:30:55+08:00",
   "dimensions": {
     "content_type": [
       {
         "value": "企业单拆",
-        "sample_size": 3,
-        "average_impressions": 2163.0,
+        "sample_size": 4,
+        "average_impressions": 2790.75,
         "average_views": 305.6666666666667,
         "average_favorite_rate": 0.009629191519660718,
         "average_engagement_rate": 0.058702626800230175,
@@ -77,8 +77,8 @@
       },
       {
         "value": "问题型",
-        "sample_size": 0,
-        "average_impressions": null,
+        "sample_size": 1,
+        "average_impressions": 4674.0,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
@@ -129,8 +129,8 @@
       },
       {
         "value": "零售",
-        "sample_size": 1,
-        "average_impressions": 3934.0,
+        "sample_size": 2,
+        "average_impressions": 4304.0,
         "average_views": 574.0,
         "average_favorite_rate": 0.008710801393728223,
         "average_engagement_rate": 0.04878048780487805,
@@ -171,8 +171,8 @@
       },
       {
         "value": "商超自救指南",
-        "sample_size": 1,
-        "average_impressions": 3934.0,
+        "sample_size": 2,
+        "average_impressions": 4304.0,
         "average_views": 574.0,
         "average_favorite_rate": 0.008710801393728223,
         "average_engagement_rate": 0.04878048780487805,

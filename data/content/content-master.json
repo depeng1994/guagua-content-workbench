@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-10",
   "source": "migrated from the existing embedded schedule snapshot; this is the single public content master",
   "series": [
     {
@@ -347,12 +347,12 @@
     },
     {
       "content_id": "GG-P001",
-      "publish_date": null,
+      "publish_date": "2026-09-09",
       "planned_date": null,
       "series": "看懂母婴生意",
-      "topic": "Babycare",
-      "title": "Babycare：从产品定义到家庭价值",
-      "status": "undated",
+      "topic": "被质疑“高级贴牌”，Ba",
+      "title": "被质疑“高级贴牌”，Babycare凭什么做到百亿？",
+      "status": "published",
       "xiaohongshu_note_id": null,
       "xiaohongshu_url": null,
       "content_type": "企业单拆",
@@ -369,8 +369,8 @@
       "publish_date": "2026-09-07",
       "planned_date": null,
       "series": "看懂母婴生意",
-      "topic": "全棉时代",
-      "title": "全棉时代：医疗信任如何变成消费生意",
+      "topic": "棉柔巾之后，全棉时代的增",
+      "title": "棉柔巾之后，全棉时代的增长靠什么？📊",
       "status": "published",
       "xiaohongshu_note_id": null,
       "xiaohongshu_url": null,
