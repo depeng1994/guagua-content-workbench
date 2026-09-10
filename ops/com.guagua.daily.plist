@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.guagua.daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench/local-data/collector-venv/bin/python</string>
+        <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench/scripts/daily_run.py</string>
+        <string>--project-root</string>
+        <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench</string>
+        <string>--collect</string>
+        <string>--push</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/juding/Desktop/AI工程目录/04 企业解读/guagua-content-workbench</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/juding/Library/Logs/guagua-daily.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/juding/Library/Logs/guagua-daily.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+</dict>
+</plist>
