@@ -40,7 +40,40 @@ _state = {
     "pid": None,
     "error": None,
     "trigger": None,  # 最近一次触发来源，便于排查
+    # 方案 B：采集与推送解耦。采集完成即算成功，推送在后台线程里继续重试。
+    "deploying": False,     # 后台是否正在重试推送
+    "deploy_error": None,   # 最近一次推送失败原因
+    "deploy_attempts": 0,   # 已重试次数
 }
+
+PUSH_MAX_ATTEMPTS = 60   # 最多重试 60 次
+PUSH_INTERVAL = 30       # 每次间隔 30 秒 => 最长约 30 分钟
+
+
+def _ahead_count() -> int:
+    """本地相对 origin/main 领先几个 commit；>0 表示还有数据没推上去。"""
+    try:
+        r = subprocess.run(
+            ["git", "rev-list", "--count", "origin/main..HEAD"],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        if r.returncode == 0:
+            return int(r.stdout.strip() or "0")
+    except Exception:
+        pass
+    return 0
+
+
+def _append_log(text: str) -> None:
+    """把后台推送的进展追加到运行日志，前端浮层能看到。"""
+    try:
+        with open(RUN_LOG, "a", encoding="utf-8") as fh:
+            fh.write(text)
+    except OSError:
+        pass
 
 
 def _public_state() -> dict:
@@ -51,6 +84,7 @@ def _public_state() -> dict:
         end = snap["finished_at"] or time.time()
         snap["elapsed"] = round(end - snap["started_at"], 1)
     snap["log_exists"] = os.path.exists(RUN_LOG)
+    snap["ahead"] = _ahead_count()
     return snap
 
 
@@ -106,6 +140,9 @@ def _worker() -> None:
             code = proc.wait()
             fh.write("\n== 退出码 %s ==\n" % code)
             fh.flush()
+        # 方案 B：采集完成即成功。若还有没推上去的 commit，交给后台线程继续重试，
+        # 用户看到的是「已完成 / 部署中」，不会被代理抖动误导成采集失败。
+        pending = _ahead_count()
         with _lock:
             _state.update(
                 running=False,
@@ -113,6 +150,12 @@ def _worker() -> None:
                 exit_code=code,
                 pid=None,
             )
+        if pending > 0:
+            _append_log(
+                "\n[部署中] 采集已完成，还有 %d 个提交待推送，"
+                "触发服务会在后台持续重试（每 %d 秒一次）。\n" % (pending, PUSH_INTERVAL)
+            )
+            threading.Thread(target=_push_worker, daemon=True).start()
     except Exception as exc:  # noqa: BLE001 - 任何异常都要让状态回到 idle
         with _lock:
             _state.update(
@@ -122,6 +165,58 @@ def _worker() -> None:
                 pid=None,
                 error=repr(exc),
             )
+
+
+def _push_worker() -> None:
+    """后台持续重试 git push，直到成功或用尽次数。
+
+    代理（127.0.0.1:xxxxx）偶发 502 甚至整个进程消失，
+    所以这里要能扛住几十分钟的不可用，而不是像流水线里那样只试 5 次。
+    """
+    with _lock:
+        if _state["deploying"]:
+            return  # 已有推送线程在跑，不重复
+        _state.update(deploying=True, deploy_error=None, deploy_attempts=0)
+
+    for attempt in range(1, PUSH_MAX_ATTEMPTS + 1):
+        if _ahead_count() == 0:
+            with _lock:
+                _state.update(deploying=False, deploy_error=None)
+            _append_log("[部署中] 没有待推送的提交，跳过。\n")
+            return
+
+        pushed = None
+        try:
+            pushed = subprocess.run(
+                ["git", "push", "origin", "main"],
+                cwd=PROJECT_ROOT,
+                capture_output=True,
+                text=True,
+                timeout=300,
+            )
+            err = (pushed.stderr or pushed.stdout or "").strip()
+        except Exception as exc:  # noqa: BLE001
+            err = repr(exc)
+
+        if pushed is not None and pushed.returncode == 0:
+            with _lock:
+                _state.update(
+                    deploying=False, deploy_error=None, deploy_attempts=attempt
+                )
+            _append_log("[部署中] 第 %d 次重试成功，已推送到 origin/main。\n" % attempt)
+            return
+
+        with _lock:
+            _state.update(deploying=True, deploy_error=err, deploy_attempts=attempt)
+        _append_log("[部署中] 第 %d 次重试失败：%s\n" % (attempt, err[:200]))
+        time.sleep(PUSH_INTERVAL)
+
+    with _lock:
+        _state.update(deploying=False)
+    _append_log(
+        "[部署中] 已重试 %d 次仍未成功，稍后可再次点击「更新数据」，"
+        "或在项目目录手动执行 git push origin main。\n" % PUSH_MAX_ATTEMPTS
+    )
 
 
 def _cors(handler: BaseHTTPRequestHandler) -> None:

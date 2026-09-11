@@ -78,7 +78,14 @@ def commit_and_push(cwd: Path, when: str, remote: str, branch: str) -> None:
         if attempt < 5:
             import time
             time.sleep(attempt * 5)
-    raise StepError(f"推送失败：{last_err}")
+    # 方案 B（采集与推送解耦）：推送失败不再让整条流水线失败——
+    # 采集已经完成、数据已经安全 commit 在本地，剩下的推送交给触发服务
+    # 在后台继续重试。用户看到的是「已完成 / 部署中」，不会被代理抖动误导。
+    print(
+        "\n[待推送] 采集与提交已完成，数据已安全保存在本地；"
+        f"推送暂未成功（代理可能不通）：{last_err}"
+    )
+    print("[待推送] 触发服务会在后台继续重试，无需重新采集。")
 
 
 def main() -> int:

@@ -14,7 +14,7 @@
 
   var BASE = "http://127.0.0.1:8899";
   var POLL_MS = 3000;
-  var MAX_WAIT_MS = 20 * 60 * 1000;
+  var MAX_WAIT_MS = 35 * 60 * 1000; // 采集 + 后台推送重试（最长约 30 分钟）的总上限
   var busy = false;
   var btn = null;
   var panel = null;
@@ -199,22 +199,51 @@
             var elapsed = st.elapsed != null ? st.elapsed : Math.round((Date.now() - startedAt) / 1000);
             if (st.running) {
               setLabel("采集中…");
-              show("on", "正在采集 / 分析 / 推送，已用时 " + elapsed + " 秒", tailLines(st.tail, 6));
+              show("on", "正在采集 / 分析，已用时 " + elapsed + " 秒", tailLines(st.tail, 6));
               if (Date.now() - startedAt > MAX_WAIT_MS) {
-                finish(false, "采集超时（超过 20 分钟），请查看本机日志。", st);
+                finish(false, "采集超时（超过 35 分钟），请查看本机日志。", st);
                 resolve();
                 return;
               }
               setTimeout(tick, POLL_MS);
               return;
             }
-            if (st.exit_code === 0) {
-              finish(true, "采集完成，正在部署到线上…", st);
-              resolve();
-            } else {
+
+            // 采集已结束
+            if (st.exit_code !== 0) {
               finish(false, "采集失败（退出码 " + st.exit_code + "）", st);
               resolve();
+              return;
             }
+
+            // 采集成功 —— 数据已在本地 commit，检查是否还有提交没推到线上。
+            // 推送失败（代理抖动）不算采集失败，触发服务会在后台持续重试。
+            if (st.ahead > 0) {
+              setLabel("部署中…");
+              var deployMsg = st.deploying
+                ? "采集完成，正在部署到线上（后台第 " + st.deploy_attempts + " 次重试）…"
+                : "采集完成，等待部署…";
+              show(
+                "on",
+                deployMsg + "\n还有 " + st.ahead + " 个提交待推送，数据已安全保存在本地。",
+                tailLines(st.tail, 6)
+              );
+              if (Date.now() - startedAt > MAX_WAIT_MS) {
+                finish(
+                  true,
+                  "采集完成，但线上部署仍在后台重试（代理不通时常见），稍后刷新即可看到新数据。",
+                  st
+                );
+                resolve();
+                return;
+              }
+              setTimeout(tick, POLL_MS);
+              return;
+            }
+
+            // 已全部推送到线上
+            finish(true, "采集完成，已推送到线上", st);
+            resolve();
           })
           .catch(reject);
       }
