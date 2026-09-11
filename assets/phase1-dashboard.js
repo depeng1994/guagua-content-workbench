@@ -393,7 +393,7 @@
 
     <div class="review-comparison-grid">
       <section class="review-panel review-series" aria-labelledby="review-series-title">
-        <div class="review-panel-head"><div><h3 id="review-series-title">系列有效性</h3><p>当前为${seriesWindowLabel}；1 篇是单篇信号，2 篇是初步趋势，${SERIES_MIN_SAMPLE} 篇起形成系列结论。</p></div><div class="review-control-stack">
+        <div class="review-panel-head"><div><h3 id="review-series-title">系列有效性</h3><p>${seriesWindowLabel}：1 篇单篇信号 · 2 篇初步趋势 · ${SERIES_MIN_SAMPLE} 篇起成系列</p></div><div class="review-control-stack">
           <div class="review-segment compact" role="group" aria-label="系列观察窗口">${segmentButton("series-window", "7d", "7 天快速", state.seriesWindow)}${segmentButton("series-window", "30d", "30 天成熟", state.seriesWindow)}</div>
           <div class="review-segment compact" role="group" aria-label="系列比较指标">${Object.entries(seriesMetricLabels).map(([value, label]) => segmentButton("series-metric", value, label, state.seriesMetric)).join("")}</div>
         </div></div>
