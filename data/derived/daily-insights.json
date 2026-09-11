@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T15:42:55+08:00",
-  "date": "2026-09-10",
+  "generated_at": "2026-09-11T09:02:12+08:00",
+  "date": "2026-09-11",
   "insights": [
     {
       "type": "positive",
@@ -11,7 +11,7 @@
     {
       "type": "attention",
       "title": "发现数据修正或缺失",
-      "detail": "GG-001 最近两个快照不连续，不计算日增量。"
+      "detail": "GG-012 最近两个快照不连续，不计算日增量。"
     }
   ]
 }

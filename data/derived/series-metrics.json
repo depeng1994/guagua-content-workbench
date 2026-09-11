@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T15:42:55+08:00",
+  "generated_at": "2026-09-11T09:02:12+08:00",
   "series": [
     {
       "series": "商超自救指南",
@@ -42,7 +42,7 @@
       "average_engagement_rate": 0.13561387198557584,
       "average_followers_gained": 4.5,
       "follow_efficiency": 0.009698275862068966,
-      "long_tail_ability": null,
+      "long_tail_ability": 0.12452830188679245,
       "viral_rate": 0.5,
       "viral_threshold_views": 464.0,
       "comparison_window": "72h"
