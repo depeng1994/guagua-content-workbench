@@ -93,12 +93,15 @@
    经营复盘看板 · 标签字号
    ========================================================================== */
 
-/* 笔记明细表的系列标签：缩小到 12px，与正文标题（14px）拉开一档 */
+/* 笔记明细表的系列标签：缩小到 12px，与正文标题（14px）拉开一档
+   注意：button 元素被 phase1-dashboard.css 里的 `button { font: inherit }`
+   干扰了 cascade 行为，相同 specificity 的 class 规则实际没胜出继承的 16px，
+   所以必须加 !important 才能生效（已用 Playwright 验证）。 */
 .series-tag.table-series {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 /* 单篇有效性头部的联动按钮（系列名 ×）：12px 与标题协调 */
 .review-clear-link {
-  font-size: 12px;
+  font-size: 12px !important;
 }
