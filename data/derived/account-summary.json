@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T09:02:12+08:00",
+  "generated_at": "2026-09-11T09:02:39+08:00",
   "latest_date": "2026-09-11",
   "latest": {
     "date": "2026-09-11",
@@ -19,8 +19,8 @@
     "period_end": "2026-09-11",
     "coverage_days": 7,
     "metric_window": "daily",
-    "impressions": 92525.0,
-    "views": 12644.0,
+    "impressions": 58905.0,
+    "views": 7888.0,
     "new_followers": null,
     "publish_count": 2
   },
@@ -183,12 +183,17 @@
       "period_start": null,
       "period_end": null,
       "metric_window": "daily",
-      "followers_delta": 37,
-      "impressions": 39000,
-      "views": 5629,
-      "profile_views": 195,
-      "engagements": 229,
-      "new_followers": 37
+      "followers": null,
+      "followers_delta": null,
+      "impressions": 5380.0,
+      "views": 873.0,
+      "profile_views": null,
+      "likes": null,
+      "favorites": null,
+      "comments": null,
+      "shares": null,
+      "engagements": null,
+      "new_followers": null
     },
     {
       "date": "2026-09-11",
