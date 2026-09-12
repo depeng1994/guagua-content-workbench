@@ -137,6 +137,31 @@ def main() -> int:
             run_step("导入导出文件", cmd, root)
             steps.append("import")
 
+        # 同步飞书排期：规划以飞书为准。先拉最新排期，再合并进内容主表；
+        # 已发布的条目不会被飞书覆盖，随后由 apply_publication_status 按小红书定状态。
+        try:
+            run_step(
+                "拉取飞书排期",
+                [python, str(SCRIPTS / "fetch_feishu_schedule.py"), "--project-root", str(root)],
+                root,
+            )
+            run_step(
+                "同步飞书规划到主表",
+                [
+                    python,
+                    str(SCRIPTS / "sync_feishu_schedule.py"),
+                    "--project-root",
+                    str(root),
+                    "--add-new",
+                    "--no-site-sync",
+                ],
+                root,
+            )
+            steps.append("sync-feishu")
+        except StepError as exc:
+            # 飞书连接器不可用等情况下不该让整条流水线挂掉——采集小红书才是核心
+            print(f"[跳过] 飞书排期同步失败：{exc}")
+
         run_step(
             "翻转发布状态",
             [python, str(SCRIPTS / "apply_publication_status.py"), "--project-root", str(root)],

@@ -63,6 +63,15 @@ def normalize_key(name: str) -> str:
     return re.sub(r"[\s_\-（）()]+", "", str(name or "")).lower()
 
 
+# 主题名归一化：飞书表可能写「Manner×M Stand」，主表写「Manner／M Stand」；
+# 去掉这些分隔符后再比对，能明显提高匹配率。
+_NORM_STRIP = re.compile(r"[\s_\-（）()×／/｜|·・—–&]+")
+
+
+def norm_text(text: str) -> str:
+    return _NORM_STRIP.sub("", str(text or "")).lower()
+
+
 def map_columns(header: List[str]) -> Dict[str, int]:
     normalized = [normalize_key(h) for h in header]
     mapping: Dict[str, int] = {}
@@ -178,6 +187,11 @@ def main() -> int:
     parser.add_argument("--file", type=Path, help="排期表导出文件，默认取 imports/ 下最新一份")
     parser.add_argument("--add-new", action="store_true", help="表里新增但主表没有的条目，自动建档")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--no-site-sync",
+        action="store_true",
+        help="只更新内容主表，不重刷页面（由调用方统一刷，避免重复）",
+    )
     parser.add_argument("--push", action="store_true", help="同步后自动 commit + push")
     args = parser.parse_args()
 
@@ -198,6 +212,14 @@ def main() -> int:
     contents = master.setdefault("contents", [])
     by_id = {item.get("content_id"): item for item in contents}
     by_title = {str(item.get("title", "")).strip(): item for item in contents}
+    # 飞书表的「内容」列就是主表的 topic，用它做主要匹配键
+    by_topic = {}
+    by_topic_norm = {}
+    for item in contents:
+        existing_topic = str(item.get("topic") or "").strip()
+        if existing_topic:
+            by_topic.setdefault(existing_topic, item)
+            by_topic_norm.setdefault(norm_text(existing_topic), item)
 
     updated: List[str] = []
     created: List[str] = []
@@ -206,10 +228,23 @@ def main() -> int:
     for row in rows:
         title = str(row.get("title") or "").strip()
         content_id = str(row.get("content_id") or "").strip() or None
+        topic = str(row.get("topic") or "").strip()
 
         target = by_id.get(content_id) if content_id else None
         if target is None and title:
             target = by_title.get(title)
+        if target is None and topic:
+            target = by_topic.get(topic)
+        if target is None and topic:
+            target = by_topic_norm.get(norm_text(topic))
+        if target is None and topic:
+            # 包含匹配：飞书「山姆」↔ 主表「山姆会员费」、飞书「安踏品牌局总览」↔「安踏品牌局」
+            needle = norm_text(topic)
+            if len(needle) >= 2:
+                for key, item in by_topic_norm.items():
+                    if len(key) >= 2 and (key.startswith(needle) or needle.startswith(key)):
+                        target = item
+                        break
         if target is None:
             if not (args.add_new and title):
                 skipped.append(title or content_id or "未命名")
@@ -237,18 +272,21 @@ def main() -> int:
             created.append(target["content_id"])
 
         changed = False
-        for field in ("series", "topic", "title"):
-            value = row.get(field)
-            if value is not None and str(value).strip() and str(value).strip() != str(target.get(field) or ""):
-                if field == "series":
-                    ensure_series(master, str(value).strip())
-                target[field] = str(value).strip()
-                changed = True
+        # 已发布的以小红书为准：不用飞书的规划值覆盖已发布内容的标题/分类/计划日期
+        already_published = target.get("status") == "published"
+        if not already_published:
+            for field in ("series", "topic", "title"):
+                value = row.get(field)
+                if value is not None and str(value).strip() and str(value).strip() != str(target.get(field) or ""):
+                    if field == "series":
+                        ensure_series(master, str(value).strip())
+                    target[field] = str(value).strip()
+                    changed = True
 
-        planned = normalize_date(row.get("planned_date"))
-        if planned and planned != target.get("planned_date"):
-            target["planned_date"] = planned
-            changed = True
+            planned = normalize_date(row.get("planned_date"))
+            if planned and planned != target.get("planned_date"):
+                target["planned_date"] = planned
+                changed = True
 
         raw_status = str(row.get("status") or "").strip()
         mapped = STATUS_MAP.get(raw_status)
@@ -287,16 +325,19 @@ def main() -> int:
     master_path.write_text(json.dumps(master, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     python = sys.executable or "python3"
-    for script in ("sync_content_master.py", "sanitize_public_snapshot.py"):
-        result = subprocess.run(
-            [python, str(root / "scripts" / script), "--project-root", str(root)],
-            cwd=str(root),
-            capture_output=True,
-            text=True,
-        )
-        if result.returncode != 0:
-            raise SystemExit(f"{script} 失败：{result.stderr.strip()}")
-    summary["site_synced"] = True
+    if args.no_site_sync:
+        summary["site_synced"] = False
+    else:
+        for script in ("sync_content_master.py", "sanitize_public_snapshot.py"):
+            result = subprocess.run(
+                [python, str(root / "scripts" / script), "--project-root", str(root)],
+                cwd=str(root),
+                capture_output=True,
+                text=True,
+            )
+            if result.returncode != 0:
+                raise SystemExit(f"{script} 失败：{result.stderr.strip()}")
+        summary["site_synced"] = True
 
     if args.push:
         subprocess.run(["git", "add", "data", "index.html"], cwd=str(root), check=False)
