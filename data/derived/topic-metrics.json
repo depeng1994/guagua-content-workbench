@@ -1,183 +1,183 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T09:02:39+08:00",
+  "generated_at": "2026-09-12T10:23:19+08:00",
   "dimensions": {
     "content_type": [
       {
         "value": "企业单拆",
-        "sample_size": 1,
-        "average_impressions": 5988.0,
-        "average_views": 844.0,
-        "average_favorite_rate": 0.014218009478672985,
-        "average_engagement_rate": 0.061611374407582936,
-        "follow_efficiency": 0.0071090047393364926,
-        "comparison_window": "7d"
+        "sample_size": 4,
+        "average_impressions": 2790.75,
+        "average_views": 391.5,
+        "average_favorite_rate": 0.011844389787665416,
+        "average_engagement_rate": 0.06213174667952549,
+        "follow_efficiency": 0.004003076295345829,
+        "comparison_window": "30d"
       },
       {
         "value": "企业对比",
-        "sample_size": 2,
-        "average_impressions": 26875.0,
-        "average_views": 6669.5,
-        "average_favorite_rate": 0.014440398088371626,
-        "average_engagement_rate": 0.05117662632216774,
-        "follow_efficiency": 0.007068213453999174,
-        "comparison_window": "7d"
-      },
-      {
-        "value": "商业模式",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
+      },
+      {
+        "value": "商业模式",
+        "sample_size": 1,
+        "average_impressions": 5906.0,
+        "average_views": 768.0,
+        "average_favorite_rate": 0.013020833333333334,
+        "average_engagement_rate": 0.0390625,
+        "follow_efficiency": 0.0013020833333333333,
+        "comparison_window": "30d"
       },
       {
         "value": "行业总览",
-        "sample_size": 1,
-        "average_impressions": 3175.0,
-        "average_views": 530.0,
-        "average_favorite_rate": 0.035849056603773584,
-        "average_engagement_rate": 0.10377358490566038,
-        "follow_efficiency": 0.020754716981132074,
-        "comparison_window": "7d"
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
       },
       {
         "value": "账号介绍",
-        "sample_size": 1,
-        "average_impressions": 877.0,
-        "average_views": 43.0,
-        "average_favorite_rate": 0.0,
-        "average_engagement_rate": 0.09302325581395349,
-        "follow_efficiency": 0.0,
-        "comparison_window": "7d"
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
       }
     ],
     "title_type": [
       {
         "value": "为什么型",
-        "sample_size": 4,
-        "average_impressions": 15728.25,
-        "average_views": 3678.25,
-        "average_favorite_rate": 0.019736965564797454,
-        "average_engagement_rate": 0.0669345529893947,
-        "follow_efficiency": 0.010500037157116728,
-        "comparison_window": "7d"
+        "sample_size": 1,
+        "average_impressions": 3934.0,
+        "average_views": 574.0,
+        "average_favorite_rate": 0.008710801393728223,
+        "average_engagement_rate": 0.04878048780487805,
+        "follow_efficiency": 0.005226480836236934,
+        "comparison_window": "30d"
       },
       {
         "value": "数字型",
-        "sample_size": 0,
-        "average_impressions": null,
-        "average_views": null,
-        "average_favorite_rate": null,
-        "average_engagement_rate": null,
-        "follow_efficiency": null,
-        "comparison_window": "7d"
+        "sample_size": 1,
+        "average_impressions": 5906.0,
+        "average_views": 768.0,
+        "average_favorite_rate": 0.013020833333333334,
+        "average_engagement_rate": 0.0390625,
+        "follow_efficiency": 0.0013020833333333333,
+        "comparison_window": "30d"
       },
       {
         "value": "问题型",
         "sample_size": 1,
-        "average_impressions": 877.0,
-        "average_views": 43.0,
-        "average_favorite_rate": 0.0,
-        "average_engagement_rate": 0.09302325581395349,
-        "follow_efficiency": 0.0,
-        "comparison_window": "7d"
+        "average_impressions": 4674.0,
+        "average_views": 649.0,
+        "average_favorite_rate": 0.01848998459167951,
+        "average_engagement_rate": 0.0724191063174114,
+        "follow_efficiency": 0.01078582434514638,
+        "comparison_window": "30d"
       },
       {
         "value": "陈述型",
-        "sample_size": 0,
-        "average_impressions": null,
-        "average_views": null,
-        "average_favorite_rate": null,
-        "average_engagement_rate": null,
-        "follow_efficiency": null,
-        "comparison_window": "7d"
+        "sample_size": 2,
+        "average_impressions": 1277.5,
+        "average_views": 171.5,
+        "average_favorite_rate": 0.010088386582626965,
+        "average_engagement_rate": 0.06366369629790625,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
       }
     ],
     "industry": [
       {
         "value": "母婴",
-        "sample_size": 1,
-        "average_impressions": 3175.0,
-        "average_views": 530.0,
-        "average_favorite_rate": 0.035849056603773584,
-        "average_engagement_rate": 0.10377358490566038,
-        "follow_efficiency": 0.020754716981132074,
-        "comparison_window": "7d"
-      },
-      {
-        "value": "汽车",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
+      },
+      {
+        "value": "汽车",
+        "sample_size": 1,
+        "average_impressions": 1258.0,
+        "average_views": 214.0,
+        "average_favorite_rate": 0.004672897196261682,
+        "average_engagement_rate": 0.04205607476635514,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
       },
       {
         "value": "消费",
         "sample_size": 1,
-        "average_impressions": 877.0,
-        "average_views": 43.0,
-        "average_favorite_rate": 0.0,
-        "average_engagement_rate": 0.09302325581395349,
+        "average_impressions": 1297.0,
+        "average_views": 129.0,
+        "average_favorite_rate": 0.015503875968992248,
+        "average_engagement_rate": 0.08527131782945736,
         "follow_efficiency": 0.0,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
       },
       {
         "value": "零售",
+        "sample_size": 3,
+        "average_impressions": 4838.0,
+        "average_views": 663.6666666666666,
+        "average_favorite_rate": 0.013407206439580354,
+        "average_engagement_rate": 0.05342069804076315,
+        "follow_efficiency": 0.005771462838238883,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "餐饮",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
-      },
-      {
-        "value": "餐饮",
-        "sample_size": 3,
-        "average_impressions": 19912.666666666668,
-        "average_views": 4727.666666666667,
-        "average_favorite_rate": 0.014366268551805414,
-        "average_engagement_rate": 0.05465487568397281,
-        "follow_efficiency": 0.007081810549111614,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
       }
     ],
     "series": [
       {
         "value": "其他内容",
         "sample_size": 1,
-        "average_impressions": 877.0,
-        "average_views": 43.0,
-        "average_favorite_rate": 0.0,
-        "average_engagement_rate": 0.09302325581395349,
+        "average_impressions": 1297.0,
+        "average_views": 129.0,
+        "average_favorite_rate": 0.015503875968992248,
+        "average_engagement_rate": 0.08527131782945736,
         "follow_efficiency": 0.0,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
       },
       {
         "value": "咖啡的N种活法",
-        "sample_size": 3,
-        "average_impressions": 19912.666666666668,
-        "average_views": 4727.666666666667,
-        "average_favorite_rate": 0.014366268551805414,
-        "average_engagement_rate": 0.05465487568397281,
-        "follow_efficiency": 0.007081810549111614,
-        "comparison_window": "7d"
-      },
-      {
-        "value": "商超自救指南",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
+      },
+      {
+        "value": "商超自救指南",
+        "sample_size": 3,
+        "average_impressions": 4838.0,
+        "average_views": 663.6666666666666,
+        "average_favorite_rate": 0.013407206439580354,
+        "average_engagement_rate": 0.05342069804076315,
+        "follow_efficiency": 0.005771462838238883,
+        "comparison_window": "30d"
       },
       {
         "value": "安踏品牌局",
@@ -187,27 +187,27 @@
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
       },
       {
         "value": "智驾天团",
+        "sample_size": 1,
+        "average_impressions": 1258.0,
+        "average_views": 214.0,
+        "average_favorite_rate": 0.004672897196261682,
+        "average_engagement_rate": 0.04205607476635514,
+        "follow_efficiency": 0.0,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "看懂母婴生意",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
         "average_favorite_rate": null,
         "average_engagement_rate": null,
         "follow_efficiency": null,
-        "comparison_window": "7d"
-      },
-      {
-        "value": "看懂母婴生意",
-        "sample_size": 1,
-        "average_impressions": 3175.0,
-        "average_views": 530.0,
-        "average_favorite_rate": 0.035849056603773584,
-        "average_engagement_rate": 0.10377358490566038,
-        "follow_efficiency": 0.020754716981132074,
-        "comparison_window": "7d"
+        "comparison_window": "30d"
       }
     ]
   }
