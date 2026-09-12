@@ -442,6 +442,10 @@ def main() -> int:
     sys.stderr.write(
         "[trigger] 监听 http://%s:%s  项目=%s\n" % (HOST, PORT, PROJECT_ROOT)
     )
+    # 启动时若还有未推送的提交（比如上次推送失败后服务重启），自动补偿推送
+    if _ahead_count() > 0:
+        sys.stderr.write("[trigger] 检测到未推送的提交，启动后台补偿推送\n")
+        threading.Thread(target=_push_worker, daemon=True).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
