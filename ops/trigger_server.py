@@ -19,9 +19,11 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PROJECT_ROOT = "/Users/juding/projects/guagua-content-workbench"
@@ -167,6 +169,89 @@ def _worker() -> None:
             )
 
 
+def _listening_ports() -> list:
+    """本机正在监听的 TCP 端口。用于找 WorkBuddy 那些会漂移的本地代理。"""
+    ports = set()
+    try:
+        r = subprocess.run(
+            ["lsof", "-nP", "-iTCP", "-sTCP:LISTEN"],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        for line in r.stdout.splitlines()[1:]:
+            m = re.search(r":(\d+)\s*\(LISTEN\)", line)
+            if m:
+                ports.add(int(m.group(1)))
+    except Exception:
+        pass
+    return sorted(ports)
+
+
+def _proxy_candidates() -> list:
+    """收集候选代理：环境变量（启动快照）→ 系统代理 → 本地监听端口。
+
+    本机代理端口会频繁漂移（实测 62775 → 62842 → 59225 → 50500 …），
+    而服务进程的环境变量是启动时的快照、不会更新，所以必须重新探测。
+    """
+    cands = []
+    for var in ("HTTPS_PROXY", "https_proxy", "HTTP_PROXY", "http_proxy"):
+        v = os.environ.get(var)
+        if v and v not in cands:
+            cands.append(v)
+    try:
+        out = subprocess.run(
+            ["scutil", "--proxy"], capture_output=True, text=True, timeout=5
+        ).stdout
+        h = re.search(r"HTTPSProxy\s*:\s*(\S+)", out)
+        p = re.search(r"HTTPSPort\s*:\s*(\d+)", out)
+        if h and p:
+            u = "http://%s:%s" % (h.group(1), p.group(1))
+            if u not in cands:
+                cands.append(u)
+    except Exception:
+        pass
+    for port in _listening_ports():
+        u = "http://127.0.0.1:%d" % port
+        if u not in cands:
+            cands.append(u)
+    return cands[:14]  # 限制数量，避免探测太慢
+
+
+def _proxy_works(proxy: str) -> bool:
+    """用 git ls-remote 实测该代理能否连上 GitHub（和真实 push 同一条路）。"""
+    env = dict(os.environ)
+    env.update(HTTPS_PROXY=proxy, https_proxy=proxy, HTTP_PROXY=proxy, http_proxy=proxy)
+    try:
+        r = subprocess.run(
+            ["git", "ls-remote", "origin", "main"],
+            cwd=PROJECT_ROOT,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+        return r.returncode == 0
+    except Exception:
+        return False
+
+
+def _pick_proxy():
+    """并发探测候选代理，返回第一个能连上 GitHub 的；都没有则 None。"""
+    cands = _proxy_candidates()
+    if not cands:
+        return None
+    try:
+        with ThreadPoolExecutor(max_workers=min(8, len(cands))) as ex:
+            results = list(ex.map(_proxy_works, cands))
+    except Exception:
+        return None
+    for c, ok in zip(cands, results):
+        if ok:
+            return c
+    return None
+
+
 def _push_worker() -> None:
     """后台持续重试 git push，直到成功或用尽次数。
 
@@ -185,11 +270,21 @@ def _push_worker() -> None:
             _append_log("[部署中] 没有待推送的提交，跳过。\n")
             return
 
+        # 每次都重新探测可用代理。代理端口会漂移（实测 62775→62842→59225→50500），
+        # 而本进程的环境变量是启动时的快照、不会更新，直接用必然敲旧端口。
+        proxy = _pick_proxy()
+        env = dict(os.environ)
+        if proxy:
+            env.update(
+                HTTPS_PROXY=proxy, https_proxy=proxy, HTTP_PROXY=proxy, http_proxy=proxy
+            )
+
         pushed = None
         try:
             pushed = subprocess.run(
                 ["git", "push", "origin", "main"],
                 cwd=PROJECT_ROOT,
+                env=env,
                 capture_output=True,
                 text=True,
                 timeout=300,
@@ -203,12 +298,18 @@ def _push_worker() -> None:
                 _state.update(
                     deploying=False, deploy_error=None, deploy_attempts=attempt
                 )
-            _append_log("[部署中] 第 %d 次重试成功，已推送到 origin/main。\n" % attempt)
+            _append_log(
+                "[部署中] 第 %d 次重试成功（代理 %s），已推送到 origin/main。\n"
+                % (attempt, proxy or "环境变量")
+            )
             return
 
         with _lock:
             _state.update(deploying=True, deploy_error=err, deploy_attempts=attempt)
-        _append_log("[部署中] 第 %d 次重试失败：%s\n" % (attempt, err[:200]))
+        _append_log(
+            "[部署中] 第 %d 次重试失败（代理 %s）：%s\n"
+            % (attempt, proxy or "环境变量/未找到可用代理", err[:160])
+        )
         time.sleep(PUSH_INTERVAL)
 
     with _lock:

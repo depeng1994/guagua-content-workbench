@@ -226,11 +226,13 @@
             if (st.ahead > 0) {
               setLabel("部署中…");
               var deployMsg = st.deploying
-                ? "采集完成，正在部署到线上（后台第 " + st.deploy_attempts + " 次重试）…"
+                ? "采集完成，正在部署到线上…"
                 : "采集完成，等待部署…";
               show(
                 "on",
-                deployMsg + "\n还有 " + st.ahead + " 个提交待推送，数据已安全保存在本地。",
+                deployMsg +
+                  "\n数据已安全保存在本地；网络波动时会自动重试，无需重新采集。" +
+                  (st.ahead ? "（待推送 " + st.ahead + " 个提交）" : ""),
                 tailLines(st.tail, 6)
               );
               if (Date.now() - startedAt > MAX_WAIT_MS) {
