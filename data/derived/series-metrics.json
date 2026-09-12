@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T10:23:19+08:00",
+  "generated_at": "2026-09-12T11:42:01+08:00",
   "series": [
     {
       "series": "商超自救指南",
       "sample_size": 3,
       "average_impressions": 4838.0,
       "median_impressions": 4674.0,
-      "average_views": 663.6666666666666,
-      "average_favorite_rate": 0.013407206439580354,
-      "average_engagement_rate": 0.05342069804076315,
+      "average_views": 664.0,
+      "average_favorite_rate": 0.013401562385252945,
+      "average_engagement_rate": 0.05340376587778092,
       "average_followers_gained": 3.6666666666666665,
-      "follow_efficiency": 0.005771462838238883,
+      "follow_efficiency": 0.005770898432806142,
       "long_tail_ability": null,
       "viral_rate": 0.3333333333333333,
-      "viral_threshold_views": 768.0,
+      "viral_threshold_views": 769.0,
       "comparison_window": "30d"
     },
     {
@@ -37,14 +37,14 @@
       "sample_size": 3,
       "average_impressions": 2941.0,
       "median_impressions": 2450.0,
-      "average_views": 559.6666666666666,
-      "average_favorite_rate": 0.02453089327165375,
-      "average_engagement_rate": 0.1120664984611937,
+      "average_views": 560.6666666666666,
+      "average_favorite_rate": 0.024510557825202284,
+      "average_engagement_rate": 0.1123184811672227,
       "average_followers_gained": 6.0,
-      "follow_efficiency": 0.009290375998441458,
+      "follow_efficiency": 0.009282418649830015,
       "long_tail_ability": 0.12452830188679245,
       "viral_rate": 0.3333333333333333,
-      "viral_threshold_views": 1062.0,
+      "viral_threshold_views": 1065.0,
       "comparison_window": "72h"
     },
     {

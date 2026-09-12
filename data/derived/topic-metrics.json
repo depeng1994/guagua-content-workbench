@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T10:23:19+08:00",
+  "generated_at": "2026-09-12T11:42:01+08:00",
   "dimensions": {
     "content_type": [
       {
@@ -27,10 +27,20 @@
         "value": "商业模式",
         "sample_size": 1,
         "average_impressions": 5906.0,
-        "average_views": 768.0,
-        "average_favorite_rate": 0.013020833333333334,
-        "average_engagement_rate": 0.0390625,
-        "follow_efficiency": 0.0013020833333333333,
+        "average_views": 769.0,
+        "average_favorite_rate": 0.013003901170351105,
+        "average_engagement_rate": 0.03901170351105332,
+        "follow_efficiency": 0.0013003901170351106,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "未分类",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
         "comparison_window": "30d"
       },
       {
@@ -69,10 +79,20 @@
         "value": "数字型",
         "sample_size": 1,
         "average_impressions": 5906.0,
-        "average_views": 768.0,
-        "average_favorite_rate": 0.013020833333333334,
-        "average_engagement_rate": 0.0390625,
-        "follow_efficiency": 0.0013020833333333333,
+        "average_views": 769.0,
+        "average_favorite_rate": 0.013003901170351105,
+        "average_engagement_rate": 0.03901170351105332,
+        "follow_efficiency": 0.0013003901170351106,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "未分类",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
         "comparison_window": "30d"
       },
       {
@@ -97,6 +117,16 @@
       }
     ],
     "industry": [
+      {
+        "value": "未分类",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
       {
         "value": "母婴",
         "sample_size": 0,
@@ -131,10 +161,10 @@
         "value": "零售",
         "sample_size": 3,
         "average_impressions": 4838.0,
-        "average_views": 663.6666666666666,
-        "average_favorite_rate": 0.013407206439580354,
-        "average_engagement_rate": 0.05342069804076315,
-        "follow_efficiency": 0.005771462838238883,
+        "average_views": 664.0,
+        "average_favorite_rate": 0.013401562385252945,
+        "average_engagement_rate": 0.05340376587778092,
+        "follow_efficiency": 0.005770898432806142,
         "comparison_window": "30d"
       },
       {
@@ -149,6 +179,16 @@
       }
     ],
     "series": [
+      {
+        "value": "AI商业地图",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
       {
         "value": "其他内容",
         "sample_size": 1,
@@ -173,10 +213,10 @@
         "value": "商超自救指南",
         "sample_size": 3,
         "average_impressions": 4838.0,
-        "average_views": 663.6666666666666,
-        "average_favorite_rate": 0.013407206439580354,
-        "average_engagement_rate": 0.05342069804076315,
-        "follow_efficiency": 0.005771462838238883,
+        "average_views": 664.0,
+        "average_favorite_rate": 0.013401562385252945,
+        "average_engagement_rate": 0.05340376587778092,
+        "follow_efficiency": 0.005770898432806142,
         "comparison_window": "30d"
       },
       {
@@ -201,6 +241,16 @@
       },
       {
         "value": "看懂母婴生意",
+        "sample_size": 0,
+        "average_impressions": null,
+        "average_views": null,
+        "average_favorite_rate": null,
+        "average_engagement_rate": null,
+        "follow_efficiency": null,
+        "comparison_window": "30d"
+      },
+      {
+        "value": "餐饮万店命题",
         "sample_size": 0,
         "average_impressions": null,
         "average_views": null,
