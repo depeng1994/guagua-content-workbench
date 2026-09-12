@@ -27,7 +27,7 @@ from typing import Any, List
 
 SPREADSHEET_TOKEN = "SNcEsVTS4hppIhtihuOcp3KOn1c"
 SHEET_ID = "27f96b"
-HEADER = ["计划发布日期", "系列", "主题", "标题"]
+HEADER = ["计划发布日期", "系列", "主题", "标题", "内容ID"]
 LARK_CLI_FALLBACK = (
     "/Users/juding/.workbuddy/binaries/node/cli-connector-packages/bin/lark-cli"
 )
@@ -81,8 +81,8 @@ def write_csv(rows: List[List[Any]], dest: Path) -> int:
         writer = csv.writer(handle)
         writer.writerow(HEADER)
         for row in rows:
-            cells = list(row) + ["", "", "", ""]
-            planned, series, topic, title = cells[:4]
+            cells = list(row) + ["", "", "", "", ""]
+            planned, series, topic, title, content_id = cells[:5]
             if not any(str(c or "").strip() for c in (planned, series, topic, title)):
                 continue
             writer.writerow(
@@ -91,6 +91,7 @@ def write_csv(rows: List[List[Any]], dest: Path) -> int:
                     str(series or "").strip(),
                     str(topic or "").strip(),
                     str(title or "").strip(),
+                    str(content_id or "").strip(),
                 ]
             )
             written += 1
