@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T09:00:34+08:00",
+  "generated_at": "2026-09-13T10:36:10+08:00",
   "warnings": [
     "GG-012 最近两个快照不连续，不计算日增量。"
   ],
@@ -13,27 +13,27 @@
       "publish_date": "2026-09-04",
       "latest": {
         "impressions": 3696,
-        "views": 590,
+        "views": 593,
         "likes": 20,
-        "favorites": 20,
+        "favorites": 21,
         "comments": 6,
         "shares": 11,
         "followers_gained": 12,
-        "interactions": 57,
-        "view_rate": 0.15963203463203463,
-        "like_rate": 0.03389830508474576,
-        "favorite_rate": 0.03389830508474576,
-        "comment_rate": 0.010169491525423728,
-        "share_rate": 0.01864406779661017,
-        "engagement_rate": 0.09661016949152543,
-        "follow_conversion_rate": 0.020338983050847456,
+        "interactions": 58,
+        "view_rate": 0.16044372294372294,
+        "like_rate": 0.03372681281618887,
+        "favorite_rate": 0.03541315345699832,
+        "comment_rate": 0.01011804384485666,
+        "share_rate": 0.01854974704890388,
+        "engagement_rate": 0.09780775716694773,
+        "follow_conversion_rate": 0.02023608768971332,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 244,
-        "views": 27,
+        "views": 30,
         "likes": 1,
-        "favorites": 0,
+        "favorites": 1,
         "comments": 0,
         "shares": 0,
         "followers_gained": 1
@@ -108,25 +108,25 @@
       "publish_date": "2026-09-02",
       "latest": {
         "impressions": 6509,
-        "views": 893,
+        "views": 896,
         "likes": 29,
         "favorites": 12,
         "comments": 4,
         "shares": 9,
         "followers_gained": 6,
         "interactions": 54,
-        "view_rate": 0.13719465355661392,
-        "like_rate": 0.032474804031354984,
-        "favorite_rate": 0.013437849944008958,
-        "comment_rate": 0.004479283314669653,
-        "share_rate": 0.010078387458006719,
-        "engagement_rate": 0.060470324748040316,
-        "follow_conversion_rate": 0.006718924972004479,
+        "view_rate": 0.13765555384851744,
+        "like_rate": 0.03236607142857143,
+        "favorite_rate": 0.013392857142857142,
+        "comment_rate": 0.004464285714285714,
+        "share_rate": 0.010044642857142858,
+        "engagement_rate": 0.060267857142857144,
+        "follow_conversion_rate": 0.006696428571428571,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 147,
-        "views": 18,
+        "views": 21,
         "likes": 0,
         "favorites": 0,
         "comments": 0,
@@ -264,26 +264,26 @@
       "publish_date": "2026-08-31",
       "latest": {
         "impressions": 55717,
-        "views": 13414,
-        "likes": 173,
+        "views": 13434,
+        "likes": 174,
         "favorites": 110,
         "comments": 65,
         "shares": 69,
         "followers_gained": 46,
-        "interactions": 417,
-        "view_rate": 0.2407523736023117,
-        "like_rate": 0.012896973311465634,
-        "favorite_rate": 0.008200387654689131,
-        "comment_rate": 0.004845683614134486,
-        "share_rate": 0.005143879528850454,
-        "engagement_rate": 0.031086924109139706,
-        "follow_conversion_rate": 0.0034292530192336365,
+        "interactions": 418,
+        "view_rate": 0.24111133047364358,
+        "like_rate": 0.012952210808396605,
+        "favorite_rate": 0.00818817924668751,
+        "comment_rate": 0.004838469554860801,
+        "share_rate": 0.00513622152746762,
+        "engagement_rate": 0.031115081137412536,
+        "follow_conversion_rate": 0.003424147684978413,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 2568,
-        "views": 282,
-        "likes": 6,
+        "views": 302,
+        "likes": 7,
         "favorites": 3,
         "comments": 2,
         "shares": 2,
@@ -325,25 +325,25 @@
       "publish_date": "2026-08-28",
       "latest": {
         "impressions": 8032,
-        "views": 1105,
+        "views": 1107,
         "likes": 37,
         "favorites": 21,
         "comments": 5,
         "shares": 14,
         "followers_gained": 15,
         "interactions": 77,
-        "view_rate": 0.1375747011952191,
-        "like_rate": 0.0334841628959276,
-        "favorite_rate": 0.019004524886877826,
-        "comment_rate": 0.004524886877828055,
-        "share_rate": 0.012669683257918552,
-        "engagement_rate": 0.06968325791855204,
-        "follow_conversion_rate": 0.013574660633484163,
+        "view_rate": 0.13782370517928286,
+        "like_rate": 0.03342366757000903,
+        "favorite_rate": 0.018970189701897018,
+        "comment_rate": 0.004516711833785004,
+        "share_rate": 0.012646793134598013,
+        "engagement_rate": 0.06955736224028906,
+        "follow_conversion_rate": 0.013550135501355014,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 148,
-        "views": 29,
+        "views": 31,
         "likes": 1,
         "favorites": 0,
         "comments": 0,
@@ -430,25 +430,25 @@
       "publish_date": "2026-08-24",
       "latest": {
         "impressions": 3084,
-        "views": 471,
+        "views": 472,
         "likes": 14,
         "favorites": 17,
         "comments": 0,
         "shares": 4,
         "followers_gained": 11,
         "interactions": 35,
-        "view_rate": 0.15272373540856032,
-        "like_rate": 0.029723991507430998,
-        "favorite_rate": 0.036093418259023353,
+        "view_rate": 0.15304798962386512,
+        "like_rate": 0.029661016949152543,
+        "favorite_rate": 0.036016949152542374,
         "comment_rate": 0.0,
-        "share_rate": 0.008492569002123142,
-        "engagement_rate": 0.07430997876857749,
-        "follow_conversion_rate": 0.02335456475583864,
+        "share_rate": 0.00847457627118644,
+        "engagement_rate": 0.07415254237288135,
+        "follow_conversion_rate": 0.023305084745762712,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 35,
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "favorites": 0,
         "comments": 0,
@@ -867,25 +867,25 @@
       "publish_date": "2026-09-09",
       "latest": {
         "impressions": 6082,
-        "views": 1111,
+        "views": 1115,
         "likes": 34,
         "favorites": 24,
         "comments": 5,
         "shares": 8,
         "followers_gained": 11,
         "interactions": 71,
-        "view_rate": 0.18267017428477475,
-        "like_rate": 0.0306030603060306,
-        "favorite_rate": 0.021602160216021602,
-        "comment_rate": 0.004500450045004501,
-        "share_rate": 0.0072007200720072,
-        "engagement_rate": 0.0639063906390639,
-        "follow_conversion_rate": 0.009900990099009901,
+        "view_rate": 0.18332785268003945,
+        "like_rate": 0.030493273542600896,
+        "favorite_rate": 0.021524663677130046,
+        "comment_rate": 0.004484304932735426,
+        "share_rate": 0.007174887892376682,
+        "engagement_rate": 0.06367713004484304,
+        "follow_conversion_rate": 0.009865470852017937,
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
         "impressions": 630,
-        "views": 46,
+        "views": 50,
         "likes": 0,
         "favorites": 1,
         "comments": 0,
@@ -2154,17 +2154,17 @@
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 13414
+          "value": 13434
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 1111
+          "value": 1115
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 1105
+          "value": 1107
         },
         {
           "content_id": "GG-006",
@@ -2174,7 +2174,7 @@
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 893
+          "value": 896
         },
         {
           "content_id": "GG-010",
@@ -2189,7 +2189,7 @@
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 590
+          "value": 593
         },
         {
           "content_id": "GG-014",
@@ -2199,7 +2199,7 @@
         {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 471
+          "value": 472
         },
         {
           "content_id": "GG-009",
@@ -2244,14 +2244,14 @@
           "value": 24
         },
         {
-          "content_id": "GG-005",
-          "topic": "瑞幸／库迪",
+          "content_id": "GG-001",
+          "topic": "母婴总览",
           "value": 21
         },
         {
-          "content_id": "GG-001",
-          "topic": "母婴总览",
-          "value": 20
+          "content_id": "GG-005",
+          "topic": "瑞幸／库迪",
+          "value": 21
         },
         {
           "content_id": "GG-006",
@@ -2318,7 +2318,7 @@
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 417
+          "value": 418
         },
         {
           "content_id": "GG-005",
@@ -2338,7 +2338,7 @@
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 57
+          "value": 58
         },
         {
           "content_id": "GG-002",
