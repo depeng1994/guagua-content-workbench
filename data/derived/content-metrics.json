@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T16:20:10+08:00",
+  "generated_at": "2026-09-13T16:22:39+08:00",
   "warnings": [
     "GG-012 最近两个快照不连续，不计算日增量。"
   ],
@@ -12,14 +12,14 @@
       "series": "看懂母婴生意",
       "publish_date": "2026-09-04",
       "latest": {
-        "impressions": 3696,
-        "views": 596,
-        "likes": 20,
-        "favorites": 21,
-        "comments": 6,
-        "shares": 14,
-        "followers_gained": 12,
-        "interactions": 61,
+        "impressions": 3696.0,
+        "views": 596.0,
+        "likes": 20.0,
+        "favorites": 21.0,
+        "comments": 6.0,
+        "shares": 14.0,
+        "followers_gained": 12.0,
+        "interactions": 61.0,
         "view_rate": 0.16125541125541126,
         "like_rate": 0.03355704697986577,
         "favorite_rate": 0.03523489932885906,
@@ -30,13 +30,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 244,
-        "views": 33,
-        "likes": 1,
-        "favorites": 1,
-        "comments": 0,
-        "shares": 3,
-        "followers_gained": 1
+        "impressions": 244.0,
+        "views": 33.0,
+        "likes": 1.0,
+        "favorites": 1.0,
+        "comments": 0.0,
+        "shares": 3.0,
+        "followers_gained": 1.0
       },
       "lifecycle": {
         "24h": {
@@ -107,14 +107,14 @@
       "series": "咖啡的N种活法",
       "publish_date": "2026-09-02",
       "latest": {
-        "impressions": 6509,
-        "views": 904,
-        "likes": 29,
-        "favorites": 12,
-        "comments": 4,
-        "shares": 9,
-        "followers_gained": 6,
-        "interactions": 54,
+        "impressions": 6509.0,
+        "views": 904.0,
+        "likes": 29.0,
+        "favorites": 12.0,
+        "comments": 4.0,
+        "shares": 9.0,
+        "followers_gained": 6.0,
+        "interactions": 54.0,
         "view_rate": 0.1388846212935935,
         "like_rate": 0.032079646017699116,
         "favorite_rate": 0.01327433628318584,
@@ -125,13 +125,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 147,
-        "views": 29,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 1,
-        "followers_gained": 0
+        "impressions": 147.0,
+        "views": 29.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -185,14 +185,14 @@
       "series": "其他内容",
       "publish_date": "2026-09-02",
       "latest": {
-        "impressions": 997,
-        "views": 47,
-        "likes": 4,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0,
-        "interactions": 4,
+        "impressions": 997.0,
+        "views": 47.0,
+        "likes": 4.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0,
+        "interactions": 4.0,
         "view_rate": 0.04714142427281846,
         "like_rate": 0.0851063829787234,
         "favorite_rate": 0.0,
@@ -203,13 +203,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 35,
-        "views": 2,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 35.0,
+        "views": 2.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -263,14 +263,14 @@
       "series": "咖啡的N种活法",
       "publish_date": "2026-08-31",
       "latest": {
-        "impressions": 55717,
-        "views": 13516,
-        "likes": 175,
-        "favorites": 110,
-        "comments": 65,
-        "shares": 69,
-        "followers_gained": 46,
-        "interactions": 419,
+        "impressions": 55717.0,
+        "views": 13516.0,
+        "likes": 175.0,
+        "favorites": 110.0,
+        "comments": 65.0,
+        "shares": 69.0,
+        "followers_gained": 46.0,
+        "interactions": 419.0,
         "view_rate": 0.2425830536461044,
         "like_rate": 0.012947617638354543,
         "favorite_rate": 0.008138502515537141,
@@ -281,13 +281,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 2568,
-        "views": 384,
-        "likes": 8,
-        "favorites": 3,
-        "comments": 2,
-        "shares": 2,
-        "followers_gained": 2
+        "impressions": 2568.0,
+        "views": 384.0,
+        "likes": 8.0,
+        "favorites": 3.0,
+        "comments": 2.0,
+        "shares": 2.0,
+        "followers_gained": 2.0
       },
       "lifecycle": {
         "24h": null,
@@ -324,14 +324,14 @@
       "series": "咖啡的N种活法",
       "publish_date": "2026-08-28",
       "latest": {
-        "impressions": 8032,
-        "views": 1123,
-        "likes": 37,
-        "favorites": 21,
-        "comments": 5,
-        "shares": 14,
-        "followers_gained": 15,
-        "interactions": 77,
+        "impressions": 8032.0,
+        "views": 1123.0,
+        "likes": 37.0,
+        "favorites": 21.0,
+        "comments": 5.0,
+        "shares": 14.0,
+        "followers_gained": 15.0,
+        "interactions": 77.0,
         "view_rate": 0.13981573705179282,
         "like_rate": 0.03294746215494212,
         "favorite_rate": 0.018699910952804988,
@@ -342,13 +342,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 148,
-        "views": 47,
-        "likes": 1,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 2
+        "impressions": 148.0,
+        "views": 47.0,
+        "likes": 1.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 2.0
       },
       "lifecycle": {
         "24h": null,
@@ -385,14 +385,14 @@
       "series": "咖啡的N种活法",
       "publish_date": "2026-08-26",
       "latest": {
-        "impressions": 4527,
-        "views": 958,
-        "likes": 29,
-        "favorites": 20,
-        "comments": 3,
-        "shares": 10,
-        "followers_gained": 15,
-        "interactions": 62,
+        "impressions": 4527.0,
+        "views": 958.0,
+        "likes": 29.0,
+        "favorites": 20.0,
+        "comments": 3.0,
+        "shares": 10.0,
+        "followers_gained": 15.0,
+        "interactions": 62.0,
         "view_rate": 0.211619173845814,
         "like_rate": 0.030271398747390398,
         "favorite_rate": 0.020876826722338204,
@@ -403,13 +403,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 31,
-        "views": 5,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 1,
-        "followers_gained": 0
+        "impressions": 31.0,
+        "views": 5.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -429,14 +429,14 @@
       "series": "商超自救指南",
       "publish_date": "2026-08-24",
       "latest": {
-        "impressions": 3084,
-        "views": 475,
-        "likes": 14,
-        "favorites": 17,
-        "comments": 0,
-        "shares": 4,
-        "followers_gained": 11,
-        "interactions": 35,
+        "impressions": 3084.0,
+        "views": 475.0,
+        "likes": 14.0,
+        "favorites": 17.0,
+        "comments": 0.0,
+        "shares": 4.0,
+        "followers_gained": 11.0,
+        "interactions": 35.0,
         "view_rate": 0.15402075226977952,
         "like_rate": 0.029473684210526315,
         "favorite_rate": 0.035789473684210524,
@@ -447,13 +447,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 35,
-        "views": 6,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 35.0,
+        "views": 6.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -473,14 +473,14 @@
       "series": "其他内容",
       "publish_date": "2026-08-20",
       "latest": {
-        "impressions": 971,
-        "views": 183,
-        "likes": 4,
-        "favorites": 1,
-        "comments": 0,
-        "shares": 1,
-        "followers_gained": 0,
-        "interactions": 6,
+        "impressions": 971.0,
+        "views": 183.0,
+        "likes": 4.0,
+        "favorites": 1.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "followers_gained": 0.0,
+        "interactions": 6.0,
         "view_rate": 0.18846549948506694,
         "like_rate": 0.02185792349726776,
         "favorite_rate": 0.00546448087431694,
@@ -491,13 +491,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 8,
-        "views": 0,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 8.0,
+        "views": 0.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -517,14 +517,14 @@
       "series": "商超自救指南",
       "publish_date": "2026-08-18",
       "latest": {
-        "impressions": 3114,
-        "views": 460,
-        "likes": 18,
-        "favorites": 10,
-        "comments": 2,
-        "shares": 3,
-        "followers_gained": 1,
-        "interactions": 33,
+        "impressions": 3114.0,
+        "views": 460.0,
+        "likes": 18.0,
+        "favorites": 10.0,
+        "comments": 2.0,
+        "shares": 3.0,
+        "followers_gained": 1.0,
+        "interactions": 33.0,
         "view_rate": 0.14771997430956968,
         "like_rate": 0.0391304347826087,
         "favorite_rate": 0.021739130434782608,
@@ -535,13 +535,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 40,
-        "views": 4,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 40.0,
+        "views": 4.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -561,14 +561,14 @@
       "series": "商超自救指南",
       "publish_date": "2026-08-13",
       "latest": {
-        "impressions": 6023,
-        "views": 775,
-        "likes": 16,
-        "favorites": 10,
-        "comments": 3,
-        "shares": 1,
-        "followers_gained": 1,
-        "interactions": 30,
+        "impressions": 6023.0,
+        "views": 775.0,
+        "likes": 16.0,
+        "favorites": 10.0,
+        "comments": 3.0,
+        "shares": 1.0,
+        "followers_gained": 1.0,
+        "interactions": 30.0,
         "view_rate": 0.12867341856217832,
         "like_rate": 0.02064516129032258,
         "favorite_rate": 0.012903225806451613,
@@ -579,13 +579,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 117,
-        "views": 6,
-        "likes": 0,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 117.0,
+        "views": 6.0,
+        "likes": 0.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -866,14 +866,14 @@
       "series": "看懂母婴生意",
       "publish_date": "2026-09-09",
       "latest": {
-        "impressions": 6082,
-        "views": 1132,
-        "likes": 34,
-        "favorites": 25,
-        "comments": 5,
-        "shares": 8,
-        "followers_gained": 11,
-        "interactions": 72,
+        "impressions": 6082.0,
+        "views": 1132.0,
+        "likes": 34.0,
+        "favorites": 25.0,
+        "comments": 5.0,
+        "shares": 8.0,
+        "followers_gained": 11.0,
+        "interactions": 72.0,
         "view_rate": 0.1861229858599145,
         "like_rate": 0.030035335689045935,
         "favorite_rate": 0.022084805653710248,
@@ -884,13 +884,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 630,
-        "views": 67,
-        "likes": 0,
-        "favorites": 2,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 2
+        "impressions": 630.0,
+        "views": 67.0,
+        "likes": 0.0,
+        "favorites": 2.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 2.0
       },
       "lifecycle": {
         "24h": {
@@ -944,14 +944,14 @@
       "series": "看懂母婴生意",
       "publish_date": "2026-09-07",
       "latest": {
-        "impressions": 1275,
-        "views": 177,
-        "likes": 22,
-        "favorites": 3,
-        "comments": 2,
-        "shares": 1,
-        "followers_gained": 0,
-        "interactions": 28,
+        "impressions": 1275.0,
+        "views": 177.0,
+        "likes": 22.0,
+        "favorites": 3.0,
+        "comments": 2.0,
+        "shares": 1.0,
+        "followers_gained": 0.0,
+        "interactions": 28.0,
         "view_rate": 0.1388235294117647,
         "like_rate": 0.12429378531073447,
         "favorite_rate": 0.01694915254237288,
@@ -962,13 +962,13 @@
         "snapshot_date": "2026-09-13"
       },
       "deltas": {
-        "impressions": 114,
-        "views": 10,
-        "likes": 1,
-        "favorites": 0,
-        "comments": 0,
-        "shares": 0,
-        "followers_gained": 0
+        "impressions": 114.0,
+        "views": 10.0,
+        "likes": 1.0,
+        "favorites": 0.0,
+        "comments": 0.0,
+        "shares": 0.0,
+        "followers_gained": 0.0
       },
       "lifecycle": {
         "24h": null,
@@ -1004,7 +1004,24 @@
       "topic": "智驾总览",
       "series": "智驾天团",
       "publish_date": "2026-09-11",
-      "latest": null,
+      "latest": {
+        "impressions": 2034.0,
+        "views": 500.0,
+        "likes": 11.0,
+        "favorites": 4.0,
+        "comments": 0.0,
+        "shares": 1.0,
+        "followers_gained": 4.0,
+        "interactions": 16.0,
+        "view_rate": 0.24582104228121926,
+        "like_rate": 0.022,
+        "favorite_rate": 0.008,
+        "comment_rate": 0.0,
+        "share_rate": 0.002,
+        "engagement_rate": 0.032,
+        "follow_conversion_rate": 0.008,
+        "snapshot_date": "2026-09-13"
+      },
       "deltas": {
         "impressions": null,
         "views": null,
@@ -1015,7 +1032,24 @@
         "followers_gained": null
       },
       "lifecycle": {
-        "24h": null,
+        "24h": {
+          "impressions": 2034.0,
+          "views": 500.0,
+          "likes": 11.0,
+          "favorites": 4.0,
+          "comments": 0.0,
+          "shares": 1.0,
+          "followers_gained": 4.0,
+          "interactions": 16.0,
+          "view_rate": 0.24582104228121926,
+          "like_rate": 0.022,
+          "favorite_rate": 0.008,
+          "comment_rate": 0.0,
+          "share_rate": 0.002,
+          "engagement_rate": 0.032,
+          "follow_conversion_rate": 0.008,
+          "snapshot_date": "2026-09-13"
+        },
         "72h": null,
         "7d": null,
         "30d": null
@@ -1597,6 +1631,11 @@
     "24h": {
       "impressions": [
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 2034.0
+        },
+        {
           "content_id": "GG-P001",
           "topic": "Babycare",
           "value": 798.0
@@ -1614,6 +1653,11 @@
           "value": 641.0
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 500.0
+        },
+        {
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 296.0
@@ -1629,6 +1673,11 @@
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 10.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4.0
         }
       ],
       "interactions": [
@@ -1641,9 +1690,19 @@
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 22.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 16.0
         }
       ],
       "followers_gained": [
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4.0
+        },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
@@ -2072,27 +2131,27 @@
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 55717
+          "value": 55717.0
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 8032
+          "value": 8032.0
         },
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 6509
+          "value": 6509.0
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 6082
+          "value": 6082.0
         },
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 6023
+          "value": 6023.0
         },
         {
           "content_id": "GG-011",
@@ -2102,7 +2161,7 @@
         {
           "content_id": "GG-006",
           "topic": "咖啡成本",
-          "value": 4527
+          "value": 4527.0
         },
         {
           "content_id": "GG-014",
@@ -2112,17 +2171,22 @@
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 3696
+          "value": 3696.0
         },
         {
           "content_id": "GG-009",
           "topic": "商超经营差异",
-          "value": 3114
+          "value": 3114.0
         },
         {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 3084
+          "value": 3084.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 2034.0
         },
         {
           "content_id": "GG-012",
@@ -2132,7 +2196,7 @@
         {
           "content_id": "GG-P002",
           "topic": "全棉时代",
-          "value": 1275
+          "value": 1275.0
         },
         {
           "content_id": "GG-013",
@@ -2142,44 +2206,44 @@
         {
           "content_id": "GG-003",
           "topic": "账号介绍",
-          "value": 997
+          "value": 997.0
         },
         {
           "content_id": "GG-008",
           "topic": "小米中报",
-          "value": 971
+          "value": 971.0
         }
       ],
       "views": [
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 13516
+          "value": 13516.0
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 1132
+          "value": 1132.0
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 1123
+          "value": 1123.0
         },
         {
           "content_id": "GG-006",
           "topic": "咖啡成本",
-          "value": 958
+          "value": 958.0
         },
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 904
+          "value": 904.0
         },
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 775
+          "value": 775.0
         },
         {
           "content_id": "GG-011",
@@ -2189,7 +2253,7 @@
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 596
+          "value": 596.0
         },
         {
           "content_id": "GG-014",
@@ -2197,14 +2261,19 @@
           "value": 574.0
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 500.0
+        },
+        {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 475
+          "value": 475.0
         },
         {
           "content_id": "GG-009",
           "topic": "商超经营差异",
-          "value": 460
+          "value": 460.0
         },
         {
           "content_id": "GG-013",
@@ -2214,12 +2283,12 @@
         {
           "content_id": "GG-008",
           "topic": "小米中报",
-          "value": 183
+          "value": 183.0
         },
         {
           "content_id": "GG-P002",
           "topic": "全棉时代",
-          "value": 177
+          "value": 177.0
         },
         {
           "content_id": "GG-012",
@@ -2229,44 +2298,44 @@
         {
           "content_id": "GG-003",
           "topic": "账号介绍",
-          "value": 47
+          "value": 47.0
         }
       ],
       "favorites": [
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 110
+          "value": 110.0
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 25
+          "value": 25.0
         },
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 21
+          "value": 21.0
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 21
+          "value": 21.0
         },
         {
           "content_id": "GG-006",
           "topic": "咖啡成本",
-          "value": 20
+          "value": 20.0
         },
         {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 17
+          "value": 17.0
         },
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 12
+          "value": 12.0
         },
         {
           "content_id": "GG-011",
@@ -2276,12 +2345,12 @@
         {
           "content_id": "GG-009",
           "topic": "商超经营差异",
-          "value": 10
+          "value": 10.0
         },
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 10
+          "value": 10.0
         },
         {
           "content_id": "GG-014",
@@ -2289,9 +2358,14 @@
           "value": 5.0
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4.0
+        },
+        {
           "content_id": "GG-P002",
           "topic": "全棉时代",
-          "value": 3
+          "value": 3.0
         },
         {
           "content_id": "GG-012",
@@ -2301,7 +2375,7 @@
         {
           "content_id": "GG-008",
           "topic": "小米中报",
-          "value": 1
+          "value": 1.0
         },
         {
           "content_id": "GG-013",
@@ -2311,39 +2385,39 @@
         {
           "content_id": "GG-003",
           "topic": "账号介绍",
-          "value": 0
+          "value": 0.0
         }
       ],
       "interactions": [
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 419
+          "value": 419.0
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 77
+          "value": 77.0
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 72
+          "value": 72.0
         },
         {
           "content_id": "GG-006",
           "topic": "咖啡成本",
-          "value": 62
+          "value": 62.0
         },
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 61
+          "value": 61.0
         },
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 54
+          "value": 54.0
         },
         {
           "content_id": "GG-011",
@@ -2353,17 +2427,17 @@
         {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 35
+          "value": 35.0
         },
         {
           "content_id": "GG-009",
           "topic": "商超经营差异",
-          "value": 33
+          "value": 33.0
         },
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 30
+          "value": 30.0
         },
         {
           "content_id": "GG-014",
@@ -2373,7 +2447,12 @@
         {
           "content_id": "GG-P002",
           "topic": "全棉时代",
-          "value": 28
+          "value": 28.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 16.0
         },
         {
           "content_id": "GG-012",
@@ -2388,44 +2467,44 @@
         {
           "content_id": "GG-008",
           "topic": "小米中报",
-          "value": 6
+          "value": 6.0
         },
         {
           "content_id": "GG-003",
           "topic": "账号介绍",
-          "value": 4
+          "value": 4.0
         }
       ],
       "followers_gained": [
         {
           "content_id": "GG-004",
           "topic": "Manner／M Stand",
-          "value": 46
+          "value": 46.0
         },
         {
           "content_id": "GG-005",
           "topic": "瑞幸／库迪",
-          "value": 15
+          "value": 15.0
         },
         {
           "content_id": "GG-006",
           "topic": "咖啡成本",
-          "value": 15
+          "value": 15.0
         },
         {
           "content_id": "GG-001",
           "topic": "母婴总览",
-          "value": 12
+          "value": 12.0
         },
         {
           "content_id": "GG-007",
           "topic": "商超自有品牌",
-          "value": 11
+          "value": 11.0
         },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
-          "value": 11
+          "value": 11.0
         },
         {
           "content_id": "GG-011",
@@ -2435,7 +2514,12 @@
         {
           "content_id": "GG-002",
           "topic": "星巴克",
-          "value": 6
+          "value": 6.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4.0
         },
         {
           "content_id": "GG-014",
@@ -2445,22 +2529,22 @@
         {
           "content_id": "GG-009",
           "topic": "商超经营差异",
-          "value": 1
+          "value": 1.0
         },
         {
           "content_id": "GG-010",
           "topic": "山姆会员费",
-          "value": 1
+          "value": 1.0
         },
         {
           "content_id": "GG-003",
           "topic": "账号介绍",
-          "value": 0
+          "value": 0.0
         },
         {
           "content_id": "GG-008",
           "topic": "小米中报",
-          "value": 0
+          "value": 0.0
         },
         {
           "content_id": "GG-012",
@@ -2475,7 +2559,7 @@
         {
           "content_id": "GG-P002",
           "topic": "全棉时代",
-          "value": 0
+          "value": 0.0
         }
       ]
     }

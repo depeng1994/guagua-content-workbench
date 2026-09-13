@@ -365,15 +365,16 @@ def normalize_note_rows(
             # 标题被改写时退一步：归一化后比（去标点 / emoji / 空格）
             content = by_title_norm.get(_norm_title(row["title"]))
         if not content:
-            # 最后兜底：按发布日期匹配「同一天、且还没发布」的主表条目。
+            # 最后兜底：按发布日期匹配主表条目（planned_date 或已有 publish_date 相同）。
             # 只在唯一命中时采用，避免同日多条时误配。
+            # 注意不能加 status != published —— 条目一旦被翻成 published，
+            # 后续快照再进来时仍需要靠这条路径认出来。
             published_on = parse_date(row.get("publish_date"), "publish_date")
             if published_on:
                 candidates = [
                     item
                     for item in master.get("contents", [])
-                    if item.get("planned_date") == published_on
-                    and item.get("status") != "published"
+                    if published_on in (item.get("planned_date"), item.get("publish_date"))
                 ]
                 if len(candidates) == 1:
                     content = candidates[0]
