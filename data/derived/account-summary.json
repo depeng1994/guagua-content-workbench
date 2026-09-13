@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T10:36:10+08:00",
+  "generated_at": "2026-09-13T16:13:51+08:00",
   "latest_date": "2026-09-13",
   "latest": {
     "date": "2026-09-13",
@@ -22,7 +22,7 @@
     "impressions": 111334.0,
     "views": 15108.0,
     "new_followers": null,
-    "publish_count": 2
+    "publish_count": 3
   },
   "trend": [
     {

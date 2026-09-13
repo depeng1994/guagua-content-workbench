@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T10:36:10+08:00",
+  "generated_at": "2026-09-13T16:13:51+08:00",
   "warnings": [
     "GG-012 最近两个快照不连续，不计算日增量。"
   ],
@@ -1003,8 +1003,25 @@
       "title": "都在做智驾，为什么做的不是同一门生意？",
       "topic": "智驾总览",
       "series": "智驾天团",
-      "publish_date": null,
-      "latest": null,
+      "publish_date": "2026-09-11",
+      "latest": {
+        "impressions": 2034,
+        "views": 461,
+        "likes": 11,
+        "favorites": 4,
+        "comments": 0,
+        "shares": 1,
+        "followers_gained": 4,
+        "interactions": 16,
+        "view_rate": 0.22664700098328416,
+        "like_rate": 0.02386117136659436,
+        "favorite_rate": 0.008676789587852495,
+        "comment_rate": 0.0,
+        "share_rate": 0.0021691973969631237,
+        "engagement_rate": 0.03470715835140998,
+        "follow_conversion_rate": 0.008676789587852495,
+        "snapshot_date": "2026-09-13"
+      },
       "deltas": {
         "impressions": null,
         "views": null,
@@ -1015,7 +1032,24 @@
         "followers_gained": null
       },
       "lifecycle": {
-        "24h": null,
+        "24h": {
+          "impressions": 2034,
+          "views": 461,
+          "likes": 11,
+          "favorites": 4,
+          "comments": 0,
+          "shares": 1,
+          "followers_gained": 4,
+          "interactions": 16,
+          "view_rate": 0.22664700098328416,
+          "like_rate": 0.02386117136659436,
+          "favorite_rate": 0.008676789587852495,
+          "comment_rate": 0.0,
+          "share_rate": 0.0021691973969631237,
+          "engagement_rate": 0.03470715835140998,
+          "follow_conversion_rate": 0.008676789587852495,
+          "snapshot_date": "2026-09-13"
+        },
         "72h": null,
         "7d": null,
         "30d": null
@@ -1597,6 +1631,11 @@
     "24h": {
       "impressions": [
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 2034
+        },
+        {
           "content_id": "GG-P001",
           "topic": "Babycare",
           "value": 798.0
@@ -1614,6 +1653,11 @@
           "value": 641.0
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 461
+        },
+        {
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 296.0
@@ -1629,6 +1673,11 @@
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 10.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4
         }
       ],
       "interactions": [
@@ -1641,9 +1690,19 @@
           "content_id": "GG-001",
           "topic": "母婴总览",
           "value": 22.0
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 16
         }
       ],
       "followers_gained": [
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4
+        },
         {
           "content_id": "GG-P001",
           "topic": "Babycare",
@@ -2125,6 +2184,11 @@
           "value": 3084
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 2034
+        },
+        {
           "content_id": "GG-012",
           "topic": "东鹏饮料",
           "value": 1297
@@ -2200,6 +2264,11 @@
           "content_id": "GG-007",
           "topic": "商超自有品牌",
           "value": 472
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 461
         },
         {
           "content_id": "GG-009",
@@ -2289,6 +2358,11 @@
           "value": 5.0
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4
+        },
+        {
           "content_id": "GG-P002",
           "topic": "全棉时代",
           "value": 3
@@ -2376,6 +2450,11 @@
           "value": 28
         },
         {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 16
+        },
+        {
           "content_id": "GG-012",
           "topic": "东鹏饮料",
           "value": 11
@@ -2436,6 +2515,11 @@
           "content_id": "GG-002",
           "topic": "星巴克",
           "value": 6
+        },
+        {
+          "content_id": "GG-P003",
+          "topic": "智驾总览",
+          "value": 4
         },
         {
           "content_id": "GG-014",

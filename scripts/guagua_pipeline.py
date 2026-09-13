@@ -320,16 +320,28 @@ def load_content_master(project_root: Path) -> Dict[str, Any]:
     return master
 
 
-def _content_indexes(master: Mapping[str, Any]) -> Tuple[Dict[str, Mapping[str, Any]], Dict[str, Mapping[str, Any]], Dict[str, Mapping[str, Any]]]:
+def _norm_title(value: Any) -> str:
+    """标题归一化：去掉空白 / 标点 / emoji，只保留中日文与字母数字。
+
+    小红书发布时标题常被改写（飞书规划「都在做智驾，为什么做的不是同一门
+    生意？」实际发布成「智驾产业链全景拆解：谁在赚什么钱？🚗」），
+    精确匹配会整条漏掉，所以先归一化再比。
+    """
+    return re.sub(r"[^\w\u4e00-\u9fff]+", "", str(value or "")).lower()
+
+
+def _content_indexes(master: Mapping[str, Any]):
     contents = master.get("contents", [])
     by_id = {str(item["content_id"]): item for item in contents}
     by_note = {str(item["xiaohongshu_note_id"]): item for item in contents if item.get("xiaohongshu_note_id")}
     by_title: Dict[str, Mapping[str, Any]] = {}
+    by_title_norm: Dict[str, Mapping[str, Any]] = {}
     for item in contents:
         for value in (item.get("title"), item.get("topic")):
             if value:
-                by_title[str(value).strip()] = item
-    return by_id, by_note, by_title
+                by_title.setdefault(str(value).strip(), item)
+                by_title_norm.setdefault(_norm_title(value), item)
+    return by_id, by_note, by_title, by_title_norm
 
 
 def normalize_note_rows(
@@ -338,7 +350,7 @@ def normalize_note_rows(
     default_date: str,
     unmatched_titles: Optional[List[str]] = None,
 ) -> List[Dict[str, Any]]:
-    by_id, by_note, by_title = _content_indexes(master)
+    by_id, by_note, by_title, by_title_norm = _content_indexes(master)
     normalized = []
     for index, raw in enumerate(rows, start=2):
         row = canonicalize_row(raw)
@@ -349,6 +361,22 @@ def normalize_note_rows(
             content = by_note.get(str(row["note_id"]).strip())
         if not content and row.get("title"):
             content = by_title.get(str(row["title"]).strip())
+        if not content and row.get("title"):
+            # 标题被改写时退一步：归一化后比（去标点 / emoji / 空格）
+            content = by_title_norm.get(_norm_title(row["title"]))
+        if not content:
+            # 最后兜底：按发布日期匹配「同一天、且还没发布」的主表条目。
+            # 只在唯一命中时采用，避免同日多条时误配。
+            published_on = parse_date(row.get("publish_date"), "publish_date")
+            if published_on:
+                candidates = [
+                    item
+                    for item in master.get("contents", [])
+                    if item.get("planned_date") == published_on
+                    and item.get("status") != "published"
+                ]
+                if len(candidates) == 1:
+                    content = candidates[0]
         if not content:
             if unmatched_titles is not None:
                 unmatched_titles.append(str(row.get("title") or row.get("note_id") or row.get("content_id") or "未命名笔记"))
