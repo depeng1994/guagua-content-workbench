@@ -1,26 +1,26 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T11:42:01+08:00",
-  "latest_date": "2026-09-12",
+  "generated_at": "2026-09-13T09:00:34+08:00",
+  "latest_date": "2026-09-13",
   "latest": {
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "period_start": null,
     "period_end": null,
     "metric_window": "daily",
-    "followers_delta": 41,
+    "followers_delta": 46,
     "impressions": 31000,
-    "views": 4261,
-    "profile_views": 160,
-    "engagements": 218,
-    "new_followers": 41
+    "views": 4246,
+    "profile_views": 156,
+    "engagements": 206,
+    "new_followers": 46
   },
   "last_7_days": {
-    "period_start": "2026-09-06",
-    "period_end": "2026-09-12",
+    "period_start": "2026-09-07",
+    "period_end": "2026-09-13",
     "coverage_days": 7,
     "metric_window": "daily",
-    "impressions": 84341.0,
-    "views": 11375.0,
+    "impressions": 111334.0,
+    "views": 15108.0,
     "new_followers": null,
     "publish_count": 2
   },
@@ -218,6 +218,18 @@
       "profile_views": 160,
       "engagements": 218,
       "new_followers": 41
+    },
+    {
+      "date": "2026-09-13",
+      "period_start": null,
+      "period_end": null,
+      "metric_window": "daily",
+      "followers_delta": 46,
+      "impressions": 31000,
+      "views": 4246,
+      "profile_views": 156,
+      "engagements": 206,
+      "new_followers": 46
     }
   ]
 }
