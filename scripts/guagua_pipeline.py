@@ -390,6 +390,8 @@ def normalize_note_rows(
             "content_id": content["content_id"],
             "note_id": str(row.get("note_id") or content.get("xiaohongshu_note_id") or "") or None,
             "publish_date": publish_date,
+            # 实际发布标题：主表 title 应以小红书为准（飞书里填的只是规划标题）
+            "title": str(row.get("title") or "").strip() or None,
         }
         for metric in METRICS:
             item[metric] = to_number(row.get(metric))

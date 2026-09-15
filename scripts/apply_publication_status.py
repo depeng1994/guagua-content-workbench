@@ -61,6 +61,7 @@ def collect_evidence(root: Path, only_date: Optional[str]) -> Dict[str, Dict[str
                     "publish_date": publish_date,
                     "note_id": note.get("note_id"),
                     "first_seen": snapshot_date,
+                    "title": note.get("title"),
                 }
                 continue
             if publish_date and publish_date < current["publish_date"]:
@@ -69,12 +70,16 @@ def collect_evidence(root: Path, only_date: Optional[str]) -> Dict[str, Dict[str
                 current["note_id"] = note.get("note_id")
             if snapshot_date < current["first_seen"]:
                 current["first_seen"] = snapshot_date
+            # 标题以最新快照为准（iter_note_files 按日期升序，后来的直接覆盖）
+            if note.get("title"):
+                current["title"] = note["title"]
     return evidence
 
 
 def apply_to_master(master: Dict[str, Any], evidence: Dict[str, Dict[str, Any]]) -> Dict[str, List[str]]:
     flipped: List[str] = []
     backfilled: List[str] = []
+    retitled: List[str] = []
 
     for item in master.get("contents") or []:
         content_id = item.get("content_id")
@@ -93,7 +98,14 @@ def apply_to_master(master: Dict[str, Any], evidence: Dict[str, Dict[str, Any]])
         if hit.get("note_id") and not item.get("xiaohongshu_note_id"):
             item["xiaohongshu_note_id"] = hit["note_id"]
 
-    return {"flipped": flipped, "backfilled": backfilled}
+        # 标题以小红书实际发布为准：飞书里填的是规划标题，发布时常被改写，
+        # 看板展示的必须是真正发出去的那个标题。
+        published_title = (hit.get("title") or "").strip()
+        if published_title and published_title != (item.get("title") or "").strip():
+            item["title"] = published_title
+            retitled.append(content_id)
+
+    return {"flipped": flipped, "backfilled": backfilled, "retitled": retitled}
 
 
 def main() -> int:
@@ -116,7 +128,7 @@ def main() -> int:
     result["matched_in_backend"] = len(evidence)
     result["dry_run"] = args.dry_run
 
-    if (result["flipped"] or result["backfilled"]) and not args.dry_run:
+    if (result["flipped"] or result["backfilled"] or result["retitled"]) and not args.dry_run:
         master["updated_at"] = date.today().isoformat()
         master_path.write_text(
             json.dumps(master, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
