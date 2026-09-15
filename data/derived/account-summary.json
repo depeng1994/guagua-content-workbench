@@ -1,28 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-14T10:40:07+08:00",
-  "latest_date": "2026-09-14",
+  "generated_at": "2026-09-15T09:00:21+08:00",
+  "latest_date": "2026-09-15",
   "latest": {
-    "date": "2026-09-14",
+    "date": "2026-09-15",
     "period_start": null,
     "period_end": null,
     "metric_window": "daily",
-    "followers_delta": 44,
-    "impressions": 32000,
-    "views": 4324,
-    "profile_views": 153,
-    "engagements": 200,
-    "new_followers": 44
+    "followers_delta": 45,
+    "impressions": 34000,
+    "views": 4819,
+    "profile_views": 162,
+    "engagements": 212,
+    "new_followers": 45
   },
   "last_7_days": {
-    "period_start": "2026-09-08",
-    "period_end": "2026-09-14",
+    "period_start": "2026-09-09",
+    "period_end": "2026-09-15",
     "coverage_days": 7,
     "metric_window": "daily",
-    "impressions": 85691.0,
-    "views": 11836.0,
+    "impressions": 64612.0,
+    "views": 9230.0,
     "new_followers": null,
-    "publish_count": 2
+    "publish_count": 3
   },
   "trend": [
     {
@@ -234,24 +234,46 @@
       "period_start": null,
       "period_end": null,
       "metric_window": "daily",
-      "followers_delta": 46,
-      "impressions": 31000,
-      "views": 4246,
-      "profile_views": 156,
-      "engagements": 206,
-      "new_followers": 46
+      "followers": null,
+      "followers_delta": null,
+      "impressions": 4667.0,
+      "views": 591.0,
+      "profile_views": null,
+      "likes": null,
+      "favorites": null,
+      "comments": null,
+      "shares": null,
+      "engagements": null,
+      "new_followers": null
     },
     {
       "date": "2026-09-14",
       "period_start": null,
       "period_end": null,
       "metric_window": "daily",
-      "followers_delta": 44,
-      "impressions": 32000,
-      "views": 4324,
-      "profile_views": 153,
-      "engagements": 200,
-      "new_followers": 44
+      "followers": null,
+      "followers_delta": null,
+      "impressions": 6359.0,
+      "views": 962.0,
+      "profile_views": null,
+      "likes": null,
+      "favorites": null,
+      "comments": null,
+      "shares": null,
+      "engagements": null,
+      "new_followers": null
+    },
+    {
+      "date": "2026-09-15",
+      "period_start": null,
+      "period_end": null,
+      "metric_window": "daily",
+      "followers_delta": 45,
+      "impressions": 34000,
+      "views": 4819,
+      "profile_views": 162,
+      "engagements": 212,
+      "new_followers": 45
     }
   ]
 }

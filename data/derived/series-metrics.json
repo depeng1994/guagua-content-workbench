@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-14T10:40:07+08:00",
+  "generated_at": "2026-09-15T09:00:21+08:00",
   "series": [
     {
       "series": "商超自救指南",
@@ -49,18 +49,18 @@
     },
     {
       "series": "智驾天团",
-      "sample_size": 1,
-      "average_impressions": 1258.0,
-      "median_impressions": 1258.0,
-      "average_views": 214.0,
-      "average_favorite_rate": 0.004672897196261682,
-      "average_engagement_rate": 0.04205607476635514,
-      "average_followers_gained": 0.0,
-      "follow_efficiency": 0.0,
+      "sample_size": 2,
+      "average_impressions": 2194.0,
+      "median_impressions": 2194.0,
+      "average_views": 579.0,
+      "average_favorite_rate": 0.009319148936170214,
+      "average_engagement_rate": 0.034996960486322184,
+      "average_followers_gained": 3.5,
+      "follow_efficiency": 0.006279635258358663,
       "long_tail_ability": null,
-      "viral_rate": 1.0,
-      "viral_threshold_views": 214.0,
-      "comparison_window": "30d"
+      "viral_rate": 0.5,
+      "viral_threshold_views": 658.0,
+      "comparison_window": "24h"
     },
     {
       "series": "安踏品牌局",

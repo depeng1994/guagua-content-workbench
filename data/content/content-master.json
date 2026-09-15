@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-13",
+  "updated_at": "2026-09-15",
   "source": "migrated from the existing embedded schedule snapshot; this is the single public content master",
   "series": [
     {
@@ -707,12 +707,12 @@
     },
     {
       "content_id": "GG-P024",
-      "publish_date": null,
+      "publish_date": "2026-09-14",
       "planned_date": "2026-09-14",
       "series": "智驾天团",
       "topic": "引望（华为乾崑）",
       "title": "华为乾崑，为什么越来越不像一家普通智驾供应商？",
-      "status": "planned",
+      "status": "published",
       "xiaohongshu_note_id": null,
       "xiaohongshu_url": null,
       "content_type": "未分类",
